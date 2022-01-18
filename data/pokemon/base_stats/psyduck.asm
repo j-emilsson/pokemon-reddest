@@ -3,7 +3,7 @@
 	db  50,  52,  48,  55,  50
 	;   hp  atk  def  spd  spc
 
-	db WATER, WATER ; type
+	db WATER, PSYCHIC ; type
 	db 190 ; catch rate
 	db 80 ; base exp
 
@@ -18,7 +18,8 @@
 	     DOUBLE_EDGE,  BUBBLEBEAM,   WATER_GUN,    ICE_BEAM,     BLIZZARD,     \
 	     PAY_DAY,      SUBMISSION,   COUNTER,      SEISMIC_TOSS, RAGE,         \
 	     DIG,          MIMIC,        DOUBLE_TEAM,  BIDE,         SWIFT,        \
-	     SKULL_BASH,   REST,         SUBSTITUTE,   SURF,         STRENGTH
+	     SKULL_BASH,   REST,         SUBSTITUTE,   SURF,         STRENGTH,     \
+		 FLASH
 	; end
 
 	db 0 ; padding

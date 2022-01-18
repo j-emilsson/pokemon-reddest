@@ -3,7 +3,7 @@
 	db 100, 100, 100, 100, 100
 	;   hp  atk  def  spd  spc
 
-	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
+	db PSYCHIC, PSYCHIC ; type
 	db 45 ; catch rate
 	db 64 ; base exp
 
@@ -24,8 +24,11 @@
 	     SELFDESTRUCT, EGG_BOMB,     FIRE_BLAST,   SWIFT,        SKULL_BASH,   \
 	     SOFTBOILED,   DREAM_EATER,  SKY_ATTACK,   REST,         THUNDER_WAVE, \
 	     PSYWAVE,      EXPLOSION,    ROCK_SLIDE,   TRI_ATTACK,   SUBSTITUTE,   \
-	     CUT,          FLY,          SURF,         STRENGTH,     FLASH,        \
-	     UNUSED
+	     SLUDGE_BOMB,  DRAGON_BREATH,SHADOW_BALL,  GIGA_DRAIN,   HYPER_VOICE,  \
+		 LEAF_BLADE,   IRON_HEAD,    FLASH_CANNON, DRAIN_PUNCH,  AIR_SLASH,    \
+		 EARTH_POWER,  POISON_JAB,   POWER_GEM,    BUG_BUZZ,     DARK_PULSE,   \
+		 DRAGON_PULSE, PLAY_ROUGH,   CUT,          FLY,          SURF,         \
+		 STRENGTH,     FLASH;,        UNUSED
 	; end
 
 	db %11111111 ; padding

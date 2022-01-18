@@ -1,9 +1,9 @@
 	db DEX_GOLDUCK ; pokedex id
 
-	db  80,  82,  78,  85,  80
+	db  80,  55,  80,  90,  110 ; 525
 	;   hp  atk  def  spd  spc
 
-	db WATER, WATER ; type
+	db WATER, PSYCHIC ; type
 	db 75 ; catch rate
 	db 174 ; base exp
 
@@ -19,7 +19,7 @@
 	     HYPER_BEAM,   PAY_DAY,      SUBMISSION,   COUNTER,      SEISMIC_TOSS, \
 	     RAGE,         DIG,          MIMIC,        DOUBLE_TEAM,  BIDE,         \
 	     SWIFT,        SKULL_BASH,   REST,         SUBSTITUTE,   SURF,         \
-	     STRENGTH
+	     STRENGTH,     FLASH
 	; end
 
 	db 0 ; padding

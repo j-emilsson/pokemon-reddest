@@ -116,7 +116,7 @@ NUM_FLOORS EQU const_value - 1 - NUM_ITEMS
 ; HMs are defined before TMs, so the actual number of TM definitions
 ; is not yet available. The TM quantity is hard-coded here and must
 ; match the actual number below.
-NUM_TMS EQU 50
+NUM_TMS EQU 50 + 17
 
 __tmhm_value__ = NUM_TMS + 1
 
@@ -207,6 +207,23 @@ TM01 EQU const_value
 	add_tm ROCK_SLIDE   ; $F8
 	add_tm TRI_ATTACK   ; $F9
 	add_tm SUBSTITUTE   ; $FA
+	add_tm SLUDGE_BOMB  ; $FC ; start of added tms
+	add_tm DRAGON_BREATH; $FD
+	add_tm SHADOW_BALL  ; $FE
+	add_tm GIGA_DRAIN   ; $FF
+	add_tm HYPER_VOICE  ; $FD
+	add_tm LEAF_BLADE   ; $FD
+	add_tm IRON_HEAD    ; $FD
+	add_tm FLASH_CANNON ; $FD
+	add_tm DRAIN_PUNCH  ; $FD
+	add_tm AIR_SLASH    ; $FD
+	add_tm EARTH_POWER  ; $FD
+	add_tm POISON_JAB   ; $FD
+	add_tm POWER_GEM    ; $FD
+	add_tm BUG_BUZZ     ; $FD
+	add_tm DARK_PULSE   ; $FD
+	add_tm DRAGON_PULSE ; $FD
+	add_tm PLAY_ROUGH   ; $FD ; end of added tms
 ASSERT NUM_TMS == const_value - TM01, "NUM_TMS ({d:NUM_TMS}) does not match the number of add_tm definitions"
 
 NUM_TM_HM EQU NUM_TMS + NUM_HMS

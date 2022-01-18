@@ -1,41 +1,82 @@
-# Pokémon Red and Blue [![Build Status][ci-badge]][ci]
+# Pokémon Reddest
 
-This is a disassembly of Pokémon Red and Blue.
+This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provided by the [pret team](https://github.com/pret).
 
-It builds the following ROMs:
+## Features
 
-- Pokemon Red (UE) [S][!].gb `sha1: ea9bcae617fdf159b045185467ae58b2e4a48b9a`
-- Pokemon Blue (UE) [S][!].gb `sha1: d7037c83e1ae5b39bde3c30787637ba1d4c48ce2`
-- BLUEMONS.GB (debug build) `sha1: 5b1456177671b79b263c614ea0e7cc9ac542e9c4`
+- ### New types
+    - Dark
+    - Steel
+    - Fairy
 
-To set up the repository, see [**INSTALL.md**](INSTALL.md).
+- ### Physical/special split
 
+- ### Purchasable TMs in PokéMarts
 
-## See also
+- ### Another rival
 
-- **Discord:** [pret][discord]
-- **IRC:** [libera#pret][irc]
+- ### Updated existing moves to latest gen
 
-Other disassembly projects:
+- ### New moves from later gens
+    - Feint Attack
+    - Sludge Bomb
+    - Flame Wheel
+    - Outrage
+    - Spark
+    - Dragon Breath
+    - Shadow Ball
+    - Crunch
+    - Extreme Speed
+    - Giga Drain
+    - Hyper Voice
+    - Leaf Blade
+    - Iron Head
+    - Flash Cannon
+    - Drain Punch
+    - Air Slash
+    - Earth Power
+    - Poison Jab
+    - Power Gem
+    - Bug Buzz
+    - Dark Pulse
+    - Dragon Pulse
+    - Moonblast
+    - Play Rough
 
-- [**Pokémon Yellow**][pokeyellow]
-- [**Pokémon Gold/Silver**][pokegold]
-- [**Pokémon Crystal**][pokecrystal]
-- [**Pokémon Pinball**][pokepinball]
-- [**Pokémon TCG**][poketcg]
-- [**Pokémon Ruby**][pokeruby]
-- [**Pokémon FireRed**][pokefirered]
-- [**Pokémon Emerald**][pokeemerald]
+- ### Different starters
+    - Jolteon
+    - Flareon
+    - Vaporeon
 
-[pokeyellow]: https://github.com/pret/pokeyellow
-[pokegold]: https://github.com/pret/pokegold
-[pokecrystal]: https://github.com/pret/pokecrystal
-[pokepinball]: https://github.com/pret/pokepinball
-[poketcg]: https://github.com/pret/poketcg
-[pokeruby]: https://github.com/pret/pokeruby
-[pokefirered]: https://github.com/pret/pokefirered
-[pokeemerald]: https://github.com/pret/pokeemerald
-[discord]: https://discord.gg/d5dubZ3
-[irc]: https://web.libera.chat/?#pret
-[ci]: https://github.com/pret/pokered/actions
-[ci-badge]: https://github.com/pret/pokered/actions/workflows/main.yml/badge.svg
+- ### Adjusted base stats of most Pokémon
+
+- ### Adjusted typings of some Pokémon
+    -	Arbok
+        - Poison/Dark
+    -	Blastoise
+        - Water/Steel
+    -	Charizard
+        - Fire/Dragon
+    -	Clefairy/Clefable
+        - Fairy
+    -	Diglett/Dugtrio
+        - Ground/Steel
+    -	Farfetch'd
+        - Flying/Fighting
+    -	Psyduck/Golduck
+        - Water/Psychic
+    -	Gyarados
+        - Water/Dragon
+    -	Jigglypuff/Wigglytuff
+        - Normal/Fairy
+    -	Magnemite/Magneton
+        - Electric/Steel
+    -	Mr.Mime
+        - Psychic/Fairy
+    -	Muk
+        - Poison/Dark
+    -	Weezing
+        - Poison/Fairy
+
+## Credit
+The pret team for the pokered disassemblies, which this repository is based on: [pret/pokered](https://github.com/pret/pokered)

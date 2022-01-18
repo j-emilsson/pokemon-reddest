@@ -1,9 +1,9 @@
 	db DEX_FARFETCHD ; pokedex id
 
-	db  52,  65,  55,  60,  58
+	db  90, 130,  80, 120, 80 ; 580
 	;   hp  atk  def  spd  spc
 
-	db NORMAL, FLYING ; type
+	db FLYING, FIGHTING ; type
 	db 45 ; catch rate
 	db 94 ; base exp
 
@@ -15,9 +15,10 @@
 
 	; tm/hm learnset
 	tmhm RAZOR_WIND,   SWORDS_DANCE, WHIRLWIND,    TOXIC,        BODY_SLAM,    \
-	     TAKE_DOWN,    DOUBLE_EDGE,  RAGE,         MIMIC,        DOUBLE_TEAM,  \
-	     REFLECT,      BIDE,         SWIFT,        SKULL_BASH,   REST,         \
-	     SUBSTITUTE,   CUT,          FLY
+	     TAKE_DOWN,    DOUBLE_EDGE,  SUBMISSION,   COUNTER,      SEISMIC_TOSS, \
+		 RAGE,         MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         \
+	     SWIFT,        SKULL_BASH,   SKY_ATTACK,   REST,         SUBSTITUTE,   \
+	     CUT,          FLY
 	; end
 
 	db 0 ; padding

@@ -166,5 +166,29 @@ MoveSoundTable:
 	db SFX_NOT_VERY_EFFECTIVE, $01, $ff ; SLASH
 	db SFX_BATTLE_2C,          $d8, $04 ; SUBSTITUTE
 	db SFX_BATTLE_0B,          $00, $80 ; STRUGGLE
+	db SFX_SUPER_EFFECTIVE,    $00, $e0 ; FEINT_ATTACK
+	db SFX_NOT_VERY_EFFECTIVE, $10, $ff ; SLUDGE_BOMB
+	db SFX_BATTLE_0D,          $10, $60 ; FLAME_WHEEL
+	db SFX_BATTLE_22,          $11, $c0 ; OUTRAGE
+	db SFX_BATTLE_2F,          $00, $20 ; SPARK
+	db SFX_BATTLE_19,          $21, $e0 ; DRAGON_BREATH
+	db SFX_NOT_VERY_EFFECTIVE, $10, $ff ; SHADOW_BALL
+	db SFX_BATTLE_1E,          $00, $80 ; CRUNCH
+	db SFX_BATTLE_25,          $00, $10 ; EXTREME_SPEED
+	db SFX_BATTLE_24,          $40, $c0 ; GIGA_DRAIN
+	db SFX_BATTLE_27,          $40, $60 ; HYPER_VOICE
+	db SFX_NOT_VERY_EFFECTIVE, $00, $a0 ; LEAF_BLADE
+	db SFX_BATTLE_18,          $00, $80 ; IRON_HEAD
+	db SFX_BATTLE_29,          $f8, $ff ; FLASH_CANNON
+	db SFX_BATTLE_0D,          $00, $40 ; DRAIN_PUNCH
+	db SFX_NOT_VERY_EFFECTIVE, $00, $a0 ; AIR_SLASH
+	db SFX_BATTLE_29,          $0f, $e0 ; EARTH_POWER
+	db SFX_BATTLE_2A,          $80, $c0 ; POISON_JAB
+	db SFX_BATTLE_2B,          $1f, $60 ; POWER_GEM
+	db SFX_NOT_VERY_EFFECTIVE, $f0, $e0 ; BUG_BUZZ
+	db SFX_PSYBEAM,            $00, $80 ; DARK_PULSE
+	db SFX_PSYBEAM,            $00, $80 ; DRAGON_PULSE
+	db SFX_NOT_VERY_EFFECTIVE, $10, $ff ; MOONBLAST
+	db SFX_BATTLE_26,          $20, $40 ; PLAY_ROUGH
 	assert_table_length NUM_ATTACKS
 	db SFX_BATTLE_0B,          $00, $80

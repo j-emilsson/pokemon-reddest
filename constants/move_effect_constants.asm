@@ -91,4 +91,7 @@
 	const LEECH_SEED_EFFECT          ; $54
 	const SPLASH_EFFECT              ; $55
 	const DISABLE_EFFECT             ; $56
+	const POISON_SIDE_EFFECT3        ; $57 Sludge Bomb
+	const INCREASED_PRIO_EFFECT      ; $58 Quick Attack, ExtremeSpeed
+	const FLINCH_SIDE_EFFECT3        ; $59 Dark Pulse
 NUM_MOVE_EFFECTS EQU const_value - 1

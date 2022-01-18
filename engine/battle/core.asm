@@ -5,6 +5,7 @@ INCLUDE "data/battle/set_damage_effects.asm"
 INCLUDE "data/battle/residual_effects_2.asm"
 INCLUDE "data/battle/always_happen_effects.asm"
 INCLUDE "data/battle/special_effects.asm"
+INCLUDE "engine/battle/physical_special_split.asm"
 
 SlidePlayerAndEnemySilhouettesOnScreen:
 	call LoadPlayerBackPic
@@ -368,16 +369,16 @@ MainInBattleLoop:
 	callfar SwitchEnemyMon
 .noLinkBattle
 	ld a, [wPlayerSelectedMove]
-	cp QUICK_ATTACK
+	cp INCREASED_PRIO_EFFECT
 	jr nz, .playerDidNotUseQuickAttack
 	ld a, [wEnemySelectedMove]
-	cp QUICK_ATTACK
-	jr z, .compareSpeed  ; if both used Quick Attack
-	jp .playerMovesFirst ; if player used Quick Attack and enemy didn't
+	cp INCREASED_PRIO_EFFECT
+	jr z, .compareSpeed  ; if both used an increased prio move
+	jp .playerMovesFirst ; if player used an increased prio move and enemy didn't
 .playerDidNotUseQuickAttack
 	ld a, [wEnemySelectedMove]
-	cp QUICK_ATTACK
-	jr z, .enemyMovesFirst ; if enemy used Quick Attack and player didn't
+	cp INCREASED_PRIO_EFFECT
+	jr z, .enemyMovesFirst ; if enemy used an increased prio move and player didn't
 	ld a, [wPlayerSelectedMove]
 	cp COUNTER
 	jr nz, .playerDidNotUseCounter
@@ -2845,7 +2846,7 @@ PrintMenuItem:
 	hlcoord 1, 10
 	ld de, DisabledText
 	call PlaceString
-	jr .moveDisabled
+	jp .moveDisabled
 .notDisabled
 	ld hl, wCurrentMenuItem
 	dec [hl]
@@ -2873,13 +2874,27 @@ PrintMenuItem:
 	ld a, [hl]
 	and $3f
 	ld [wcd6d], a
-; print TYPE/<type> and <curPP>/<maxPP>
+	ld a, [wPlayerSelectedMove] ; physical/special split start
+	call PhysicalSpecialSplit
+	cp a, STATUS
+	jp z, .StatusTextShow
+	cp a, SPECIAL
+	jp nz, .PhysicalTextShow
 	hlcoord 1, 9
-	ld de, TypeText
+	ld de, SpecialText
 	call PlaceString
+	jp .RestOfTheRoutineThing
+.PhysicalTextShow
+	hlcoord 1,9
+	ld de, PhysicalText
+	call PlaceString
+	jr .RestOfTheRoutineThing
+.StatusTextShow
+	hlcoord 1,9
+	ld de, StatusText2
+	call PlaceString
+.RestOfTheRoutineThing
 	hlcoord 7, 11
-	ld [hl], "/"
-	hlcoord 5, 9
 	ld [hl], "/"
 	hlcoord 5, 11
 	ld de, wcd6d
@@ -2891,17 +2906,45 @@ PrintMenuItem:
 	call PrintNumber
 	call GetCurrentMove
 	hlcoord 2, 10
-	predef PrintMoveType
+	predef PrintMoveType 
+; ; print TYPE/<type> and <curPP>/<maxPP>
+	; hlcoord 1, 9
+	; ld de, TypeText
+	; call PlaceString
+	; hlcoord 7, 11
+	; ld [hl], "/"
+	; hlcoord 5, 9
+	; ld [hl], "/"
+	; hlcoord 5, 11
+	; ld de, wcd6d
+	; lb bc, 1, 2
+	; call PrintNumber
+	; hlcoord 8, 11
+	; ld de, wMaxPP
+	; lb bc, 1, 2
+	; call PrintNumber
+	; call GetCurrentMove
+	; hlcoord 2, 10
+	; predef PrintMoveType ; physical/special split end
 .moveDisabled
 	ld a, $1
 	ldh [hAutoBGTransferEnabled], a
 	jp Delay3
 
 DisabledText:
-	db "disabled!@"
+	db "Disabled!@"
+	
+StatusText2: ; physical/special split start
+	db "STATUS@"
 
-TypeText:
-	db "TYPE@"
+PhysicalText: 
+	db "PHYSICAL@"
+
+SpecialText: 
+	db "SPECIAL@"
+
+; TypeText:
+	; db "TYPE@" ; physical/special split end
 
 SelectEnemyMove:
 	ld a, [wLinkState]
@@ -4141,9 +4184,13 @@ GetDamageVarsForPlayerAttack:
 	and a
 	ld d, a ; d = move power
 	ret z ; return if move power is zero
-	ld a, [hl] ; a = [wPlayerMoveType]
-	cp SPECIAL ; types >= SPECIAL are all special
-	jr nc, .specialAttack
+	ld a, [wPlayerSelectedMove] ; physical/special split start
+	call PhysicalSpecialSplit
+	cp a, SPECIAL
+	jr z, .specialAttack
+	; ld a, [hl] ; a = [wPlayerMoveType]
+	; cp SPECIAL ; types >= SPECIAL are all special
+	; jr nc, .specialAttack ; physical/special split end
 .physicalAttack
 	ld hl, wEnemyMonDefense
 	ld a, [hli]
@@ -4254,9 +4301,13 @@ GetDamageVarsForEnemyAttack:
 	ld d, a ; d = move power
 	and a
 	ret z ; return if move power is zero
-	ld a, [hl] ; a = [wEnemyMoveType]
-	cp SPECIAL ; types >= SPECIAL are all special
-	jr nc, .specialAttack
+	ld a,[wEnemySelectedMove] ; physical/special split start
+	call PhysicalSpecialSplit
+	cp a, SPECIAL
+	jr z, .specialAttack
+	; ld a, [hl] ; a = [wEnemyMoveType]
+	; cp SPECIAL ; types >= SPECIAL are all special
+	; jr nc, .specialAttack  ; physical/special split end
 .physicalAttack
 	ld hl, wBattleMonDefense
 	ld a, [hli]
@@ -4678,12 +4729,16 @@ HandleCounterMove:
 	and a
 	ret z ; miss if the opponent's last selected move's Base Power is 0.
 ; check if the move the target last selected was Normal or Fighting type
-	inc de
-	ld a, [de]
-	and a ; normal type
+	ld a, [hl] ; physical/special split start
+	call PhysicalSpecialSplit
+	cp a, PHYSICAL
 	jr z, .counterableType
-	cp FIGHTING
-	jr z, .counterableType
+	; inc de
+	; ld a, [de]
+	; and a ; normal type
+	; jr z, .counterableType
+	; cp FIGHTING
+	; jr z, .counterableType ; physical/special split end
 ; if the move wasn't Normal or Fighting type, miss
 	xor a
 	ret
@@ -7012,3 +7067,12 @@ LoadMonBackPic:
 	ldh a, [hLoadedROMBank]
 	ld b, a
 	jp CopyVideoData
+	
+; Determine if a move is Physical, Special, or Status ; physical/special split start
+; INPUT: Move ID in register a
+; OUTPUT: Move Physical/Special/Status type in register a
+PhysicalSpecialSplit:
+	ld [wTempMoveID], a
+	call _PhysicalSpecialSplit
+	ld a, [wTempMoveID]
+	ret ; physical/special split end

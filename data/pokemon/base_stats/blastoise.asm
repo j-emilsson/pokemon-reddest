@@ -1,9 +1,9 @@
 	db DEX_BLASTOISE ; pokedex id
 
-	db  79,  83, 100,  78,  85
+	db  80,  60, 110,  80, 110 ; 550
 	;   hp  atk  def  spd  spc
 
-	db WATER, WATER ; type
+	db WATER, STEEL ; type
 	db 45 ; catch rate
 	db 210 ; base exp
 
@@ -18,8 +18,8 @@
 	     DOUBLE_EDGE,  BUBBLEBEAM,   WATER_GUN,    ICE_BEAM,     BLIZZARD,     \
 	     HYPER_BEAM,   SUBMISSION,   COUNTER,      SEISMIC_TOSS, RAGE,         \
 	     EARTHQUAKE,   FISSURE,      DIG,          MIMIC,        DOUBLE_TEAM,  \
-	     REFLECT,      BIDE,         SKULL_BASH,   REST,         SUBSTITUTE,   \
-	     SURF,         STRENGTH
+	     REFLECT,      BIDE,         SKULL_BASH,   REST,         ROCK_SLIDE,   \
+	     SUBSTITUTE,   CUT,          SURF,         STRENGTH
 	; end
 
 	db 0 ; padding

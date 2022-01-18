@@ -223,6 +223,9 @@
 	const EVENT_GOT_POTION_SAMPLE
 
 ; Route 2 events
+	const_next $3D0
+	const_skip
+	const EVENT_BEAT_ROUTE_2_TRAINER_0
 	const_next $3D8
 	const EVENT_GOT_HM05
 
@@ -769,6 +772,11 @@
 	const EVENT_SEAFOAM4_BOULDER2_DOWN_HOLE
 	const_skip 8
 	const EVENT_BEAT_ARTICUNO
+	
+; Custom events
+	;const_next $9DB
+	;const_skip
+	;const EVENT_BEAT_PALLET_TOWN_TRAINER_0
 
 ; End of events
 	const_next $A00

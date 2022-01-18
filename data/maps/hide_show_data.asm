@@ -295,6 +295,7 @@ SaffronCityHS:
 Route2HS:
 	db ROUTE_2, $01, SHOW
 	db ROUTE_2, $02, SHOW
+	db ROUTE_2, $03, SHOW
 Route4HS:
 	db ROUTE_4, $03, SHOW
 Route9HS:

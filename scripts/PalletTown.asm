@@ -1,7 +1,18 @@
 PalletTown_Script:
+	call PalletTownScript_515e1
+	; call EnableAutoTextBoxDrawing
+    ; ld hl, PalletTownTrainerHeaders
+    ; ld de, PalletTown_BattleScriptPointers
+    ; ld a, [wPalletTownBattleCurScript]
+    ; call ExecuteCurMapScriptInTable
+    ; ld [wPalletTownBattleCurScript], a
+    ; ret
+
+PalletTownScript_515e1:
 	CheckEvent EVENT_GOT_POKEBALLS_FROM_OAK
 	jr z, .next
 	SetEvent EVENT_PALLET_AFTER_GETTING_POKEBALLS
+
 .next
 	call EnableAutoTextBoxDrawing
 	ld hl, PalletTown_ScriptPointers
@@ -15,7 +26,12 @@ PalletTown_ScriptPointers:
 	dw PalletTownScript3
 	dw PalletTownScript4
 	dw PalletTownScript5
-	dw PalletTownScript6
+	dw PalletTownScript6	
+	
+; PalletTown_BattleScriptPointers:
+	; dw CheckFightingMapTrainers
+	; dw DisplayEnemyTrainerTextAndStartBattle
+	; dw EndTrainerBattle
 
 PalletTownScript0:
 	CheckEvent EVENT_FOLLOWED_OAK_INTO_LAB
@@ -156,6 +172,7 @@ PalletTown_TextPointers:
 	dw PalletTownText5
 	dw PalletTownText6
 	dw PalletTownText7
+	;dw PalletTownText8
 
 PalletTownText1:
 	text_asm
@@ -212,3 +229,27 @@ PalletTownText6: ; sign by Red's house
 PalletTownText7: ; sign by Blue's house
 	text_far _PalletTownText7
 	text_end
+	
+; PalletTownTrainerHeaders:
+	; def_trainers
+; PalletTownTrainerHeader0:
+    ; trainer EVENT_BEAT_PALLET_TOWN_TRAINER_0, 3, PalletTownBattleText1, PalletTownEndBattleText1, PalletTownAfterBattleText1
+	; db -1 ; end
+	
+; PalletTownText8:
+    ; text_asm
+    ; ld hl, PalletTownTrainerHeader0
+    ; call TalkToTrainer
+    ; jp TextScriptEnd
+
+; PalletTownBattleText1:
+    ; text_far _PalletTownBattleText1
+    ; text_end
+
+; PalletTownEndBattleText1:
+    ; text_far _PalletTownEndBattleText1
+    ; text_end
+
+; PalletTownAfterBattleText1:
+    ; text_far _PalletTownAfterBattleText1
+    ; text_end

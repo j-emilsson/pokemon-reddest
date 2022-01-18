@@ -1,9 +1,9 @@
 	db DEX_CLEFABLE ; pokedex id
 
-	db  95,  70,  73,  60,  85
+	db  100,  70,  80,  60,  105 ; 520
 	;   hp  atk  def  spd  spc
 
-	db NORMAL, NORMAL ; type
+	db FAIRY, FAIRY ; type
 	db 25 ; catch rate
 	db 129 ; base exp
 

@@ -98,10 +98,13 @@ PoisonEffect:
 	jr z, .noEffect
 	ld a, [de]
 	cp POISON_SIDE_EFFECT1
-	ld b, 20 percent + 1 ; chance of poisoning
+	ld b, 20 percent + 1 ; 20 chance of poisoning
 	jr z, .sideEffectTest
 	cp POISON_SIDE_EFFECT2
-	ld b, 40 percent + 1 ; chance of poisoning
+	ld b, 40 percent + 1 ; 40 chance of poisoning
+	jr z, .sideEffectTest
+	cp POISON_SIDE_EFFECT3
+	ld b, 30 percent + 1 ; 30 chance of poisoning
 	jr z, .sideEffectTest
 	push hl
 	push de
@@ -981,7 +984,12 @@ FlinchSideEffect:
 	cp FLINCH_SIDE_EFFECT1
 	ld b, 10 percent + 1 ; chance of flinch (FLINCH_SIDE_EFFECT1)
 	jr z, .gotEffectChance
-	ld b, 30 percent + 1 ; chance of flinch otherwise
+	cp FLINCH_SIDE_EFFECT3
+	ld b, 20 percent + 1 ; chance of flinch (FLINCH_SIDE_EFFECT3)
+	jr z, .gotEffectChance
+	cp FLINCH_SIDE_EFFECT2
+	ld b, 30 percent + 1 ; chance of flinch (FLINCH_SIDE_EFFECT2)
+	jr z, .gotEffectChance
 .gotEffectChance
 	call BattleRandom
 	cp b

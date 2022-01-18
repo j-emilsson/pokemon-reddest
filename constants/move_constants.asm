@@ -1,4 +1,4 @@
-; move ids
+; const ids
 ; indexes for:
 ; - Moves (see data/moves/moves.asm)
 ; - MoveNames (see data/moves/names.asm)
@@ -171,6 +171,30 @@
 	const SLASH        ; a3
 	const SUBSTITUTE   ; a4
 	const STRUGGLE     ; a5
+	const FEINT_ATTACK ; a6
+	const SLUDGE_BOMB  ; a7
+	const FLAME_WHEEL  ; a8
+	const OUTRAGE      ; a9
+	const SPARK        ; aa
+	const DRAGON_BREATH; ab
+	const SHADOW_BALL  ; ac
+	const CRUNCH       ; ad
+	const EXTREME_SPEED; ae
+	const GIGA_DRAIN   ; af
+	const HYPER_VOICE  ; b0
+	const LEAF_BLADE   ; b1
+	const IRON_HEAD    ; b2
+	const FLASH_CANNON ; b3
+	const DRAIN_PUNCH  ; b4
+	const AIR_SLASH    ; b5
+	const EARTH_POWER  ; b6
+	const POISON_JAB   ; b7
+	const POWER_GEM    ; b8
+	const BUG_BUZZ     ; b9
+	const DARK_PULSE   ; ba
+	const DRAGON_PULSE ; bb
+	const MOONBLAST    ; bc
+	const PLAY_ROUGH   ; bd
 NUM_ATTACKS EQU const_value - 1
 
 	; Moves do double duty as animation identifiers.

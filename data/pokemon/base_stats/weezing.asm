@@ -1,9 +1,9 @@
 	db DEX_WEEZING ; pokedex id
 
-	db  65,  90, 120,  60,  85
+	db  60,  75, 120,  60,  105 ; 525
 	;   hp  atk  def  spd  spc
 
-	db POISON, POISON ; type
+	db POISON, FAIRY ; type
 	db 60 ; catch rate
 	db 173 ; base exp
 
@@ -16,7 +16,7 @@
 	; tm/hm learnset
 	tmhm TOXIC,        HYPER_BEAM,   RAGE,         THUNDERBOLT,  THUNDER,      \
 	     MIMIC,        DOUBLE_TEAM,  BIDE,         SELFDESTRUCT, FIRE_BLAST,   \
-	     REST,         EXPLOSION,    SUBSTITUTE
+	     REST,         PSYWAVE,      EXPLOSION,    SUBSTITUTE,   FLASH
 	; end
 
 	db 0 ; padding

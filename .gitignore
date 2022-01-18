@@ -10,6 +10,9 @@
 *.gbc
 *.gb
 
+# rgbds folder
+rgbds-0.5.2/
+
 # rgbds extras
 *.map
 *.sym

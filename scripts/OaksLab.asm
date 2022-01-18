@@ -193,11 +193,11 @@ OaksLabScript7:
 OaksLabScript8:
 	ld a, [wPlayerStarter]
 	cp STARTER1
-	jr z, .Charmander
+	jr z, .Starter1
 	cp STARTER2
-	jr z, .Squirtle
-	jr .Bulbasaur
-.Charmander
+	jr z, .Starter2
+	jr .Starter3
+.Starter1
 	ld de, .MiddleBallMovement1
 	ld a, [wYCoord]
 	cp 4 ; is the player standing below the table?
@@ -221,7 +221,7 @@ OaksLabScript8:
 	db NPC_MOVEMENT_RIGHT
 	db -1 ; end
 
-.Squirtle
+.Starter2
 	ld de, .RightBallMovement1
 	ld a, [wYCoord]
 	cp 4 ; is the player standing below the table?
@@ -247,7 +247,7 @@ OaksLabScript8:
 	db NPC_MOVEMENT_RIGHT
 	db -1 ; end
 
-.Bulbasaur
+.Starter3
 	ld de, .LeftBallMovement1
 	ld a, [wXCoord]
 	cp 9 ; is the player standing to the right of the table?
@@ -385,15 +385,15 @@ OaksLabScript11:
 	ld [wCurOpponent], a
 	ld a, [wRivalStarter]
 	cp STARTER2
-	jr nz, .NotSquirtle
+	jr nz, .NotStarter2
 	ld a, $1
 	jr .done
-.NotSquirtle
+.NotStarter2
 	cp STARTER3
-	jr nz, .Charmander
+	jr nz, .Starter1
 	ld a, $2
 	jr .done
-.Charmander
+.Starter1
 	ld a, $3
 .done
 	ld [wTrainerNo], a
@@ -861,30 +861,30 @@ OaksLabScript_1d157:
 	call DelayFrames
 	ld a, [wSpriteIndex]
 	cp $2
-	jr z, OaksLabLookAtCharmander
+	jr z, OaksLabLookAtStarter1
 	cp $3
-	jr z, OaksLabLookAtSquirtle
-	jr OaksLabLookAtBulbasaur
+	jr z, OaksLabLookAtStarter2
+	jr OaksLabLookAtStarter3
 
-OaksLabLookAtCharmander:
-	ld hl, OaksLabCharmanderText
+OaksLabLookAtStarter1:
+	ld hl, OaksLabStarter1Text
 	jr OaksLabMonChoiceMenu
-OaksLabCharmanderText:
-	text_far _OaksLabCharmanderText
+OaksLabStarter1Text:
+	text_far _OaksLabStarter1Text
 	text_end
 
-OaksLabLookAtSquirtle:
-	ld hl, OaksLabSquirtleText
+OaksLabLookAtStarter2:
+	ld hl, OaksLabStarter2Text
 	jr OaksLabMonChoiceMenu
-OaksLabSquirtleText:
-	text_far _OaksLabSquirtleText
+OaksLabStarter2Text:
+	text_far _OaksLabStarter2Text
 	text_end
 
-OaksLabLookAtBulbasaur:
-	ld hl, OaksLabBulbasaurText
+OaksLabLookAtStarter3:
+	ld hl, OaksLabStarter3Text
 	jr OaksLabMonChoiceMenu
-OaksLabBulbasaurText:
-	text_far _OaksLabBulbasaurText
+OaksLabStarter3Text:
+	text_far _OaksLabStarter3Text
 	text_end
 
 OaksLabMonChoiceMenu:

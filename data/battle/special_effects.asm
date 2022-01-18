@@ -16,6 +16,7 @@ SpecialEffects:
 	db ATTACK_TWICE_EFFECT
 	db JUMP_KICK_EFFECT
 	db RECOIL_EFFECT
+	dw INCREASED_PRIO_EFFECT
 	; fallthrough
 SpecialEffectsCont:
 ; damaging moves whose effect is executed prior to damage calculation

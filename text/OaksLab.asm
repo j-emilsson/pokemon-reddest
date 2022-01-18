@@ -24,23 +24,23 @@ _OaksLabText39::
 	line "BALLs. They"
 	cont "contain #MON!"
 	done
-
-_OaksLabCharmanderText::
-	text "So! You want the"
-	line "fire #MON,"
-	cont "CHARMANDER?"
+	
+_OaksLabStarter1Text::
+	text "You want the"
+	line "lighting #MON,"
+	cont "JOLTEON?"
 	done
 
-_OaksLabSquirtleText::
-	text "So! You want the"
-	line "water #MON,"
-	cont "SQUIRTLE?"
+_OaksLabStarter2Text::
+	text "You want the"
+	line "flame #MON,"
+	cont "FLAREON?"
 	done
 
-_OaksLabBulbasaurText::
+_OaksLabStarter3Text::
 	text "So! You want the"
-	line "plant #MON,"
-	cont "BULBASAUR?"
+	line "bubble jet"
+	cont "#MON,VAPOREON?"
 	done
 
 _OaksLabMonEnergeticText::

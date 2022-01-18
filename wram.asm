@@ -179,6 +179,7 @@ ENDU
 
 	ds 80
 
+wTempMoveID:: ; physical/special split start end
 
 SECTION "Overworld Map", WRAM0
 
@@ -2044,7 +2045,13 @@ wSeafoamIslandsB3FCurScript:: db
 wRoute23CurScript:: db
 wSeafoamIslandsB4FCurScript:: db
 wRoute18Gate1FCurScript:: db
-	ds 78
+;wPalletTownBattleCurScript:: db
+;	ds 1
+wRoute2CurScript:: db
+	ds 1
+
+	ds 77
+;	ds 78
 wGameProgressFlagsEnd::
 
 	ds 56
