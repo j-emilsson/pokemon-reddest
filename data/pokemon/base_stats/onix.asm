@@ -1,6 +1,6 @@
 	db DEX_ONIX ; pokedex id
 
-	db  80,  120, 150,  80,  75 ; 580
+	db  90, 130, 150, 90,  70 ; 600
 	;   hp  atk  def  spd  spc
 
 	db ROCK, DARK ; type
@@ -17,7 +17,8 @@
 	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  RAGE,         \
 	     EARTHQUAKE,   FISSURE,      DIG,          MIMIC,        DOUBLE_TEAM,  \
 	     BIDE,         SELFDESTRUCT, SKULL_BASH,   REST,         EXPLOSION,    \
-	     ROCK_SLIDE,   SUBSTITUTE,   STRENGTH
+	     ROCK_SLIDE,   SUBSTITUTE,   DRAGON_BREATH,IRON_HEAD,    FLASH_CANNON, \
+		 EARTH_POWER,  DARK_PULSE,   DRAGON_PULSE, STRENGTH
 	; end
 
 	db 0 ; padding

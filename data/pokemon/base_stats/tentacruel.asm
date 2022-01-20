@@ -1,6 +1,6 @@
 	db DEX_TENTACRUEL ; pokedex id
 
-	db  80,  70,  65, 100, 120
+	db  80,  70,  65, 100, 120 ; 555
 	;   hp  atk  def  spd  spc
 
 	db WATER, POISON ; type
@@ -17,7 +17,8 @@
 	tmhm SWORDS_DANCE, TOXIC,        TAKE_DOWN,    DOUBLE_EDGE,  BUBBLEBEAM,   \
 	     WATER_GUN,    ICE_BEAM,     BLIZZARD,     HYPER_BEAM,   RAGE,         \
 	     MEGA_DRAIN,   MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         \
-	     SKULL_BASH,   REST,         SUBSTITUTE,   CUT,          SURF
+	     SKULL_BASH,   REST,         SUBSTITUTE,   SLUDGE_BOMB,  GIGA_DRAIN,   \
+		 POISON_JAB,   CUT,          SURF
 	; end
 
 	db 0 ; padding

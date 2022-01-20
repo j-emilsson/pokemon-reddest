@@ -15,9 +15,10 @@
 
 	; tm/hm learnset
 	tmhm MEGA_PUNCH,   TOXIC,        BODY_SLAM,    HYPER_BEAM,   RAGE,         \
-	     MEGA_DRAIN,   THUNDERBOLT,  THUNDER,      MIMIC,        DOUBLE_TEAM,  \
-	     BIDE,		   SELFDESTRUCT, FIRE_BLAST,   REST,         EXPLOSION,    \
-		 SUBSTITUTE
+	     MEGA_DRAIN,   THUNDERBOLT,  THUNDER,      DIG,          MIMIC,        \
+	     DOUBLE_TEAM,  BIDE,		 SELFDESTRUCT, FIRE_BLAST,   REST,         \
+		 EXPLOSION,    ROCK_SLIDE,   SUBSTITUTE,   SLUDGE_BOMB,  SHADOW_BALL,  \
+		 GIGA_DRAIN,   POISON_JAB,   DARK_PULSE,   STRENGTH
 	; end
 
 	db 0 ; padding

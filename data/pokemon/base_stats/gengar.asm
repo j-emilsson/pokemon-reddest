@@ -1,6 +1,6 @@
 	db DEX_GENGAR ; pokedex id
 
-	db  60,  65,  60, 110, 130
+	db  60,  65,  60, 110, 130 ; 555
 	;   hp  atk  def  spd  spc
 
 	db GHOST, POISON ; type
@@ -10,7 +10,7 @@
 	INCBIN "gfx/pokemon/front/gengar.pic", 0, 1 ; sprite dimensions
 	dw GengarPicFront, GengarPicBack
 
-	db LICK, CONFUSE_RAY, NIGHT_SHADE, NO_MOVE ; level 1 learnset
+	db LICK, CONFUSE_RAY, HYPNOSIS, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_SLOW ; growth rate
 
 	; tm/hm learnset
@@ -19,7 +19,8 @@
 	     RAGE,         MEGA_DRAIN,   THUNDERBOLT,  THUNDER,      PSYCHIC_M,    \
 	     MIMIC,        DOUBLE_TEAM,  BIDE,         METRONOME,    SELFDESTRUCT, \
 	     SKULL_BASH,   DREAM_EATER,  REST,         PSYWAVE,      EXPLOSION,    \
-	     SUBSTITUTE,   STRENGTH
+	     SUBSTITUTE,   SLUDGE_BOMB,  SHADOW_BALL,  GIGA_DRAIN,   DRAIN_PUNCH,  \
+		 POISON_JAB,   DARK_PULSE,   STRENGTH
 	; end
 
 	db 0 ; padding

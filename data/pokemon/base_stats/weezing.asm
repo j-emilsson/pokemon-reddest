@@ -1,6 +1,6 @@
 	db DEX_WEEZING ; pokedex id
 
-	db  60,  75, 120,  60,  105 ; 525
+	db  60,  75, 120,  60, 105 ; 525
 	;   hp  atk  def  spd  spc
 
 	db POISON, FAIRY ; type
@@ -16,7 +16,8 @@
 	; tm/hm learnset
 	tmhm TOXIC,        HYPER_BEAM,   RAGE,         THUNDERBOLT,  THUNDER,      \
 	     MIMIC,        DOUBLE_TEAM,  BIDE,         SELFDESTRUCT, FIRE_BLAST,   \
-	     REST,         PSYWAVE,      EXPLOSION,    SUBSTITUTE,   FLASH
+	     REST,         PSYWAVE,      EXPLOSION,    SUBSTITUTE,   SLUDGE_BOMB,  \
+		 SHADOW_BALL,  DARK_PULSE,   PLAY_ROUGH,   FLASH
 	; end
 
 	db 0 ; padding

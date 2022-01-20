@@ -16,7 +16,8 @@
 	; tm/hm learnset
 	tmhm TOXIC,        RAGE,         THUNDERBOLT,  THUNDER,      MIMIC,        \
 	     DOUBLE_TEAM,  BIDE,         SELFDESTRUCT, FIRE_BLAST,   REST,         \
-	     EXPLOSION,    SUBSTITUTE
+	     EXPLOSION,    SUBSTITUTE,   SLUDGE_BOMB,  SHADOW_BALL,  DARK_PULSE,   \
+		 FLASH
 	; end
 
 	db 0 ; padding

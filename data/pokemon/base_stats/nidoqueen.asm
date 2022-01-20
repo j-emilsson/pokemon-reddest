@@ -1,6 +1,6 @@
 	db DEX_NIDOQUEEN ; pokedex id
 
-	db  90,  82,  87,  76,  75
+	db  90,  90,  90,  80,  85 ; 520
 	;   hp  atk  def  spd  spc
 
 	db POISON, GROUND ; type
@@ -10,7 +10,7 @@
 	INCBIN "gfx/pokemon/front/nidoqueen.pic", 0, 1 ; sprite dimensions
 	dw NidoqueenPicFront, NidoqueenPicBack
 
-	db TACKLE, SCRATCH, TAIL_WHIP, BODY_SLAM ; level 1 learnset
+	db TACKLE, SCRATCH, POISON_STING, BODY_SLAM ; level 1 learnset
 	db GROWTH_MEDIUM_SLOW ; growth rate
 
 	; tm/hm learnset
@@ -20,7 +20,8 @@
 	     SEISMIC_TOSS, RAGE,         THUNDERBOLT,  THUNDER,      EARTHQUAKE,   \
 	     FISSURE,      MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         \
 	     FIRE_BLAST,   SKULL_BASH,   REST,         ROCK_SLIDE,   SUBSTITUTE,   \
-	     SURF,         STRENGTH
+	     SLUDGE_BOMB,  SHADOW_BALL,  EARTH_POWER,  POISON_JAB,   CUT,          \
+		 SURF,         STRENGTH
 	; end
 
 	db 0 ; padding

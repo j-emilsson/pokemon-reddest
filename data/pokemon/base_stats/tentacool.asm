@@ -17,7 +17,8 @@
 	tmhm SWORDS_DANCE, TOXIC,        TAKE_DOWN,    DOUBLE_EDGE,  BUBBLEBEAM,   \
 	     WATER_GUN,    ICE_BEAM,     BLIZZARD,     RAGE,         MEGA_DRAIN,   \
 	     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         SKULL_BASH,   \
-	     REST,         SUBSTITUTE,   CUT,          SURF
+	     REST,         SUBSTITUTE,   SLUDGE_BOMB,  GIGA_DRAIN,   POISON_JAB,   \
+		 CUT,          SURF
 	; end
 
 	db 0 ; padding

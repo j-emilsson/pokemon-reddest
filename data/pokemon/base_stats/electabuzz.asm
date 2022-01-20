@@ -1,9 +1,9 @@
 	db DEX_ELECTABUZZ ; pokedex id
 
-	db  65,  83,  57, 105,  85
+	db  80, 115, 115, 120,  60 ; 550
 	;   hp  atk  def  spd  spc
 
-	db ELECTRIC, ELECTRIC ; type
+	db ELECTRIC, FIGHTING ; type
 	db 45 ; catch rate
 	db 156 ; base exp
 

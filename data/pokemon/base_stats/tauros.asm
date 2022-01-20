@@ -1,9 +1,9 @@
 	db DEX_TAUROS ; pokedex id
 
-	db  75, 100,  95, 110,  70
+	db  80, 110, 100, 120,  70 ; 550
 	;   hp  atk  def  spd  spc
 
-	db NORMAL, NORMAL ; type
+	db NORMAL, STEEL ; type
 	db 45 ; catch rate
 	db 211 ; base exp
 

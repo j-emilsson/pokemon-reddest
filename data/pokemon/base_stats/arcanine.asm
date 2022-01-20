@@ -1,9 +1,9 @@
 	db DEX_ARCANINE ; pokedex id
 
-	db  90, 110,  80,  95,  80
+	db  90, 120,  80, 105,  85 ; 565
 	;   hp  atk  def  spd  spc
 
-	db FIRE, FIRE ; type
+	db FIRE, DARK ; type
 	db 75 ; catch rate
 	db 213 ; base exp
 
@@ -15,9 +15,10 @@
 
 	; tm/hm learnset
 	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  HYPER_BEAM,   \
-	     RAGE,         DRAGON_RAGE,  DIG,          TELEPORT,     MIMIC,        \
-	     DOUBLE_TEAM,  REFLECT,      BIDE,         FIRE_BLAST,   SWIFT,        \
-	     SKULL_BASH,   REST,         SUBSTITUTE
+	     RAGE,         SOLARBEAM,    DRAGON_RAGE,  DIG,          TELEPORT,     \
+	     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         FIRE_BLAST,   \
+	     SWIFT,        SKULL_BASH,   REST,         SUBSTITUTE,   HYPER_VOICE,  \
+		 IRON_HEAD,    DARK_PULSE,   DRAGON_PULSE, PLAY_ROUGH,   STRENGTH
 	; end
 
 	db 0 ; padding

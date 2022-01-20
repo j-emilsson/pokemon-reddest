@@ -1,9 +1,9 @@
 	db DEX_HORSEA ; pokedex id
 
-	db  30,  40,  70,  60,  70
+	db  50,  40,  70,  80,  70
 	;   hp  atk  def  spd  spc
 
-	db WATER, WATER ; type
+	db WATER, POISON ; type
 	db 225 ; catch rate
 	db 83 ; base exp
 
@@ -17,7 +17,7 @@
 	tmhm TOXIC,        TAKE_DOWN,    DOUBLE_EDGE,  BUBBLEBEAM,   WATER_GUN,    \
 	     ICE_BEAM,     BLIZZARD,     RAGE,         MIMIC,        DOUBLE_TEAM,  \
 	     BIDE,         SWIFT,        SKULL_BASH,   REST,         SUBSTITUTE,   \
-	     SURF
+	     SLUDGE_BOMB,  DRAGON_BREATH,FLASH_CANNON, DRAGON_PULSE, SURF
 	; end
 
 	db 0 ; padding

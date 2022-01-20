@@ -965,7 +965,7 @@ TwoToFiveAttacksEffect:
 	ld [bc], a
 	ret
 .twineedle
-	ld a, POISON_SIDE_EFFECT1
+	ld a, POISON_SIDE_EFFECT2
 	ld [hl], a ; set Twineedle's effect to poison effect
 	jr .saveNumberOfHits
 
@@ -982,13 +982,13 @@ FlinchSideEffect:
 .flinchSideEffect
 	ld a, [de]
 	cp FLINCH_SIDE_EFFECT1
-	ld b, 10 percent + 1 ; chance of flinch (FLINCH_SIDE_EFFECT1)
+	ld b, 10 percent + 1 ; 10% chance of flinch (FLINCH_SIDE_EFFECT1)
 	jr z, .gotEffectChance
 	cp FLINCH_SIDE_EFFECT3
-	ld b, 20 percent + 1 ; chance of flinch (FLINCH_SIDE_EFFECT3)
+	ld b, 20 percent + 1 ; 20% chance of flinch (FLINCH_SIDE_EFFECT3)
 	jr z, .gotEffectChance
 	cp FLINCH_SIDE_EFFECT2
-	ld b, 30 percent + 1 ; chance of flinch (FLINCH_SIDE_EFFECT2)
+	ld b, 30 percent + 1 ; 30% chance of flinch (FLINCH_SIDE_EFFECT2)
 	jr z, .gotEffectChance
 .gotEffectChance
 	call BattleRandom
@@ -1118,10 +1118,19 @@ RecoilEffect:
 	jpfar RecoilEffect_
 
 ConfusionSideEffect:
-	call BattleRandom
-	cp 10 percent ; chance of confusion
-	ret nc
+	cp CONFUSION_SIDE_EFFECT
+	ld b, 10 percent + 1 ; 10% chance of confusion (CONFUSION_SIDE_EFFECT)
+	jr z, .confusionChance
+	
+	cp CONFUSION_SIDE_EFFECT2
+	ld b, 20 percent + 1 ; 20% chance of confusion (CONFUSION_SIDE_EFFECT2)
+	jr z, .confusionChance
+
 	jr ConfusionSideEffectSuccess
+.confusionChance
+	call BattleRandom
+	cp b
+	ret nc
 
 ConfusionEffect:
 	call CheckTargetSubstitute

@@ -16,6 +16,7 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
 - ### Another rival
 
 - ### Updated existing moves to latest gen
+    - Sky Attack has been changed to now attack immediately and also has a 30% chance to flinch.
 
 - ### New moves from later gens
     - Feint Attack
@@ -53,6 +54,10 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
 - ### Adjusted typings of some Pokémon
     -	Arbok
         - Poison/Dark
+    -   Arcanine
+        - Fire/Dark
+    -   Bellsprout/Weepinbell/Victreebel
+        - Grass/Dark
     -	Blastoise
         - Water/Steel
     -	Charizard
@@ -61,20 +66,40 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
         - Fairy
     -	Diglett/Dugtrio
         - Ground/Steel
+    -   Electabuzz
+        - Electric/Fighting
     -	Farfetch'd
-        - Flying/Fighting
-    -	Psyduck/Golduck
-        - Water/Psychic
+        - Fighting/Flying
     -	Gyarados
         - Water/Dragon
+    -   Horsea/Seadra
+        - Water/Poison
     -	Jigglypuff/Wigglytuff
         - Normal/Fairy
+    -   Kangaskhan
+        - Normal/Ground
+    -   Magmar
+        - Fire/Fighting
     -	Magnemite/Magneton
         - Electric/Steel
     -	Mr.Mime
         - Psychic/Fairy
+    -   Ninetales
+        - Fire/Fairy
     -	Muk
         - Poison/Dark
+    -   Onix
+        - Rock/Dark
+    -   Pinsir
+        - Bug/Fighting
+    -   Porygon
+        - Psychic/Electric
+    -	Psyduck/Golduck
+        - Water/Psychic
+    -   Tauros
+        - Normal/Steel
+    -   Venonat/Venomoth
+        - Bug/Psychic
     -	Weezing
         - Poison/Fairy
 

@@ -94,4 +94,5 @@
 	const POISON_SIDE_EFFECT3        ; $57 Sludge Bomb
 	const INCREASED_PRIO_EFFECT      ; $58 Quick Attack, ExtremeSpeed
 	const FLINCH_SIDE_EFFECT3        ; $59 Dark Pulse
+	const CONFUSION_SIDE_EFFECT2     ; $4C Dizzy Punch
 NUM_MOVE_EFFECTS EQU const_value - 1
