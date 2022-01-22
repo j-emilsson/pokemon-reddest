@@ -37,7 +37,7 @@ Moves:
 	move GUILLOTINE,   OHKO_EFFECT,                  1, NORMAL,        30,  5
 	move RAZOR_WIND,   CHARGE_EFFECT,               80, NORMAL,       100, 10
 	move SWORDS_DANCE, ATTACK_UP2_EFFECT,            0, NORMAL,       100, 30
-	move CUT,          NO_ADDITIONAL_EFFECT,        60, STEEL,         95, 30   ; Cut is now steel type and has 60 power
+	move CUT,          NO_ADDITIONAL_EFFECT,        60, STEEL,         95, 30   ; Cut is now Steel type and has 60 power
 	move GUST,         NO_ADDITIONAL_EFFECT,        40, FLYING,       100, 35
 	move WING_ATTACK,  NO_ADDITIONAL_EFFECT,        60, FLYING,       100, 35
 	move WHIRLWIND,    SWITCH_AND_TELEPORT_EFFECT,   0, NORMAL,       100, 20
@@ -92,7 +92,7 @@ Moves:
 	move LOW_KICK,     FLINCH_SIDE_EFFECT2,         50, FIGHTING,     100, 20
 	move COUNTER,      NO_ADDITIONAL_EFFECT,         1, FIGHTING,     100, 20
 	move SEISMIC_TOSS, SPECIAL_DAMAGE_EFFECT,        1, FIGHTING,     100, 20
-	move STRENGTH,     NO_ADDITIONAL_EFFECT,        80, ROCK,         100, 15 ; Strenght is now rock type
+	move STRENGTH,     NO_ADDITIONAL_EFFECT,        80, ROCK,         100, 15 ; Strength is now Rock type
 	move ABSORB,       DRAIN_HP_EFFECT,             20, GRASS,        100, 25
 	move MEGA_DRAIN,   DRAIN_HP_EFFECT,             40, GRASS,        100, 15
 	move LEECH_SEED,   LEECH_SEED_EFFECT,            0, GRASS,         90, 10
@@ -202,6 +202,7 @@ Moves:
 	move LEAF_BLADE,   NO_ADDITIONAL_EFFECT,        90, GRASS,        100, 15 ; end of gen 3 moves
 	move IRON_HEAD,    FLINCH_SIDE_EFFECT2,         80, STEEL,        100, 15 ; start of gen 4 moves
 	move FLASH_CANNON, SPECIAL_DOWN_SIDE_EFFECT,    80, STEEL,        100, 10
+	move AURA_SPHERE,  SWIFT_EFFECT,                80, FIGHTING,     100, 20
 	move DRAIN_PUNCH,  DRAIN_HP_EFFECT,             75, FIGHTING,     100, 10
 	move AIR_SLASH,    FLINCH_SIDE_EFFECT2,         75, FLYING,        95, 15
 	move EARTH_POWER,  SPECIAL_DOWN_SIDE_EFFECT,    90, GROUND,       100, 10

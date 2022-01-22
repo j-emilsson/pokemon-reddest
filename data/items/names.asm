@@ -166,5 +166,8 @@ ItemNames::
 	li "TM65"
 	li "TM66"
 	li "TM67"
+	li "TM68"
+	li "TM69"
+	li "TM70"
 	assert_list_length NUM_ITEMS + NUM_FLOORS + NUM_TMS
 	

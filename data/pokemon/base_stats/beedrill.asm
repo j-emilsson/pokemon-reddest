@@ -1,6 +1,6 @@
 	db DEX_BEEDRILL ; pokedex id
 
-	db  70,  90,  65,  95,  70 ; 460
+	db  70, 115,  60, 115,  80 ; 520
 	;   hp  atk  def  spd  spc
 
 	db BUG, POISON ; type
@@ -16,8 +16,9 @@
 	; tm/hm learnset
 	tmhm SWORDS_DANCE, TOXIC,        TAKE_DOWN,    DOUBLE_EDGE,  HYPER_BEAM,   \
 	     RAGE,         MEGA_DRAIN,   SOLARBEAM,    MIMIC,        DOUBLE_TEAM,  \
-	     REFLECT,      BIDE,         SWIFT,        SKULL_BASH,   REST,         \
-	     SUBSTITUTE,   SLUDGE_BOMB,  CUT,          FLY
+	     REFLECT,      BIDE,         SWIFT,        SKULL_BASH,   SKY_ATTACK,   \
+		 REST,         SUBSTITUTE,   SLUDGE_BOMB,  OUTRAGE,      GIGA_DRAIN,   \
+		 AIR_SLASH,    POISON_JAB,   CUT,          FLY
 	; end
 
 	db 0 ; padding

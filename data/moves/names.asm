@@ -179,6 +179,7 @@ MoveNames::
 	li "LEAF BLADE"
 	li "IRON HEAD"
 	li "FLASH CANNON"
+	li "AURA SPHERE"
 	li "DRAIN PUNCH"
 	li "AIR SLASH"
 	li "EARTH POWER"

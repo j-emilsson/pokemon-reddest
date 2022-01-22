@@ -180,6 +180,7 @@ MoveSoundTable:
 	db SFX_NOT_VERY_EFFECTIVE, $00, $a0 ; LEAF_BLADE
 	db SFX_BATTLE_18,          $00, $80 ; IRON_HEAD
 	db SFX_BATTLE_29,          $f8, $ff ; FLASH_CANNON
+	db SFX_NOT_VERY_EFFECTIVE, $10, $ff ; AURA_SPHERE
 	db SFX_BATTLE_0D,          $00, $40 ; DRAIN_PUNCH
 	db SFX_NOT_VERY_EFFECTIVE, $00, $a0 ; AIR_SLASH
 	db SFX_BATTLE_29,          $0f, $e0 ; EARTH_POWER

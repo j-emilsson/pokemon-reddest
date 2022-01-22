@@ -179,6 +179,7 @@ AttackAnimationPointers:
 	dw LeafBladeAnim
 	dw IronHeadAnim
 	dw FlashCannonAnim
+	dw AuraSphereAnim
 	dw DrainPunchAnim
 	dw AirSlashAnim
 	dw EarthPowerAnim
@@ -958,6 +959,7 @@ LickAnim:
 	battle_anim SLUDGE, SUBANIM_14, 1, 6
 	db -1 ; end
 
+AuraSphereAnim:
 MoonblastAnim:
 ShadowBallAnim:
 SludgeBombAnim:

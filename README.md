@@ -15,8 +15,12 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
 
 - ### Another rival
 
-- ### Updated existing moves to latest gen
-    - Sky Attack has been changed to now attack immediately and also has a 30% chance to flinch.
+- ### Updated power, accuracy, pp and additional effect changes on existing moves to latest gen
+  
+- ### Updated some existing moves 
+    - Cut is now Steel type and has 60 power
+    - Sky Attack has been changed to now attack immediately and also has a 30% chance to flinch
+    - Strenght is now Rock type
 
 - ### New moves from later gens
     - Feint Attack
@@ -33,6 +37,7 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
     - Leaf Blade
     - Iron Head
     - Flash Cannon
+    - Aura Sphere
     - Drain Punch
     - Air Slash
     - Earth Power
@@ -60,6 +65,8 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
         - Grass/Dark
     -	Blastoise
         - Water/Steel
+    -   Bulbasaur/Ivysaur/Venusaur
+        - Grass/Ground
     -	Charizard
         - Fire/Dragon
     -	Clefairy/Clefable
@@ -78,10 +85,14 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
         - Normal/Fairy
     -   Kangaskhan
         - Normal/Ground
+    -   Machop/Machoke/Machamp
+        - Fighting/Ground
     -   Magmar
         - Fire/Fighting
     -	Magnemite/Magneton
         - Electric/Steel
+    -   Meowth/Persian
+        - Normal/Dark
     -	Mr.Mime
         - Psychic/Fairy
     -   Ninetales
@@ -96,6 +107,10 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
         - Psychic/Electric
     -	Psyduck/Golduck
         - Water/Psychic
+    -   Rattata/Raticate
+        - Dark/Normal
+    -   Spearow/Fearow
+        - Flying/Dark
     -   Tauros
         - Normal/Steel
     -   Venonat/Venomoth

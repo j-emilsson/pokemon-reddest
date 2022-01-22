@@ -1,9 +1,9 @@
 	db DEX_VENUSAUR ; pokedex id
 
-	db  95,  70,  95,  80, 105 ; 550
+	db  90,  70,  85,  85, 115 ; 560
 	;   hp  atk  def  spd  spc
 
-	db GRASS, POISON ; type
+	db GRASS, GROUND ; type
 	db 45 ; catch rate
 	db 208 ; base exp
 
@@ -16,8 +16,9 @@
 	; tm/hm learnset
 	tmhm SWORDS_DANCE, TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  \
 	     HYPER_BEAM,   RAGE,         MEGA_DRAIN,   SOLARBEAM,    EARTHQUAKE,   \
-	     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         REST,         \
-	     SUBSTITUTE,   SLUDGE_BOMB,  CUT,          STRENGTH,     FLASH
+	     FISSURE,      DIG,          MIMIC,        DOUBLE_TEAM,  REFLECT,      \
+	     BIDE,         REST,         SUBSTITUTE,   SLUDGE_BOMB,  OUTRAGE,      \
+		 GIGA_DRAIN,   EARTH_POWER,  CUT,          STRENGTH,     FLASH
 	; end
 
 	db 0 ; padding

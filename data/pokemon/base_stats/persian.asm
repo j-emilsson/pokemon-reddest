@@ -1,9 +1,9 @@
 	db DEX_PERSIAN ; pokedex id
 
-	db  65,  70,  60, 115,  65
+	db  75,  95,  70, 125,  75 ; 515
 	;   hp  atk  def  spd  spc
 
-	db NORMAL, NORMAL ; type
+	db NORMAL, DARK ; type
 	db 90 ; catch rate
 	db 148 ; base exp
 
@@ -17,7 +17,8 @@
 	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  BUBBLEBEAM,   \
 	     WATER_GUN,    HYPER_BEAM,   PAY_DAY,      RAGE,         THUNDERBOLT,  \
 	     THUNDER,      MIMIC,        DOUBLE_TEAM,  BIDE,         SWIFT,        \
-	     SKULL_BASH,   REST,         SUBSTITUTE
+	     SKULL_BASH,   REST,         SUBSTITUTE,   SHADOW_BALL,  IRON_HEAD,    \
+		 DARK_PULSE,   PLAY_ROUGH,   CUT,          FLASH
 	; end
 
 	db 0 ; padding

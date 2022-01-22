@@ -17,10 +17,11 @@
 	tmhm RAZOR_WIND,   TOXIC,        HORN_DRILL,   BODY_SLAM,    TAKE_DOWN,    \
 	     DOUBLE_EDGE,  BUBBLEBEAM,   WATER_GUN,    ICE_BEAM,     BLIZZARD,     \
 	     HYPER_BEAM,   RAGE,         DRAGON_RAGE,  THUNDERBOLT,  THUNDER,      \
-	     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         FIRE_BLAST,   \
-	     SWIFT,        SKULL_BASH,   SKY_ATTACK,   REST,         THUNDER_WAVE, \
-	     ROCK_SLIDE,   SUBSTITUTE,   CUT,          FLY,          SURF,         \
-		 STRENGTH
+	     EARTHQUAKE,   MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         \
+	     FIRE_BLAST,   SWIFT,        SKULL_BASH,   SKY_ATTACK,   REST,         \
+	     THUNDER_WAVE, ROCK_SLIDE,   SUBSTITUTE,   OUTRAGE,      DRAGON_BREATH,\
+		 IRON_HEAD,    AIR_SLASH,    DRAGON_PULSE, CUT,          FLY,          \
+		 SURF,         STRENGTH
 	; end
 
 	db 0 ; padding

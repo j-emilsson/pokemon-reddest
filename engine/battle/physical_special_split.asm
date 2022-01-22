@@ -189,14 +189,15 @@ _PhysicalSpecialSplit:: ; Determines if a move is Physical or Special
 	db PHYSICAL ; LEAF_BLADE   ; b1
 	db PHYSICAL ; IRON_HEAD    ; b2
 	db SPECIAL  ; FLASH_CANNON ; b3
-	db PHYSICAL ; DRAIN_PUNCH  ; b4
-	db SPECIAL  ; AIR_SLASH    ; b5
-	db SPECIAL  ; EARTH_POWER  ; b6
-	db PHYSICAL ; POISON_JAB   ; b7
-	db SPECIAL  ; POWER_GEM    ; b8
-	db SPECIAL  ; BUG_BUZZ     ; b9
-	db SPECIAL  ; DARK_PULSE   ; ba
-	db SPECIAL  ; DRAGON_PULSE ; bb
-	db SPECIAL  ; MOONBLAST    ; bc
-	db PHYSICAL ; PLAY_ROUGH   ; bd
+	db SPECIAL  ; AURA_SPHERE  ; b4
+	db PHYSICAL ; DRAIN_PUNCH  ; b5
+	db SPECIAL  ; AIR_SLASH    ; b6
+	db SPECIAL  ; EARTH_POWER  ; b7
+	db PHYSICAL ; POISON_JAB   ; b8
+	db SPECIAL  ; POWER_GEM    ; b9
+	db SPECIAL  ; BUG_BUZZ     ; ba
+	db SPECIAL  ; DARK_PULSE   ; bb
+	db SPECIAL  ; DRAGON_PULSE ; bc
+	db SPECIAL  ; MOONBLAST    ; bd
+	db PHYSICAL ; PLAY_ROUGH   ; be
 	

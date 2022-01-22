@@ -1,6 +1,6 @@
 	db DEX_PONYTA ; pokedex id
 
-	db  50,  85,  55,  90,  65
+	db  60,  90,  55, 110,  60
 	;   hp  atk  def  spd  spc
 
 	db FIRE, FIRE ; type
@@ -15,8 +15,9 @@
 
 	; tm/hm learnset
 	tmhm TOXIC,        HORN_DRILL,   BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  \
-	     RAGE,         MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         \
-	     FIRE_BLAST,   SWIFT,        SKULL_BASH,   REST,         SUBSTITUTE
+	     RAGE,         SOLARBEAM,    MIMIC,        DOUBLE_TEAM,  REFLECT,      \
+	     BIDE,         FIRE_BLAST,   SWIFT,        SKULL_BASH,   REST,         \
+		 SUBSTITUTE,   PLAY_ROUGH,   STRENGTH
 	; end
 
 	db 0 ; padding

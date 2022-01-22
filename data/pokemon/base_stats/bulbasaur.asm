@@ -3,7 +3,7 @@
 	db  45,  49,  49,  45,  65
 	;   hp  atk  def  spd  spc
 
-	db GRASS, POISON ; type
+	db GRASS, GROUND ; type
 	db 45 ; catch rate
 	db 64 ; base exp
 
@@ -15,9 +15,10 @@
 
 	; tm/hm learnset
 	tmhm SWORDS_DANCE, TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  \
-	     RAGE,         MEGA_DRAIN,   SOLARBEAM,    MIMIC,        DOUBLE_TEAM,  \
-	     REFLECT,      BIDE,         REST,         SUBSTITUTE,   SLUDGE_BOMB,  \
-		 CUT
+	     RAGE,         MEGA_DRAIN,   SOLARBEAM,    EARTHQUAKE,   FISSURE,      \
+		 DIG,          MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         \
+		 REST,         SUBSTITUTE,   SLUDGE_BOMB,  OUTRAGE,      GIGA_DRAIN,   \
+		 EARTH_POWER,  CUT,          STRENGTH,     FLASH
 	; end
 
 	db 0 ; padding

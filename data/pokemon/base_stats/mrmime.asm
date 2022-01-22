@@ -1,6 +1,6 @@
 	db DEX_MR_MIME ; pokedex id
 
-	db  75,  40,  80,  100, 115 ; 525
+	db  85,  50,  65, 100, 125 ; 550
 	;   hp  atk  def  spd  spc
 
 	db PSYCHIC, FAIRY ; type

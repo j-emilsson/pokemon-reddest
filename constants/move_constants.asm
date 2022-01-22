@@ -171,7 +171,7 @@
 	const SLASH        ; a3
 	const SUBSTITUTE   ; a4
 	const STRUGGLE     ; a5
-	const FEINT_ATTACK ; a6
+	const FEINT_ATTACK ; a6 ; start of added tms
 	const SLUDGE_BOMB  ; a7
 	const FLAME_WHEEL  ; a8
 	const OUTRAGE      ; a9
@@ -185,16 +185,17 @@
 	const LEAF_BLADE   ; b1
 	const IRON_HEAD    ; b2
 	const FLASH_CANNON ; b3
-	const DRAIN_PUNCH  ; b4
-	const AIR_SLASH    ; b5
-	const EARTH_POWER  ; b6
-	const POISON_JAB   ; b7
-	const POWER_GEM    ; b8
-	const BUG_BUZZ     ; b9
-	const DARK_PULSE   ; ba
-	const DRAGON_PULSE ; bb
-	const MOONBLAST    ; bc
-	const PLAY_ROUGH   ; bd
+	const AURA_SPHERE  ; b4
+	const DRAIN_PUNCH  ; b5
+	const AIR_SLASH    ; b6
+	const EARTH_POWER  ; b7
+	const POISON_JAB   ; b8
+	const POWER_GEM    ; b9
+	const BUG_BUZZ     ; ba
+	const DARK_PULSE   ; bb
+	const DRAGON_PULSE ; bc
+	const MOONBLAST    ; bd
+	const PLAY_ROUGH   ; be ; end of added tms
 NUM_ATTACKS EQU const_value - 1
 
 	; Moves do double duty as animation identifiers.

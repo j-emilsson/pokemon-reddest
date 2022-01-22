@@ -1,6 +1,6 @@
 	db DEX_GOLBAT ; pokedex id
 
-	db  80,  90,  80,  90,  80 ; 500
+	db  85, 100,  80, 115,  80 ; 540
 	;   hp  atk  def  spd  spc
 
 	db POISON, FLYING ; type
@@ -17,7 +17,7 @@
 	tmhm RAZOR_WIND,   WHIRLWIND,    TOXIC,        TAKE_DOWN,    DOUBLE_EDGE,  \
 	     HYPER_BEAM,   RAGE,         MEGA_DRAIN,   MIMIC,        DOUBLE_TEAM,  \
 	     BIDE,         SWIFT,        REST,         SUBSTITUTE,   SLUDGE_BOMB,  \
-		 SHADOW_BALL,  GIGA_DRAIN,   AIR_SLASH,    FLY
+		 SHADOW_BALL,  GIGA_DRAIN,   AIR_SLASH,    DARK_PULSE,   FLY
 	; end
 
 	db 0 ; padding
