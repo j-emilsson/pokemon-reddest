@@ -18,7 +18,9 @@
 	     DOUBLE_EDGE,  BUBBLEBEAM,   WATER_GUN,    ICE_BEAM,     BLIZZARD,     \
 	     SUBMISSION,   COUNTER,      SEISMIC_TOSS, RAGE,         DIG,          \
 	     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         SKULL_BASH,   \
-	     REST,         SUBSTITUTE,   SURF,         STRENGTH
+	     REST,         SUBSTITUTE,   OUTRAGE,      CRUNCH,       IRON_HEAD,    \
+		 FLASH_CANNON, AURA_SPHERE,  DARK_PULSE,   DRAGON_PULSE, SURF,         \
+		 STRENGTH
 	; end
 
 	db 0 ; padding

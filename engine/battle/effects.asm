@@ -194,6 +194,35 @@ ExplodeEffect:
 	ld [de], a
 	ret
 
+/* TriAttackEffect:
+   ld b, BURN_SIDE_EFFECT1
+   ;ld a, [hRandomSub] ; grab a random number
+   cp 6 percent + 1
+   jr c, .gotStatusEffect
+   inc b ; FREEZE_SIDE_EFFECT
+   cp 6 percent + 1 ; (170-85) / 256 chance = 33%
+   jr c, .gotStatusEffect
+   inc b ; PARALYZE_SIDE_EFFECT1 ; remaining 33%
+   cp 6 percent + 1
+   jr c, .gotStatusEffect
+.gotStatusEffect
+   ld a, b
+   ld [wPlayerMoveEffect], a
+; fallthrough to FreezeBurnParalyzeEffect */
+
+TriAttackEffect:
+   ld b, BURN_SIDE_EFFECT1
+   ld a, [hRandomSub] ; grab a random number
+   cp 85 ; 85 / 256 chance = 33%
+   jr c, .gotStatusEffect
+   inc b ; FREEZE_SIDE_EFFECT
+   cp 170 ; (170-85) / 256 chance = 33%
+   jr c, .gotStatusEffect
+   inc b ; PARALYZE_SIDE_EFFECT1 ; remaining 33%
+.gotStatusEffect
+   ld a, b
+   ld [wPlayerMoveEffect], a
+; fallthrough to FreezeBurnParalyzeEffect
 FreezeBurnParalyzeEffect:
 	xor a
 	ld [wAnimationType], a
@@ -965,7 +994,7 @@ TwoToFiveAttacksEffect:
 	ld [bc], a
 	ret
 .twineedle
-	ld a, POISON_SIDE_EFFECT2
+	ld a, POISON_SIDE_EFFECT1
 	ld [hl], a ; set Twineedle's effect to poison effect
 	jr .saveNumberOfHits
 

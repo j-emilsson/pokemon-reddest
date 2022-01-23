@@ -11,6 +11,8 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
 
 - ### Physical/special split
 
+- ### Fixed Focus Energy Glitch
+
 - ### Purchasable TMs in PokéMarts
 
 - ### Another rival
@@ -20,7 +22,7 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
 - ### Updated some existing moves 
     - Cut is now Steel type and has 60 power
     - Sky Attack has been changed to now attack immediately and also has a 30% chance to flinch
-    - Strenght is now Rock type
+    - Strength is now Rock type
 
 - ### New moves from later gens
     - Feint Attack

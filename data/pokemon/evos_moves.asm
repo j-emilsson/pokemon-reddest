@@ -304,12 +304,17 @@ SquirtleEvosMoves:
 	db EV_LEVEL, 16, WARTORTLE
 	db 0
 ; Learnset
-	db 8, BUBBLE
-	db 15, WATER_GUN
-	db 22, CONFUSION
-	db 28, WITHDRAW
-	db 35, SKULL_BASH
-	db 42, HYDRO_PUMP
+	db 8, WATER_GUN
+	db 13, WITHDRAW
+	db 17, BITE
+	db 20, SEISMIC_TOSS
+	db 26, HAZE
+	db 32, SKULL_BASH
+    db 37, CRUNCH
+	db 40, AURA_SPHERE
+	db 44, FLASH_CANNON
+	db 46, ICE_BEAM
+	db 50, HYDRO_PUMP
 	db 0
 
 WartortleEvosMoves:
@@ -317,24 +322,34 @@ WartortleEvosMoves:
 	db EV_LEVEL, 36, BLASTOISE
 	db 0
 ; Learnset
-	db 8, BUBBLE
-	db 15, WATER_GUN
-	db 24, CONFUSION
-	db 31, WITHDRAW
-	db 39, SKULL_BASH
-	db 47, HYDRO_PUMP
+	db 8, WATER_GUN
+	db 13, WITHDRAW
+	db 18, BITE
+	db 22, SEISMIC_TOSS
+	db 28, HAZE
+	db 34, SKULL_BASH
+    db 37, CRUNCH
+	db 40, AURA_SPHERE
+	db 44, FLASH_CANNON
+	db 46, ICE_BEAM
+	db 50, HYDRO_PUMP
 	db 0
 
 BlastoiseEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
-	db 8, BUBBLE
-	db 15, WATER_GUN
-	db 24, CONFUSION
-	db 31, WITHDRAW
-	db 42, SKULL_BASH
-	db 52, HYDRO_PUMP
+	db 8, WATER_GUN
+	db 13, WITHDRAW
+	db 18, BITE
+	db 22, SEISMIC_TOSS
+	db 28, HAZE
+	db 34, SKULL_BASH
+    db 39, CRUNCH
+	db 43, AURA_SPHERE
+	db 46, FLASH_CANNON
+	db 50, ICE_BEAM
+	db 53, HYDRO_PUMP
 	db 0
 
 CaterpieEvosMoves:

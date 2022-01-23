@@ -91,4 +91,5 @@ MoveEffectPointerTable:
 	dw NULL						 ; INCREASED_PRIO_EFFECT
 	dw FlinchSideEffect          ; FLINCH_SIDE_EFFECT3
 	dw ConfusionSideEffect       ; CONFUSION_SIDE_EFFECT2
+	dw TriAttackEffect		 	 ; TRI_ATTACK_EFFECT
 	assert_table_length NUM_MOVE_EFFECTS
