@@ -414,6 +414,9 @@ wUnusedCC5B:: db
 	ds 59
 
 wNPCMovementDirections2:: ds 10
+
+wMoveBuffer::
+
 ; used in Pallet Town scripted movement
 wNumStepsToTake:: db
 

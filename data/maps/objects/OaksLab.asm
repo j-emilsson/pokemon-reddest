@@ -20,4 +20,7 @@ OaksLab_Object:
 	object_event  2, 10, SPRITE_SCIENTIST, STAY, NONE, 10 ; person
 	object_event  8, 10, SPRITE_SCIENTIST, STAY, NONE, 11 ; person
 
+	object_event  9,  8, SPRITE_GRAMPS, STAY, DOWN, 28				; move deleter
+	object_event  8,  8, SPRITE_MIDDLE_AGED_MAN, STAY, DOWN, 29		; move relearner
+
 	def_warps_to OAKS_LAB
