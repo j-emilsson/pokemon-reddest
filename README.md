@@ -124,5 +124,7 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
 
 ## Credit
 The pret team for the pokered disassemblies, which this repository is based on: [pret/pokered](https://github.com/pret/pokered)
-TheFakeMateo for physical/special split ([rpp-backup](https://github.com/JustRegularLuna/rpp-backup))
-TheFakeMateo for move relearner/deleter ([rpp-backup](https://github.com/JustRegularLuna/rpp-backup)) and Jojobear13 for implementation guide ([shinpokered](https://github.com/jojobear13/shinpokered))
+
+TheFakeMateo for physical/special split: [rpp-backup](https://github.com/JustRegularLuna/rpp-backup)
+
+TheFakeMateo for move relearner/deleter: [rpp-backup](https://github.com/JustRegularLuna/rpp-backup), and Jojobear13 for implementation guide: [shinpokered](https://github.com/jojobear13/shinpokered)
