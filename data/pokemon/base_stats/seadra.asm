@@ -1,6 +1,6 @@
 	db DEX_SEADRA ; pokedex id
 
-	db  70,  50,  95, 120, 100 ; 535
+	db  65,  50,  95, 120, 105 ; 540
 	;   hp  atk  def  spd  spc
 
 	db WATER, POISON ; type
@@ -17,8 +17,8 @@
 	tmhm TOXIC,        TAKE_DOWN,    DOUBLE_EDGE,  BUBBLEBEAM,   WATER_GUN,    \
 	     ICE_BEAM,     BLIZZARD,     HYPER_BEAM,   RAGE,         MIMIC,        \
 	     DOUBLE_TEAM,  BIDE,         SWIFT,        SKULL_BASH,   REST,         \
-	     SUBSTITUTE,   SLUDGE_BOMB,  DRAGON_BREATH,FLASH_CANNON, DRAGON_PULSE, \
-		 SURF
+	     SUBSTITUTE,   SLUDGE_BOMB,  OUTRAGE,      DRAGON_BREATH,IRON_HEAD,    \
+		 FLASH_CANNON, DRAGON_PULSE, SURF
 	; end
 
 	db 0 ; padding

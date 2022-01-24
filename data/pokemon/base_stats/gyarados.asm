@@ -18,8 +18,8 @@
 	     WATER_GUN,    ICE_BEAM,     BLIZZARD,     HYPER_BEAM,   RAGE,         \
 	     DRAGON_RAGE,  THUNDERBOLT,  THUNDER,      EARTHQUAKE,   MIMIC,        \
 	     DOUBLE_TEAM,  REFLECT,      BIDE,         FIRE_BLAST,   SKULL_BASH,   \
-	     REST,         SUBSTITUTE,   DRAGON_BREATH,IRON_HEAD,    DARK_PULSE,   \
-		 DRAGON_PULSE, SURF,         STRENGTH
+	     REST,         SUBSTITUTE,   OUTRAGE,      DRAGON_BREATH,CRUNCH,       \
+		 IRON_HEAD,    DARK_PULSE,   DRAGON_PULSE, SURF,         STRENGTH
 	; end
 
 	db 0 ; padding

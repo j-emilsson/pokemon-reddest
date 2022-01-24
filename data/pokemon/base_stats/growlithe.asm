@@ -17,7 +17,8 @@
 	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  RAGE,         \
 	     DRAGON_RAGE,  DIG,          MIMIC,        DOUBLE_TEAM,  REFLECT,      \
 	     BIDE,         FIRE_BLAST,   SWIFT,        SKULL_BASH,   REST,         \
-	     SUBSTITUTE,   IRON_HEAD,    DARK_PULSE,   PLAY_ROUGH,   STRENGTH
+	     SUBSTITUTE,   OUTRAGE,      DRAGON_BREATH,CRUNCH,       IRON_HEAD,    \
+		 DARK_PULSE,   PLAY_ROUGH,   STRENGTH
 	; end
 
 	db 0 ; padding

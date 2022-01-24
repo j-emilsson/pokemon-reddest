@@ -1,6 +1,6 @@
 	db DEX_RHYDON ; pokedex id
 
-	db 105, 130, 120,  40,  45
+	db 115, 130, 120,  50,  65 ; 545
 	;   hp  atk  def  spd  spc
 
 	db GROUND, ROCK ; type
@@ -20,7 +20,9 @@
 	     COUNTER,      SEISMIC_TOSS, RAGE,         THUNDERBOLT,  THUNDER,      \
 	     EARTHQUAKE,   FISSURE,      DIG,          MIMIC,        DOUBLE_TEAM,  \
 	     BIDE,         FIRE_BLAST,   SKULL_BASH,   REST,         ROCK_SLIDE,   \
-	     SUBSTITUTE,   SURF,         STRENGTH
+	     SUBSTITUTE,   OUTRAGE,      CRUNCH,       IRON_HEAD,    FLASH_CANNON, \
+		 EARTH_POWER,  POISON_JAB,   DRAGON_PULSE, CUT,          SURF,         \
+		 STRENGTH
 	; end
 
 	db 0 ; padding

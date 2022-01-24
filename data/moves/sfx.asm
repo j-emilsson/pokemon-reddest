@@ -170,7 +170,7 @@ MoveSoundTable:
 	db SFX_NOT_VERY_EFFECTIVE, $10, $ff ; SLUDGE_BOMB
 	db SFX_BATTLE_0D,          $10, $60 ; FLAME_WHEEL
 	db SFX_BATTLE_22,          $11, $c0 ; OUTRAGE
-	db SFX_BATTLE_2F,          $00, $20 ; SPARK
+	db SFX_BATTLE_29,          $1f, $20 ; SACRED_FIRE
 	db SFX_BATTLE_19,          $21, $e0 ; DRAGON_BREATH
 	db SFX_NOT_VERY_EFFECTIVE, $10, $ff ; SHADOW_BALL
 	db SFX_BATTLE_1E,          $00, $80 ; CRUNCH

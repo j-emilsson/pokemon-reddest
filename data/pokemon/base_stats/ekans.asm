@@ -1,6 +1,6 @@
 	db DEX_EKANS ; pokedex id
 
-	db  35,  60,  44,  55,  40
+	db  45,  70,  45,  95,  50
 	;   hp  atk  def  spd  spc
 
 	db POISON, POISON ; type
@@ -17,7 +17,8 @@
 	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  RAGE,         \
 	     MEGA_DRAIN,   EARTHQUAKE,   FISSURE,      DIG,          MIMIC,        \
 	     DOUBLE_TEAM,  BIDE,         SKULL_BASH,   REST,         ROCK_SLIDE,   \
-	     SUBSTITUTE,   SLUDGE_BOMB,  STRENGTH
+	     SUBSTITUTE,   SLUDGE_BOMB,  CRUNCH,       GIGA_DRAIN,   POISON_JAB,   \
+		 STRENGTH
 	; end
 
 	db 0 ; padding

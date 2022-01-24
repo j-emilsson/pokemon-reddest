@@ -1,9 +1,9 @@
 	db DEX_PRIMEAPE ; pokedex id
 
-	db 100, 110,  75,  95,  70 ; 520
+	db 120, 115,  60,  95,  65 ; 520
 	;   hp  atk  def  spd  spc
 
-	db FIGHTING, FIGHTING ; type
+	db FIGHTING, DARK ; type
 	db 75 ; catch rate
 	db 149 ; base exp
 
@@ -19,7 +19,8 @@
 	     SEISMIC_TOSS, RAGE,         THUNDERBOLT,  THUNDER,      EARTHQUAKE,   \
 	     FISSURE,      DIG,          MIMIC,        DOUBLE_TEAM,  BIDE,         \
 	     METRONOME,    SWIFT,        SKULL_BASH,   REST,         ROCK_SLIDE,   \
-		 SUBSTITUTE,   OUTRAGE,      DRAIN_PUNCH,  POISON_JAB,   STRENGTH
+		 SUBSTITUTE,   OUTRAGE,      DRAIN_PUNCH,  POISON_JAB,   DARK_PULSE,   \
+		 STRENGTH
 	; end
 
 	db 0 ; padding

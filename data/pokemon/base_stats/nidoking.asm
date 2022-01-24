@@ -1,6 +1,6 @@
 	db DEX_NIDOKING ; pokedex id
 
-	db  85, 105,  80,  90,  90 ; 540
+	db  85, 120,  80,  95,  80 ; 540
 	;   hp  atk  def  spd  spc
 
 	db POISON, GROUND ; type
@@ -20,8 +20,9 @@
 	     SEISMIC_TOSS, RAGE,         THUNDERBOLT,  THUNDER,      EARTHQUAKE,   \
 	     FISSURE,      MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         \
 	     FIRE_BLAST,   SKULL_BASH,   REST,         ROCK_SLIDE,   SUBSTITUTE,   \
-	     SLUDGE_BOMB,  SHADOW_BALL,  EARTH_POWER,  POISON_JAB,   CUT,          \
-		 SURF,         STRENGTH
+	     SLUDGE_BOMB,  SHADOW_BALL,  EARTH_POWER,  POISON_JAB,   SLUDGE_BOMB,  \
+		 OUTRAGE,      SHADOW_BALL,  CRUNCH,       EARTH_POWER,  POISON_JAB,   \
+		 DARK_PULSE,   DRAGON_PULSE, CUT,          SURF,         STRENGTH
 	; end
 
 	db 0 ; padding

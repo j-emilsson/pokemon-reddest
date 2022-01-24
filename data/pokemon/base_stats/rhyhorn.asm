@@ -18,7 +18,8 @@
 	     DOUBLE_EDGE,  RAGE,         THUNDERBOLT,  THUNDER,      EARTHQUAKE,   \
 	     FISSURE,      DIG,          MIMIC,        DOUBLE_TEAM,  BIDE,         \
 	     FIRE_BLAST,   SKULL_BASH,   REST,         ROCK_SLIDE,   SUBSTITUTE,   \
-		 STRENGTH
+		 CRUNCH,       IRON_HEAD,    FLASH_CANNON, EARTH_POWER,  POISON_JAB,   \
+		 DRAGON_PULSE, STRENGTH
 	; end
 
 	db 0 ; padding

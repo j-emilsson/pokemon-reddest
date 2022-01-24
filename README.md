@@ -11,7 +11,9 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
 
 - ### Physical/special split
 
-- ### Fixed Focus Energy glitch
+- ### Fixed Focus Energy Bug
+
+- ### Fixed 100% Accuracy Bug
 
 - ### Move Relearner and Move Deleter
 
@@ -31,7 +33,7 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
     - Sludge Bomb
     - Flame Wheel
     - Outrage
-    - Spark
+    - Sacred Fire
     - Dragon Breath
     - Shadow Ball
     - Crunch
@@ -81,6 +83,8 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
         - Electric/Fighting
     -	Farfetch'd
         - Fighting/Flying
+    -   Gastly/Haunter/Gengar
+        - Ghost
     -	Gyarados
         - Water/Dragon
     -   Horsea/Seadra
@@ -95,6 +99,8 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
         - Fire/Fighting
     -	Magnemite/Magneton
         - Electric/Steel
+    -   Mankey/Primeape
+        - Fighting/Dark
     -   Meowth/Persian
         - Normal/Dark
     -	Mr.Mime

@@ -175,7 +175,7 @@
 	const SLUDGE_BOMB  ; a7
 	const FLAME_WHEEL  ; a8
 	const OUTRAGE      ; a9
-	const SPARK        ; aa
+	const SACRED_FIRE  ; aa
 	const DRAGON_BREATH; ab
 	const SHADOW_BALL  ; ac
 	const CRUNCH       ; ad

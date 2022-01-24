@@ -3,7 +3,7 @@
 	db  70,  85,  50,  70,  45
 	;   hp  atk  def  spd  spc
 
-	db FIGHTING, FIGHTING ; type
+	db FIGHTING, DARK ; type
 	db 190 ; catch rate
 	db 74 ; base exp
 
@@ -19,7 +19,7 @@
 	     RAGE,         THUNDERBOLT,  THUNDER,      EARTHQUAKE,   FISSURE,      \
 	     DIG,          MIMIC,        DOUBLE_TEAM,  BIDE,         METRONOME,    \
 	     SWIFT,        SKULL_BASH,   REST,         ROCK_SLIDE,   SUBSTITUTE,   \
-		 OUTRAGE,      DRAIN_PUNCH,  POISON_JAB,   STRENGTH
+		 OUTRAGE,      DRAIN_PUNCH,  POISON_JAB,   DARK_PULSE,   STRENGTH
 	; end
 
 	db 0 ; padding

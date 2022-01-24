@@ -1,6 +1,6 @@
 	db DEX_NIDORINO ; pokedex id
 
-	db  61,  72,  57,  65,  55
+	db  61,  82,  57,  65,  50
 	;   hp  atk  def  spd  spc
 
 	db POISON, POISON ; type
@@ -17,7 +17,8 @@
 	tmhm TOXIC,        HORN_DRILL,   BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  \
 	     BUBBLEBEAM,   WATER_GUN,    ICE_BEAM,     BLIZZARD,     RAGE,         \
 	     THUNDERBOLT,  THUNDER,      MIMIC,        DOUBLE_TEAM,  REFLECT,      \
-	     BIDE,         SKULL_BASH,   REST,         SUBSTITUTE
+	     BIDE,         SKULL_BASH,   REST,         SUBSTITUTE,   SLUDGE_BOMB,  \
+		 CRUNCH,       POISON_JAB,   DARK_PULSE
 	; end
 
 	db 0 ; padding

@@ -169,7 +169,7 @@ MoveNames::
 	li "SLUDGE BOMB"
 	li "FLAME WHEEL"
 	li "OUTRAGE"
-	li "SPARK" 
+	li "SACRED FIRE" 
 	li "DRAGONBREATH"
 	li "SHADOW BALL"
 	li "CRUNCH"

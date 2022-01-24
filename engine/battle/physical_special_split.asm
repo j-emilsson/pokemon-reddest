@@ -179,7 +179,7 @@ _PhysicalSpecialSplit:: ; Determines if a move is Physical or Special
 	db SPECIAL  ; SLUDGE_BOMB  ; a7
 	db PHYSICAL ; FLAME_WHEEL  ; a8
 	db PHYSICAL ; OUTRAGE      ; a9
-	db PHYSICAL ; SPARK        ; aa
+	db PHYSICAL ; SACRED_FIRE  ; aa
 	db SPECIAL  ; DRAGON_BREATH; ab
 	db SPECIAL  ; SHADOW_BALL  ; ac
 	db PHYSICAL ; CRUNCH       ; ad

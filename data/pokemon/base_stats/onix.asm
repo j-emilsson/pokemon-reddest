@@ -1,6 +1,6 @@
 	db DEX_ONIX ; pokedex id
 
-	db  90, 130, 150, 90,  70 ; 600
+	db  85, 135, 115, 115,  75 ; 600
 	;   hp  atk  def  spd  spc
 
 	db ROCK, DARK ; type

@@ -169,7 +169,7 @@ AttackAnimationPointers:
 	dw SludgeBombAnim
 	dw FlameWheelAnim
 	dw OutrageAnim
-	dw SparkAnim
+	dw SacredFireAnim
 	dw DragonbreathAnim
 	dw ShadowBallAnim
 	dw CrunchAnim
@@ -716,7 +716,6 @@ FireSpinAnim:
 	battle_anim NO_MOVE, SUBANIM_0E, 1, 6
 	db -1 ; end
 
-SparkAnim:
 ThunderShockAnim:
 	battle_anim THUNDERSHOCK, SUBANIM_29, 1, 2
 	db -1 ; end
@@ -978,6 +977,7 @@ BoneClubAnim:
 	battle_anim BONE_CLUB, SUBANIM_02, 0, 8
 	db -1 ; end
 
+SacredFireAnim:
 FireBlastAnim:
 	battle_anim FIRE_BLAST, SUBANIM_1F, 1, 6
 	battle_anim NO_MOVE, SUBANIM_20, 1, 6

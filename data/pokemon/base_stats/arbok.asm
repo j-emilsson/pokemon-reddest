@@ -1,6 +1,6 @@
 	db DEX_ARBOK ; pokedex id
 
-	db  60,  110,  70,  120,  80
+	db  75, 105,  70, 125,  75 ; 525
 	;   hp  atk  def  spd  spc
 
 	db POISON, DARK ; type
@@ -17,7 +17,8 @@
 	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  HYPER_BEAM,   \
 	     RAGE,         MEGA_DRAIN,   EARTHQUAKE,   FISSURE,      DIG,          \
 	     MIMIC,        DOUBLE_TEAM,  BIDE,         SKULL_BASH,   REST,         \
-	     ROCK_SLIDE,   SUBSTITUTE,   SLUDGE_BOMB,  DARK_PULSE,   STRENGTH
+	     ROCK_SLIDE,   SUBSTITUTE,   SLUDGE_BOMB,  CRUNCH,       GIGA_DRAIN,   \
+		 POISON_JAB,   DARK_PULSE,   STRENGTH
 	; end
 
 	db 0 ; padding
