@@ -1,6 +1,6 @@
 	db DEX_MUK ; pokedex id
 
-	db 105, 105,  75,  50,  95 ; 525
+	db 110, 120,  75,  50,  90 ; 535
 	;   hp  atk  def  spd  spc
 
 	db POISON, DARK ; type
@@ -18,7 +18,7 @@
 	     MEGA_DRAIN,   THUNDERBOLT,  THUNDER,      DIG,          MIMIC,        \
 	     DOUBLE_TEAM,  BIDE,		 SELFDESTRUCT, FIRE_BLAST,   REST,         \
 		 EXPLOSION,    ROCK_SLIDE,   SUBSTITUTE,   SLUDGE_BOMB,  SHADOW_BALL,  \
-		 GIGA_DRAIN,   POISON_JAB,   DARK_PULSE,   STRENGTH
+		 CRUNCH,       GIGA_DRAIN,   POISON_JAB,   DARK_PULSE,   STRENGTH
 	; end
 
 	db 0 ; padding

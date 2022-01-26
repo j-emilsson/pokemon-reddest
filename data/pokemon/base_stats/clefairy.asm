@@ -1,6 +1,6 @@
 	db DEX_CLEFAIRY ; pokedex id
 
-	db  70,  45,  48,  35,  60
+	db  75,  35,  55,  35,  85 ; 370
 	;   hp  atk  def  spd  spc
 
 	db FAIRY, FAIRY ; type
@@ -20,7 +20,8 @@
 	     THUNDERBOLT,  THUNDER,      PSYCHIC_M,    TELEPORT,     MIMIC,        \
 	     DOUBLE_TEAM,  REFLECT,      BIDE,         METRONOME,    FIRE_BLAST,   \
 	     SKULL_BASH,   REST,         THUNDER_WAVE, PSYWAVE,      TRI_ATTACK,   \
-	     SUBSTITUTE,   STRENGTH,     FLASH
+	     SUBSTITUTE,   SHADOW_BALL,  DRAIN_PUNCH,  PLAY_ROUGH,   STRENGTH,     \
+		 FLASH
 	; end
 
 	db 0 ; padding

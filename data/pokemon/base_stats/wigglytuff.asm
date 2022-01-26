@@ -1,6 +1,6 @@
 	db DEX_WIGGLYTUFF ; pokedex id
 
-	db 140,  90,  75,  45,  85 ; 520
+	db 140, 105,  75,  50,  75 ; 520
 	;   hp  atk  def  spd  spc
 
 	db NORMAL, FAIRY ; type
@@ -10,7 +10,7 @@
 	INCBIN "gfx/pokemon/front/wigglytuff.pic", 0, 1 ; sprite dimensions
 	dw WigglytuffPicFront, WigglytuffPicBack
 
-	db SING, DISABLE, DEFENSE_CURL, DOUBLESLAP ; level 1 learnset
+	db SING, POUND, DISABLE, DEFENSE_CURL ; level 1 learnset
 	db GROWTH_FAST ; growth rate
 
 	; tm/hm learnset
@@ -20,7 +20,8 @@
 	     SOLARBEAM,    THUNDERBOLT,  THUNDER,      PSYCHIC_M,    TELEPORT,     \
 	     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         FIRE_BLAST,   \
 	     SKULL_BASH,   REST,         THUNDER_WAVE, PSYWAVE,      TRI_ATTACK,   \
-	     SUBSTITUTE,   STRENGTH,     FLASH
+	     SHADOW_BALL,  DRAIN_PUNCH,  PLAY_ROUGH,   SUBSTITUTE,   STRENGTH,     \
+		 FLASH
 	; end
 
 	db 0 ; padding

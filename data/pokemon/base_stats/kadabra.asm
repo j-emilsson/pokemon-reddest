@@ -1,6 +1,6 @@
 	db DEX_KADABRA ; pokedex id
 
-	db  40,  35,  30, 105, 120
+	db  50,  35,  45, 105, 120
 	;   hp  atk  def  spd  spc
 
 	db PSYCHIC, PSYCHIC ; type
@@ -10,7 +10,7 @@
 	INCBIN "gfx/pokemon/front/kadabra.pic", 0, 1 ; sprite dimensions
 	dw KadabraPicFront, KadabraPicBack
 
-	db TELEPORT, CONFUSION, DISABLE, NO_MOVE ; level 1 learnset
+	db TELEPORT, CONFUSION, KINESIS, DISABLE ; level 1 learnset
 	db GROWTH_MEDIUM_SLOW ; growth rate
 
 	; tm/hm learnset
@@ -18,7 +18,8 @@
 	     DOUBLE_EDGE,  SUBMISSION,   COUNTER,      SEISMIC_TOSS, RAGE,         \
 	     DIG,          PSYCHIC_M,    TELEPORT,     MIMIC,        DOUBLE_TEAM,  \
 	     REFLECT,      BIDE,         METRONOME,    SKULL_BASH,   REST,         \
-	     THUNDER_WAVE, PSYWAVE,      TRI_ATTACK,   SUBSTITUTE,   FLASH
+	     THUNDER_WAVE, PSYWAVE,      TRI_ATTACK,   SUBSTITUTE,   SHADOW_BALL,  \
+		 DRAIN_PUNCH,  FLASH
 	; end
 
 	db 0 ; padding

@@ -1,6 +1,6 @@
 	db DEX_HYPNO ; pokedex id
 
-	db  85,  73,  70,  67, 115
+	db  85,  65,  80,  70, 115 ; 530
 	;   hp  atk  def  spd  spc
 
 	db PSYCHIC, PSYCHIC ; type
@@ -19,7 +19,7 @@
 	     RAGE,         PSYCHIC_M,    TELEPORT,     MIMIC,        DOUBLE_TEAM,  \
 	     REFLECT,      BIDE,         METRONOME,    SKULL_BASH,   DREAM_EATER,  \
 	     REST,         THUNDER_WAVE, PSYWAVE,      TRI_ATTACK,   SUBSTITUTE,   \
-	     FLASH
+	     SHADOW_BALL,  DRAIN_PUNCH,  FLASH
 	; end
 
 	db 0 ; padding

@@ -1,6 +1,6 @@
 	db DEX_ALAKAZAM ; pokedex id
 
-	db  55,  50,  45, 120, 135
+	db  65,  50,  60, 120, 135 ; 565
 	;   hp  atk  def  spd  spc
 
 	db PSYCHIC, PSYCHIC ; type
@@ -10,7 +10,7 @@
 	INCBIN "gfx/pokemon/front/alakazam.pic", 0, 1 ; sprite dimensions
 	dw AlakazamPicFront, AlakazamPicBack
 
-	db TELEPORT, CONFUSION, DISABLE, NO_MOVE ; level 1 learnset
+	db TELEPORT, CONFUSION, KINESIS, DISABLE ; level 1 learnset
 	db GROWTH_MEDIUM_SLOW ; growth rate
 
 	; tm/hm learnset
@@ -19,7 +19,7 @@
 	     RAGE,         DIG,          PSYCHIC_M,    TELEPORT,     MIMIC,        \
 	     DOUBLE_TEAM,  REFLECT,      BIDE,         METRONOME,    SKULL_BASH,   \
 	     REST,         THUNDER_WAVE, PSYWAVE,      TRI_ATTACK,   SUBSTITUTE,   \
-	     FLASH
+	     SHADOW_BALL,  DRAIN_PUNCH,  FLASH
 	; end
 
 	db 0 ; padding

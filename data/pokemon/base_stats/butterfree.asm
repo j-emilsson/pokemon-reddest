@@ -17,8 +17,9 @@
 	tmhm RAZOR_WIND,   WHIRLWIND,    TOXIC,        TAKE_DOWN,    DOUBLE_EDGE,  \
 	     HYPER_BEAM,   RAGE,         MEGA_DRAIN,   SOLARBEAM,    PSYCHIC_M,    \
 	     TELEPORT,     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         \
-	     SWIFT,        DREAM_EATER,  REST,         PSYWAVE,      SUBSTITUTE,   \
-		 FLASH
+	     SWIFT,        DREAM_EATER,  SKY_ATTACK,   REST,         PSYWAVE,      \
+		 SHADOW_BALL,  GIGA_DRAIN,   AIR_SLASH,    BUG_BUZZ,     SUBSTITUTE,   \
+		 FLY,          FLASH
 	; end
 
 	db 0 ; padding

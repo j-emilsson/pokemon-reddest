@@ -17,7 +17,8 @@
 	tmhm RAZOR_WIND,   WHIRLWIND,    TOXIC,        TAKE_DOWN,    DOUBLE_EDGE,  \
 	     HYPER_BEAM,   RAGE,         MEGA_DRAIN,   MIMIC,        DOUBLE_TEAM,  \
 	     BIDE,         SWIFT,        REST,         SUBSTITUTE,   SLUDGE_BOMB,  \
-		 SHADOW_BALL,  GIGA_DRAIN,   AIR_SLASH,    DARK_PULSE,   FLY
+		 SHADOW_BALL,  CRUNCH,       GIGA_DRAIN,   AIR_SLASH,    DARK_PULSE,   \
+		 FLY
 	; end
 
 	db 0 ; padding

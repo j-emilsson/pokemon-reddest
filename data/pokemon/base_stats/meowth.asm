@@ -17,8 +17,8 @@
 	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  BUBBLEBEAM,   \
 	     WATER_GUN,    PAY_DAY,      RAGE,         THUNDERBOLT,  THUNDER,      \
 	     MIMIC,        DOUBLE_TEAM,  BIDE,         SWIFT,        SKULL_BASH,   \
-	     REST,         SUBSTITUTE,   SHADOW_BALL,  IRON_HEAD,    DARK_PULSE,   \
-		 PLAY_ROUGH,   CUT,          FLASH
+	     REST,         SUBSTITUTE,   SHADOW_BALL,  CRUNCH,       IRON_HEAD,    \
+		 DARK_PULSE,   PLAY_ROUGH,   CUT,          FLASH
 	; end
 
 	db 0 ; padding

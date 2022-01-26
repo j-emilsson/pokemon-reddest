@@ -1,6 +1,6 @@
 	db DEX_ABRA ; pokedex id
 
-	db  25,  20,  15,  90, 105
+	db  35,  20,  30,  90, 105
 	;   hp  atk  def  spd  spc
 
 	db PSYCHIC, PSYCHIC ; type
@@ -10,7 +10,7 @@
 	INCBIN "gfx/pokemon/front/abra.pic", 0, 1 ; sprite dimensions
 	dw AbraPicFront, AbraPicBack
 
-	db TELEPORT, NO_MOVE, NO_MOVE, NO_MOVE ; level 1 learnset
+	db TELEPORT, CONFUSION, NO_MOVE, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_SLOW ; growth rate
 
 	; tm/hm learnset
@@ -18,7 +18,8 @@
 	     DOUBLE_EDGE,  SUBMISSION,   COUNTER,      SEISMIC_TOSS, RAGE,         \
 	     PSYCHIC_M,    TELEPORT,     MIMIC,        DOUBLE_TEAM,  REFLECT,      \
 	     BIDE,         METRONOME,    SKULL_BASH,   REST,         THUNDER_WAVE, \
-	     PSYWAVE,      TRI_ATTACK,   SUBSTITUTE,   FLASH
+	     PSYWAVE,      TRI_ATTACK,   SUBSTITUTE,   SHADOW_BALL,  DRAIN_PUNCH,  \
+		 FLASH
 	; end
 
 	db 0 ; padding

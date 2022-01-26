@@ -1,6 +1,6 @@
 	db DEX_WEEZING ; pokedex id
 
-	db  60,  75, 120,  60, 105 ; 525
+	db  60,  75, 120,  60, 110 ; 535
 	;   hp  atk  def  spd  spc
 
 	db POISON, FAIRY ; type

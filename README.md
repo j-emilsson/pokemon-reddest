@@ -19,6 +19,8 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
 
 - ### Purchasable TMs in PokéMarts
 
+- ### Trade evolutions has been changed to level up evolutions
+
 - ### Another rival
 
 - ### Updated power, accuracy, pp and additional effect changes on existing moves to latest gen

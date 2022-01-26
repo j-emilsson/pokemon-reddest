@@ -1,6 +1,6 @@
 	db DEX_JIGGLYPUFF ; pokedex id
 
-	db 115,  45,  20,  20,  25
+	db 120,  85,  45,  30,  45 ; 370
 	;   hp  atk  def  spd  spc
 
 	db NORMAL, FAIRY ; type
@@ -20,7 +20,7 @@
 	     THUNDERBOLT,  THUNDER,      PSYCHIC_M,    TELEPORT,     MIMIC,        \
 	     DOUBLE_TEAM,  REFLECT,      BIDE,         FIRE_BLAST,   SKULL_BASH,   \
 	     REST,         THUNDER_WAVE, PSYWAVE,      TRI_ATTACK,   SUBSTITUTE,   \
-	     STRENGTH,     FLASH
+	     SHADOW_BALL,  DRAIN_PUNCH,  PLAY_ROUGH,   STRENGTH,     FLASH
 	; end
 
 	db 0 ; padding

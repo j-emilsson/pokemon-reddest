@@ -1,6 +1,6 @@
 	db DEX_CLEFABLE ; pokedex id
 
-	db  100,  70,  80,  60,  105 ; 520
+	db 100,  60,  80,  60, 110 ; 520
 	;   hp  atk  def  spd  spc
 
 	db FAIRY, FAIRY ; type
@@ -10,7 +10,7 @@
 	INCBIN "gfx/pokemon/front/clefable.pic", 0, 1 ; sprite dimensions
 	dw ClefablePicFront, ClefablePicBack
 
-	db SING, DOUBLESLAP, MINIMIZE, METRONOME ; level 1 learnset
+	db POUND, GROWL, SING, DOUBLESLAP ; level 1 learnset
 	db GROWTH_FAST ; growth rate
 
 	; tm/hm learnset
@@ -20,7 +20,8 @@
 	     SOLARBEAM,    THUNDERBOLT,  THUNDER,      PSYCHIC_M,    TELEPORT,     \
 	     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         METRONOME,    \
 	     FIRE_BLAST,   SKULL_BASH,   REST,         THUNDER_WAVE, PSYWAVE,      \
-	     TRI_ATTACK,   SUBSTITUTE,   STRENGTH,     FLASH
+	     TRI_ATTACK,   SUBSTITUTE,   SHADOW_BALL,  DRAIN_PUNCH,  PLAY_ROUGH,   \
+		 STRENGTH,     FLASH
 	; end
 
 	db 0 ; padding

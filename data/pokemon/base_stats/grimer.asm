@@ -17,8 +17,8 @@
 	tmhm TOXIC,        BODY_SLAM,    RAGE,         MEGA_DRAIN,   THUNDERBOLT,  \
 	     THUNDER,      DIG,          MIMIC,        DOUBLE_TEAM,  BIDE,         \
 	     SELFDESTRUCT, FIRE_BLAST,   REST,         EXPLOSION,    ROCK_SLIDE,   \
-		 SUBSTITUTE,   SLUDGE_BOMB,  SHADOW_BALL,  GIGA_DRAIN,   POISON_JAB,   \
-		 STRENGTH
+		 SUBSTITUTE,   SLUDGE_BOMB,  SHADOW_BALL,  CRUNCH,       GIGA_DRAIN,   \
+		 POISON_JAB,   STRENGTH
 	; end
 
 	db 0 ; padding
