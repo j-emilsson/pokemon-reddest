@@ -26,6 +26,7 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
 - ### Updated power, accuracy, pp and additional effect changes on existing moves to latest gen
   
 - ### Updated some existing moves 
+    - Trapping moves (Bind, Clamp, Fire Spin, Wrap) are now 2-5 hitting moves instead
     - Cut is now Steel type and has 60 power
     - Sky Attack has been changed to now attack immediately and also has a 30% chance to flinch
     - Strength is now Rock type
@@ -64,7 +65,7 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
 
 - ### Adjusted base stats of most Pokémon
 
-- ### Adjusted typings of some Pokémon
+- ### Adjusted typings of certain Pokémon
     -	Arbok
         - Poison/Dark
     -   Arcanine

@@ -56,5 +56,6 @@ _MoveRelearnerNoMovesText::
 	text "Sorry..."
 	line "There isn't any"
 	cont "move I can make"
-	cont "that #MON remember."
+	cont "that #MON"
+	cont "remember."
 	done

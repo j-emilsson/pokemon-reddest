@@ -1,6 +1,6 @@
 	db DEX_JYNX ; pokedex id
 
-	db  65,  50,  35,  95,  95
+	db  75,  50,  65, 110, 125 ; 550
 	;   hp  atk  def  spd  spc
 
 	db ICE, PSYCHIC ; type
@@ -18,8 +18,8 @@
 	     DOUBLE_EDGE,  BUBBLEBEAM,   WATER_GUN,    ICE_BEAM,     BLIZZARD,     \
 	     HYPER_BEAM,   SUBMISSION,   COUNTER,      SEISMIC_TOSS, RAGE,         \
 	     PSYCHIC_M,    TELEPORT,     MIMIC,        DOUBLE_TEAM,  REFLECT,      \
-	     BIDE,         METRONOME,    SKULL_BASH,   REST,         PSYWAVE,      \
-	     SUBSTITUTE
+	     BIDE,         METRONOME,    SKULL_BASH,   DREAM_EATER,  REST,         \
+	     PSYWAVE,      SUBSTITUTE,   SHADOW_BALL,  DRAIN_PUNCH,  FLASH
 	; end
 
 	db 0 ; padding

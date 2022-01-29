@@ -1,6 +1,6 @@
 	db DEX_MOLTRES ; pokedex id
 
-	db  90, 100,  90,  90, 125
+	db  90, 120,  85,  85, 135 ; 650
 	;   hp  atk  def  spd  spc
 
 	db FIRE, FLYING ; type
