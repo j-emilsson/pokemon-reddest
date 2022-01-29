@@ -1222,3 +1222,8 @@ INCLUDE "data/maps/headers/AgathasRoom.asm"
 INCLUDE "scripts/AgathasRoom.asm"
 INCLUDE "data/maps/objects/AgathasRoom.asm"
 AgathasRoom_Blocks: INCBIN "maps/AgathasRoom.blk"
+
+INCLUDE "data/maps/headers/MoveTutorsHouse.asm"
+INCLUDE "scripts/MoveTutorsHouse.asm"
+INCLUDE "data/maps/objects/MoveTutorsHouse.asm"
+MoveTutorsHouse_Blocks: INCBIN "maps/MoveTutorsHouse.blk"
