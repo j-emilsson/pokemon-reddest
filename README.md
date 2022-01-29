@@ -106,6 +106,10 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
         - Fighting/Dark
     -   Meowth/Persian
         - Normal/Dark
+    -   Mew
+        - Psychic/Flying
+    -   Mewtwo
+        - Psychic/Dark
     -	Mr.Mime
         - Psychic/Fairy
     -   Ninetales

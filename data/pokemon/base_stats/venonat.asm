@@ -1,6 +1,6 @@
 	db DEX_VENONAT ; pokedex id
 
-	db  60,  55,  50,  45,  40
+	db  60,  45,  50,  50,  80 ; 365
 	;   hp  atk  def  spd  spc
 
 	db BUG, PSYCHIC ; type

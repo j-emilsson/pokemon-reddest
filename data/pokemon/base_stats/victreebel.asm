@@ -1,6 +1,6 @@
 	db DEX_VICTREEBEL ; pokedex id
 
-	db  80, 120,  70,  70, 85 ; 510
+	db  90, 130,  70,  90,  85 ; 550
 	;   hp  atk  def  spd  spc
 
 	db GRASS, DARK ; type
@@ -17,8 +17,8 @@
 	tmhm SWORDS_DANCE, TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  \
 	     HYPER_BEAM,   RAGE,         MEGA_DRAIN,   SOLARBEAM,    MIMIC,        \
 	     DOUBLE_TEAM,  REFLECT,      BIDE,         REST,         SUBSTITUTE,   \
-	     SLUDGE_BOMB,  GIGA_DRAIN,   LEAF_BLADE,   POISON_JAB,   DARK_PULSE,   \
-		 CUT,          FLASH
+	     SLUDGE_BOMB,  CRUNCH,       GIGA_DRAIN,   LEAF_BLADE,   POISON_JAB,   \
+		 DARK_PULSE,   CUT,          FLASH
 	; end
 
 	db 0 ; padding

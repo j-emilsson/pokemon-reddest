@@ -1,6 +1,6 @@
 	db DEX_ODDISH ; pokedex id
 
-	db  45,  50,  55,  30,  75
+	db  55,  30,  55,  30,  95 ; 360
 	;   hp  atk  def  spd  spc
 
 	db GRASS, POISON ; type

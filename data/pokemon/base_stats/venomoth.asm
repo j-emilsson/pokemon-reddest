@@ -1,6 +1,6 @@
 	db DEX_VENOMOTH ; pokedex id
 
-	db  75,  60,  70,  95, 100 ; 500
+	db  80,  55,  70, 105, 105 ; 520
 	;   hp  atk  def  spd  spc
 
 	db BUG, PSYCHIC ; type
@@ -10,7 +10,7 @@
 	INCBIN "gfx/pokemon/front/venomoth.pic", 0, 1 ; sprite dimensions
 	dw VenomothPicFront, VenomothPicBack
 
-	db TACKLE, DISABLE, POISONPOWDER, GUST ; level 1 learnset
+	db TACKLE, DISABLE, SUPERSONIC, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_FAST ; growth rate
 
 	; tm/hm learnset

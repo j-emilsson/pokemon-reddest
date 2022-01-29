@@ -1,9 +1,9 @@
 	db DEX_WEEPINBELL ; pokedex id
 
-	db  65,  90,  50,  55,  85
+	db  75, 110,  55,  75,  70 ; 455
 	;   hp  atk  def  spd  spc
 
-	db GRASS, POISON ; type
+	db GRASS, DARK ; type
 	db 120 ; catch rate
 	db 151 ; base exp
 
@@ -16,8 +16,9 @@
 	; tm/hm learnset
 	tmhm SWORDS_DANCE, TOXIC,        TAKE_DOWN,    DOUBLE_EDGE,  RAGE,         \
 	     MEGA_DRAIN,   SOLARBEAM,    MIMIC,        DOUBLE_TEAM,  REFLECT,      \
-	     BIDE,         REST,         SUBSTITUTE,   SLUDGE_BOMB,  GIGA_DRAIN,   \
-		 LEAF_BLADE,   POISON_JAB,   CUT,          FLASH
+	     BIDE,         REST,         SUBSTITUTE,   SLUDGE_BOMB,  CRUNCH,       \
+		 GIGA_DRAIN,   LEAF_BLADE,   POISON_JAB,   DARK_PULSE,   CUT,          \
+		 FLASH
 	; end
 
 	db 0 ; padding

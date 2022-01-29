@@ -1,9 +1,9 @@
 	db DEX_BELLSPROUT ; pokedex id
 
-	db  50,  75,  35,  40,  70
+	db  60,  80,  40,  60,  55 ; 350
 	;   hp  atk  def  spd  spc
 
-	db GRASS, POISON ; type
+	db GRASS, DARK ; type
 	db 255 ; catch rate
 	db 84 ; base exp
 
@@ -16,8 +16,9 @@
 	; tm/hm learnset
 	tmhm SWORDS_DANCE, TOXIC,        TAKE_DOWN,    DOUBLE_EDGE,  RAGE,         \
 	     MEGA_DRAIN,   SOLARBEAM,    MIMIC,        DOUBLE_TEAM,  REFLECT,      \
-	     BIDE,         REST,         SUBSTITUTE,   SLUDGE_BOMB,  GIGA_DRAIN,   \
-		 LEAF_BLADE,   POISON_JAB,   CUT,          FLASH
+	     BIDE,         REST,         SUBSTITUTE,   SLUDGE_BOMB,  CRUNCH,       \
+		 GIGA_DRAIN,   LEAF_BLADE,   POISON_JAB,   DARK_PULSE,   CUT,          \
+		 FLASH
 	; end
 
 	db 0 ; padding

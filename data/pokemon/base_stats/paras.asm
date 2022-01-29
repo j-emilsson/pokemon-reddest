@@ -1,6 +1,6 @@
 	db DEX_PARAS ; pokedex id
 
-	db  35,  70,  55,  25,  55
+	db  70,  80,  65,  35,  50 ; 350
 	;   hp  atk  def  spd  spc
 
 	db BUG, GRASS ; type

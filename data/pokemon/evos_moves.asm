@@ -572,6 +572,43 @@ ArbokEvosMoves:
 	db 48, POISON_JAB
 	db 0
 
+PikachuEvosMoves:
+; Evolutions
+	db EV_ITEM, THUNDER_STONE, 1, RAICHU
+	db 0
+; Learnset
+	db 5, TAIL_WHIP
+	db 10, THUNDER_WAVE
+	db 13, QUICK_ATTACK
+	db 18, DOUBLE_TEAM
+	db 21, SLAM
+	db 24, AGILITY
+	db 29, SWIFT
+	db 34, THUNDERBOLT
+	db 38, LIGHT_SCREEN
+	db 42, SURF
+	db 47, THUNDER
+	db 50, EXTREME_SPEED
+	db 0
+
+RaichuEvosMoves:
+; Evolutions
+	db 0
+; Learnset
+	db 8, TAIL_WHIP
+	db 12, THUNDER_WAVE
+	db 15, QUICK_ATTACK
+	db 20, DOUBLE_TEAM
+	db 24, SLAM
+	db 28, AGILITY
+	db 33, SWIFT
+	db 38, THUNDERBOLT
+	db 43, LIGHT_SCREEN
+	db 48, SURF
+	db 52, THUNDER
+	db 55, EXTREME_SPEED
+	db 0
+
 NidoranFEvosMoves:
 ; Evolutions
 	db EV_LEVEL, 16, NIDORINA
@@ -873,10 +910,14 @@ ParasEvosMoves:
 	db 13, POISONPOWDER
 	db 14, STUN_SPORE
 	db 22, SPORE
-	db 26, SLASH
+	db 25, PIN_MISSILE
+	db 28, SLASH
 	db 31, GROWTH
-	db 34, GIGA_DRAIN
-	db 43, LEECH_LIFE
+	db 35, AGILITY
+	db 38, SCREECH
+	db 40, LEAF_BLADE
+	db 44, SWORDS_DANCE
+	db 48, LEECH_LIFE
 	db 0
 
 ParasectEvosMoves:
@@ -887,10 +928,14 @@ ParasectEvosMoves:
 	db 13, POISONPOWDER
 	db 14, STUN_SPORE
 	db 22, SPORE
-	db 29, SLASH
+	db 26, PIN_MISSILE
+	db 30, SLASH
 	db 34, GROWTH
-	db 38, GIGA_DRAIN
-	db 48, LEECH_LIFE
+	db 37, AGILITY
+	db 40, SCREECH
+	db 43, LEAF_BLADE
+	db 48, SWORDS_DANCE
+	db 52, LEECH_LIFE
 	db 0
 
 VenonatEvosMoves:
@@ -1148,13 +1193,13 @@ BellsproutEvosMoves:
 	db 11, POISONPOWDER
 	db 13, STUN_SPORE
 	db 15, SLEEP_POWDER
-	db 18, ACID
-	db 22, GROWTH
-	db 27, RAZOR_LEAF
-	db 33, SLAM
-	db 38, POISON_JAB
-	db 43, LEECH_LIFE
-	db 47, LEAF_BLADE
+	db 19, FEINT_ATTACK
+	db 22, RAZOR_LEAF
+	db 27, SLAM
+	db 31, CRUNCH
+	db 36, POISON_JAB
+	db 40, LEECH_LIFE
+	db 45, LEAF_BLADE
 	db 0
 
 WeepinbellEvosMoves:
@@ -1166,11 +1211,11 @@ WeepinbellEvosMoves:
 	db 11, POISONPOWDER
 	db 13, STUN_SPORE
 	db 15, SLEEP_POWDER
-	db 18, ACID
-	db 24, GROWTH
-	db 31, RAZOR_LEAF
-	db 36, SLAM
-	db 40, POISON_JAB
+	db 19, FEINT_ATTACK
+	db 24, RAZOR_LEAF
+	db 30, SLAM
+	db 34, CRUNCH
+	db 39, POISON_JAB
 	db 44, LEECH_LIFE
 	db 48, LEAF_BLADE
 	db 0
@@ -1183,14 +1228,13 @@ VictreebelEvosMoves:
 	db 11, POISONPOWDER
 	db 13, STUN_SPORE
 	db 15, SLEEP_POWDER
-	db 18, ACID
-	db 26, GROWTH
-	db 34, RAZOR_LEAF
-	db 38, CRUNCH
-	db 42, SLAM
-	db 45, POISON_JAB
-	db 49, LEECH_LIFE
-	db 53, LEAF_BLADE
+	db 19, FEINT_ATTACK
+	db 25, RAZOR_LEAF
+	db 32, SLAM
+	db 37, CRUNCH
+	db 43, POISON_JAB
+	db 48, LEECH_LIFE
+	db 52, LEAF_BLADE
 	db 0
 
 TentacoolEvosMoves:
@@ -2081,6 +2125,42 @@ DragoniteEvosMoves:
 	db 58, EXTREME_SPEED
 	db 0
 
+MewtwoEvosMoves:
+; Evolutions
+	db 0
+; Learnset
+	db 5, BARRIER
+	db 10, SWIFT
+	db 15, PSYBEAM
+	db 20, CONFUSE_RAY
+	db 25, FEINT_ATTACK
+	db 30, MIST
+	db 35, DARK_PULSE
+	db 40, RECOVER
+	db 45, PSYCHIC_M
+	db 50, AMNESIA
+	db 55, AURA_SPHERE
+	db 60, AGILITY
+	db 0
+
+MewEvosMoves:
+; Evolutions
+	db 0
+; Learnset
+	db 5, TRANSFORM
+	db 10, MEGA_PUNCH
+	db 15, PSYBEAM
+	db 20, BARRIER
+	db 25, GUST
+	db 30, MIMIC
+	db 35, AIR_SLASH
+	db 40, METRONOME
+	db 45, PSYCHIC_M
+	db 50, AMNESIA
+	db 55, AURA_SPHERE
+	db 60, AGILITY
+	db 0
+
 VoltorbEvosMoves:
 ; Evolutions
 	db EV_LEVEL, 30, ELECTRODE
@@ -2091,16 +2171,6 @@ VoltorbEvosMoves:
 	db 29, LIGHT_SCREEN
 	db 36, SWIFT
 	db 43, EXPLOSION
-	db 0
-
-MewEvosMoves:
-; Evolutions
-	db 0
-; Learnset
-	db 10, TRANSFORM
-	db 20, MEGA_PUNCH
-	db 30, METRONOME
-	db 40, PSYCHIC_M
 	db 0
 
 ShellderEvosMoves:
@@ -2343,24 +2413,6 @@ MissingNo51EvosMoves:
 ; Learnset
 	db 0
 
-PikachuEvosMoves:
-; Evolutions
-	db EV_ITEM, THUNDER_STONE, 1, RAICHU
-	db 0
-; Learnset
-	db 9, THUNDER_WAVE
-	db 16, QUICK_ATTACK
-	db 26, SWIFT
-	db 33, AGILITY
-	db 43, THUNDER
-	db 0
-
-RaichuEvosMoves:
-; Evolutions
-	db 0
-; Learnset
-	db 0
-
 MissingNo56EvosMoves:
 ; Evolutions
 	db 0
@@ -2527,17 +2579,6 @@ MissingNo7FEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
-	db 0
-
-MewtwoEvosMoves:
-; Evolutions
-	db 0
-; Learnset
-	db 63, BARRIER
-	db 66, PSYCHIC_M
-	db 70, RECOVER
-	db 75, MIST
-	db 81, AMNESIA
 	db 0
 
 MissingNo86EvosMoves:

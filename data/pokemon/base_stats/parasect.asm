@@ -1,6 +1,6 @@
 	db DEX_PARASECT ; pokedex id
 
-	db  90, 120,  90,  40,  80 ; 500
+	db 100, 125,  95,  50,  75 ; 520
 	;   hp  atk  def  spd  spc
 
 	db BUG, GRASS ; type
@@ -10,7 +10,7 @@
 	INCBIN "gfx/pokemon/front/parasect.pic", 0, 1 ; sprite dimensions
 	dw ParasectPicFront, ParasectPicBack
 
-	db SCRATCH, STUN_SPORE, ABSORB, NO_MOVE ; level 1 learnset
+	db SCRATCH, ABSORB, NO_MOVE, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_FAST ; growth rate
 
 	; tm/hm learnset
