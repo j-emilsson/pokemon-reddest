@@ -1,6 +1,6 @@
 	db DEX_KABUTOPS ; pokedex id
 
-	db  60, 115, 105,  80,  70
+	db  80, 125, 105, 110,  70 ; 560
 	;   hp  atk  def  spd  spc
 
 	db ROCK, WATER ; type
@@ -10,15 +10,16 @@
 	INCBIN "gfx/pokemon/front/kabutops.pic", 0, 1 ; sprite dimensions
 	dw KabutopsPicFront, KabutopsPicBack
 
-	db SCRATCH, HARDEN, ABSORB, NO_MOVE ; level 1 learnset
+	db SCRATCH, HARDEN, WATER_GUN, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_FAST ; growth rate
 
 	; tm/hm learnset
 	tmhm RAZOR_WIND,   SWORDS_DANCE, MEGA_KICK,    TOXIC,        BODY_SLAM,    \
 	     TAKE_DOWN,    DOUBLE_EDGE,  BUBBLEBEAM,   WATER_GUN,    ICE_BEAM,     \
 	     BLIZZARD,     HYPER_BEAM,   SUBMISSION,   SEISMIC_TOSS, RAGE,         \
-	     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         SKULL_BASH,   \
-	     REST,         SUBSTITUTE,   SURF
+	     MEGA_DRAIN,   DIG,          MIMIC,        DOUBLE_TEAM,  REFLECT,      \
+	     BIDE,         SKULL_BASH,   REST,         ROCK_SLIDE,   SUBSTITUTE,   \
+		 GIGA_DRAIN,   EARTH_POWER,  CUT,          SURF
 	; end
 
 	db 0 ; padding

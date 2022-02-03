@@ -1,6 +1,6 @@
 	db DEX_OMANYTE ; pokedex id
 
-	db  35,  40, 100,  35,  90
+	db  45,  30,  90,  45, 100 ; 410
 	;   hp  atk  def  spd  spc
 
 	db ROCK, WATER ; type
@@ -16,8 +16,8 @@
 	; tm/hm learnset
 	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  BUBBLEBEAM,   \
 	     WATER_GUN,    ICE_BEAM,     BLIZZARD,     RAGE,         MIMIC,        \
-	     DOUBLE_TEAM,  REFLECT,      BIDE,         REST,         SUBSTITUTE,   \
-	     SURF
+	     DOUBLE_TEAM,  REFLECT,      BIDE,         REST,         ROCK_SLIDE,   \
+	     SUBSTITUTE,   EARTH_POWER,  SURF
 	; end
 
 	db 0 ; padding

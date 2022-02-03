@@ -1,6 +1,6 @@
 	db DEX_KABUTO ; pokedex id
 
-	db  30,  80,  90,  55,  45
+	db  50,  90,  90,  85,  45 ; 405
 	;   hp  atk  def  spd  spc
 
 	db ROCK, WATER ; type
@@ -15,9 +15,10 @@
 
 	; tm/hm learnset
 	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  BUBBLEBEAM,   \
-	     WATER_GUN,    ICE_BEAM,     BLIZZARD,     RAGE,         MIMIC,        \
-	     DOUBLE_TEAM,  REFLECT,      BIDE,         REST,         SUBSTITUTE,   \
-	     SURF
+	     WATER_GUN,    ICE_BEAM,     BLIZZARD,     RAGE,         MEGA_DRAIN,   \
+	     DIG,          MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         \
+	     REST,         ROCK_SLIDE,   SUBSTITUTE,   GIGA_DRAIN,   EARTH_POWER,  \
+		 SURF
 	; end
 
 	db 0 ; padding

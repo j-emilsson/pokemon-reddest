@@ -1,6 +1,6 @@
 	db DEX_WIGGLYTUFF ; pokedex id
 
-	db 140, 105,  75,  50,  75 ; 520
+	db 140, 110,  70,  50,  75 ; 520
 	;   hp  atk  def  spd  spc
 
 	db NORMAL, FAIRY ; type
@@ -17,11 +17,11 @@
 	tmhm MEGA_PUNCH,   MEGA_KICK,    TOXIC,        BODY_SLAM,    TAKE_DOWN,    \
 	     DOUBLE_EDGE,  BUBBLEBEAM,   WATER_GUN,    ICE_BEAM,     BLIZZARD,     \
 	     HYPER_BEAM,   SUBMISSION,   COUNTER,      SEISMIC_TOSS, RAGE,         \
-	     SOLARBEAM,    THUNDERBOLT,  THUNDER,      PSYCHIC_M,    TELEPORT,     \
-	     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         FIRE_BLAST,   \
-	     SKULL_BASH,   REST,         THUNDER_WAVE, PSYWAVE,      TRI_ATTACK,   \
-	     SHADOW_BALL,  DRAIN_PUNCH,  PLAY_ROUGH,   SUBSTITUTE,   STRENGTH,     \
-		 FLASH
+	     SOLARBEAM,    THUNDERBOLT,  THUNDER,      DIG,          PSYCHIC_M,    \
+	     TELEPORT,     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         \
+	     FIRE_BLAST,   SKULL_BASH,   SOFTBOILED,   DREAM_EATER,  REST,         \
+	     THUNDER_WAVE, PSYWAVE,      TRI_ATTACK,   SHADOW_BALL,  DRAIN_PUNCH,  \
+		 PLAY_ROUGH,   SUBSTITUTE,   STRENGTH,     FLASH
 	; end
 
 	db 0 ; padding

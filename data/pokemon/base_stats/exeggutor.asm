@@ -1,6 +1,6 @@
 	db DEX_EXEGGUTOR ; pokedex id
 
-	db  95,  95,  85,  55, 125 ; 580
+	db  95,  80,  85,  55, 125 ; 565
 	;   hp  atk  def  spd  spc
 
 	db GRASS, PSYCHIC ; type
