@@ -190,6 +190,7 @@ AttackAnimationPointers:
 	dw DragonPulseAnim
 	dw MoonblastAnim
 	dw PlayRoughAnim
+	dw ShadowBoneAnim
 	assert_table_length NUM_ATTACKS
 	dw ShowPicAnim
 	dw EnemyFlashAnim
@@ -973,6 +974,7 @@ SludgeAnim:
 	battle_anim SLUDGE, SUBANIM_14, 1, 6
 	db -1 ; end
 
+ShadowBoneAnim:
 BoneClubAnim:
 	battle_anim BONE_CLUB, SUBANIM_02, 0, 8
 	db -1 ; end

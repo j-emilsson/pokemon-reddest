@@ -609,6 +609,43 @@ RaichuEvosMoves:
 	db 55, EXTREME_SPEED
 	db 0
 
+SandshrewEvosMoves:
+; Evolutions
+	db EV_LEVEL, 22, SANDSLASH
+	db 0
+; Learnset
+	db 7, SAND_ATTACK
+	db 11, POISON_STING
+	db 16, SWIFT
+	db 21, FURY_SWIPES
+	db 23, ROCK_THROW
+	db 27, COUNTER
+	db 30, DIG
+	db 34, SLASH
+	db 38, ROCK_SLIDE
+	db 42, POISON_JAB
+	db 45, SWORDS_DANCE
+	db 48, EARTHQUAKE
+	db 0
+
+SandslashEvosMoves:
+; Evolutions
+	db 0
+; Learnset
+	db 7, SAND_ATTACK
+	db 11, POISON_STING
+	db 16, SWIFT
+	db 21, FURY_SWIPES
+	db 26, ROCK_THROW
+	db 30, COUNTER
+	db 34, DIG
+	db 38, SLASH
+	db 42, ROCK_SLIDE
+	db 45, POISON_JAB
+	db 48, SWORDS_DANCE
+	db 52, EARTHQUAKE
+	db 0
+
 NidoranFEvosMoves:
 ; Evolutions
 	db EV_LEVEL, 16, NIDORINA
@@ -987,7 +1024,8 @@ DiglettEvosMoves:
 	db 23, FEINT_ATTACK
 	db 28, SLASH
 	db 33, SCREECH
-	db 37, EARTH_POWER
+	db 36, IRON_HEAD
+	db 40, EARTH_POWER
 	db 42, ROCK_SLIDE
 	db 45, EARTHQUAKE
 	db 0
@@ -1003,7 +1041,8 @@ DugtrioEvosMoves:
 	db 26, TRI_ATTACK
 	db 30, SLASH
 	db 35, SCREECH
-	db 39, EARTH_POWER
+	db 38, IRON_HEAD
+	db 42, EARTH_POWER
 	db 45, ROCK_SLIDE
 	db 48, EARTHQUAKE
 	db 0
@@ -1354,13 +1393,14 @@ FarfetchdEvosMoves:
 	db 7, LEER
 	db 11, FURY_ATTACK
 	db 15, KARATE_CHOP
-	db 18, QUICK_ATTACK
-	db 23, SWORDS_DANCE
-	db 27, MIRROR_MOVE
-	db 31, AGILITY
-	db 36, DRILL_PECK
-	db 42, SUBMISSION
-	db 47, SLASH
+	db 18, RAZOR_LEAF
+	db 23, QUICK_ATTACK
+	db 28, AGILITY
+	db 34, DRILL_PECK
+	db 38, SWORDS_DANCE
+	db 43, SUBMISSION
+	db 47, LEAF_BLADE
+	db 50, SLASH
 	db 55, SKY_ATTACK
 	db 0
 
@@ -1583,9 +1623,10 @@ CuboneEvosMoves:
 	db 19, FOCUS_ENERGY
 	db 22, DOUBLE_KICK
 	db 26, RAGE
-	db 29, THRASH
-	db 33, IRON_HEAD
-	db 37, ROCK_SLIDE
+	db 29, SHADOW_BONE
+	db 32, THRASH
+	db 35, IRON_HEAD
+	db 38, ROCK_SLIDE
 	db 43, OUTRAGE
 	db 47, BONEMERANG
 	db 50, DOUBLE_EDGE
@@ -1600,8 +1641,9 @@ MarowakEvosMoves:
 	db 19, FOCUS_ENERGY
 	db 22, DOUBLE_KICK
 	db 26, RAGE
-	db 30, THRASH
-	db 35, IRON_HEAD
+	db 31, SHADOW_BONE
+	db 34, THRASH
+	db 37, IRON_HEAD
 	db 40, ROCK_SLIDE
 	db 45, OUTRAGE
 	db 49, BONEMERANG
@@ -1870,11 +1912,13 @@ TaurosEvosMoves:
 	db 10, TAIL_WHIP
 	db 14, HORN_ATTACK
 	db 19, RAGE
-	db 25, REST
-	db 30, STOMP
-	db 35, IRON_HEAD
-	db 42, TAKE_DOWN
-	db 48, OUTRAGE
+	db 24, REST
+	db 28, STOMP
+	db 32, FOCUS_ENERGY
+	db 37, IRON_HEAD
+	db 41, TAKE_DOWN
+	db 45, STRENGTH
+	db 49, OUTRAGE
 	db 53, DOUBLE_EDGE
 	db 0
 
@@ -2511,29 +2555,6 @@ MissingNo5FEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
-	db 0
-
-SandshrewEvosMoves:
-; Evolutions
-	db EV_LEVEL, 22, SANDSLASH
-	db 0
-; Learnset
-	db 10, SAND_ATTACK
-	db 17, SLASH
-	db 24, POISON_STING
-	db 31, SWIFT
-	db 38, FURY_SWIPES
-	db 0
-
-SandslashEvosMoves:
-; Evolutions
-	db 0
-; Learnset
-	db 10, SAND_ATTACK
-	db 17, SLASH
-	db 27, POISON_STING
-	db 36, SWIFT
-	db 47, FURY_SWIPES
 	db 0
 
 MachopEvosMoves:

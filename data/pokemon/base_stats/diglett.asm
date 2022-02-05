@@ -1,6 +1,6 @@
 	db DEX_DIGLETT ; pokedex id
 
-	db  50,  65,  35,  95,  45
+	db  50,  75,  35,  95,  45 ; 345
 	;   hp  atk  def  spd  spc
 
 	db GROUND, STEEL ; type

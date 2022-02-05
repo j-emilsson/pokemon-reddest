@@ -1,6 +1,6 @@
 	db DEX_VAPOREON ; pokedex id
 
-	db 130,  55,  70,  65, 110 ; 540
+	db 130,  55,  70,  75, 115 ; 560
 	;   hp  atk  def  spd  spc
 
 	db WATER, WATER ; type
@@ -18,7 +18,7 @@
 	     WATER_GUN,    ICE_BEAM,     BLIZZARD,     HYPER_BEAM,   PAY_DAY,      \
 	     RAGE,         DIG,          MIMIC,        DOUBLE_TEAM,  REFLECT,      \
 	     BIDE,         SWIFT,        SKULL_BASH,   REST,         SUBSTITUTE,   \
-		 SHADOW_BALL,  SURF,         STRENGTH
+		 SHADOW_BALL,  HYPER_VOICE,  SURF,         STRENGTH
 	; end
 
 	db 0 ; padding

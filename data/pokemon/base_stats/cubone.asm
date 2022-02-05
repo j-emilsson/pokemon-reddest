@@ -1,9 +1,9 @@
 	db DEX_CUBONE ; pokedex id
 
-	db  70,  75, 105,  55,  55
+	db  70,  85, 105,  55,  55 ; 425
 	;   hp  atk  def  spd  spc
 
-	db GROUND, GROUND ; type
+	db GROUND, GHOST ; type
 	db 190 ; catch rate
 	db 87 ; base exp
 
@@ -18,8 +18,9 @@
 	     TAKE_DOWN,    DOUBLE_EDGE,  BUBBLEBEAM,   WATER_GUN,    ICE_BEAM,     \
 	     BLIZZARD,     SUBMISSION,   COUNTER,      SEISMIC_TOSS, RAGE,         \
 	     EARTHQUAKE,   FISSURE,      DIG,          MIMIC,        DOUBLE_TEAM,  \
-	     BIDE,         FIRE_BLAST,   SKULL_BASH,   REST,         ROCK_SLIDE,   \
-		 SUBSTITUTE,   IRON_HEAD,    EARTH_POWER,  STRENGTH
+	     BIDE,         FIRE_BLAST,   SKULL_BASH,   DREAM_EATER,  REST,         \
+		 ROCK_SLIDE,   SUBSTITUTE,   SHADOW_BALL,  IRON_HEAD,    EARTH_POWER,  \
+		 DARK_PULSE,   STRENGTH
 	; end
 
 	db 0 ; padding

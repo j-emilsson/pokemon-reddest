@@ -57,6 +57,7 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
     - Dragon Pulse
     - Moonblast
     - Play Rough
+    - Shadow Bone
 
 - ### Different starters
     - Jolteon
@@ -80,6 +81,8 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
         - Fire/Dragon
     -	Clefairy/Clefable
         - Fairy
+    -   Cubone/Marowak
+        - Ground/Ghost
     -	Diglett/Dugtrio
         - Ground/Steel
     -   Electabuzz

@@ -1,6 +1,6 @@
 	db DEX_DUGTRIO ; pokedex id
 
-	db  70, 100,  70, 130,  75 ; 520
+	db  70, 110,  70, 130,  75 ; 530
 	;   hp  atk  def  spd  spc
 
 	db GROUND, STEEL ; type

@@ -191,5 +191,6 @@ MoveSoundTable:
 	db SFX_PSYBEAM,            $00, $80 ; DRAGON_PULSE
 	db SFX_NOT_VERY_EFFECTIVE, $10, $ff ; MOONBLAST
 	db SFX_BATTLE_26,          $20, $40 ; PLAY_ROUGH
+	db SFX_BATTLE_32,          $00, $80 ; SHADOW_BONE
 	assert_table_length NUM_ATTACKS
 	db SFX_BATTLE_0B,          $00, $80

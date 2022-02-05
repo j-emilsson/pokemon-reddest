@@ -171,7 +171,7 @@
 	const SLASH        ; a3
 	const SUBSTITUTE   ; a4
 	const STRUGGLE     ; a5
-	const FEINT_ATTACK ; a6 ; start of added tms
+	const FEINT_ATTACK ; a6 ; start of added moves
 	const SLUDGE_BOMB  ; a7
 	const FLAME_WHEEL  ; a8
 	const OUTRAGE      ; a9
@@ -195,7 +195,8 @@
 	const DARK_PULSE   ; bb
 	const DRAGON_PULSE ; bc
 	const MOONBLAST    ; bd
-	const PLAY_ROUGH   ; be ; end of added tms
+	const PLAY_ROUGH   ; be
+	const SHADOW_BONE  ; bf ; end of added moves
 NUM_ATTACKS EQU const_value - 1
 
 	; Moves do double duty as animation identifiers.

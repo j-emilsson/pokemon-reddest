@@ -19,6 +19,7 @@ ENDM
 ; FLINCH_SIDE_EFFECT1 = 10% chance of flinch
 ; FLINCH_SIDE_EFFECT2 = 30% chance of flinch
 ; FLINCH_SIDE_EFFECT3 = 20% chance of flinch
+; DEFENSE_DOWN_SIDE_EFFECT = 20% chance of defense down by 1 stage
 
 Moves:
 ; Characteristics of each move.
@@ -213,4 +214,5 @@ Moves:
 	move DRAGON_PULSE, NO_ADDITIONAL_EFFECT,        85, DRAGON,       100, 10 ; end of gen 4 moves
 	move MOONBLAST,    SPECIAL_DOWN_SIDE_EFFECT,    95, FAIRY,        100, 15 ; start of gen 6 moves
 	move PLAY_ROUGH,   ATTACK_DOWN_SIDE_EFFECT,     90, FAIRY,         90, 10 ; end of gen 6 moves
+	move SHADOW_BONE,  DEFENSE_DOWN_SIDE_EFFECT,    85, GHOST,        100, 10 ; start of gen 7 moves ; end of gen 7 moves
 	assert_table_length NUM_ATTACKS

@@ -190,4 +190,5 @@ MoveNames::
 	li "DRAGON PULSE"
 	li "MOONBLAST"
 	li "PLAY ROUGH"
+	li "SHADOW BONE"
 	assert_list_length NUM_ATTACKS

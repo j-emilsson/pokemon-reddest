@@ -1,6 +1,6 @@
 	db DEX_FARFETCHD ; pokedex id
 
-	db  80, 135,  85, 130, 85 ; 600
+	db  80, 135,  85, 130,  85 ; 600
 	;   hp  atk  def  spd  spc
 
 	db FIGHTING, FLYING ; type
@@ -18,7 +18,7 @@
 	     TAKE_DOWN,    DOUBLE_EDGE,  SUBMISSION,   COUNTER,      SEISMIC_TOSS, \
 		 RAGE,         MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         \
 	     SWIFT,        SKULL_BASH,   SKY_ATTACK,   REST,         SUBSTITUTE,   \
-	     CUT,          FLY
+	     LEAF_BLADE,   POISON_JAB,   CUT,          FLY
 	; end
 
 	db 0 ; padding

@@ -200,4 +200,5 @@ _PhysicalSpecialSplit:: ; Determines if a move is Physical or Special
 	db SPECIAL  ; DRAGON_PULSE ; bc
 	db SPECIAL  ; MOONBLAST    ; bd
 	db PHYSICAL ; PLAY_ROUGH   ; be
+	db PHYSICAL ; SHADOW_BONE  ; bf
 	

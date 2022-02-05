@@ -21,7 +21,8 @@
 	     FISSURE,      PSYCHIC_M,    MIMIC,        DOUBLE_TEAM,  REFLECT,      \
 	     BIDE,         METRONOME,    SELFDESTRUCT, FIRE_BLAST,   SKULL_BASH,   \
 	     REST,         PSYWAVE,      ROCK_SLIDE,   SUBSTITUTE,   OUTRAGE,      \
-	     SHADOW_BALL,  CRUNCH,       IRON_HEAD,    SURF,         STRENGTH
+	     SHADOW_BALL,  CRUNCH,       HYPER_VOICE,  IRON_HEAD,    SURF,         \
+		 STRENGTH
 	; end
 
 	db 0 ; padding

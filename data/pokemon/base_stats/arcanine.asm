@@ -1,6 +1,6 @@
 	db DEX_ARCANINE ; pokedex id
 
-	db  90, 120,  80, 105,  85 ; 565
+	db  90, 120,  80, 115,  80 ; 565
 	;   hp  atk  def  spd  spc
 
 	db FIRE, DARK ; type

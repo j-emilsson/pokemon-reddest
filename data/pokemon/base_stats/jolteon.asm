@@ -1,6 +1,6 @@
 	db DEX_JOLTEON ; pokedex id
 
-	db  75,  55,  60, 130, 110 ; 540
+	db  75,  55,  70, 130, 115 ; 560
 	;   hp  atk  def  spd  spc
 
 	db ELECTRIC, ELECTRIC ; type
@@ -18,7 +18,7 @@
 	     PAY_DAY,      RAGE,         THUNDERBOLT,  THUNDER,      DIG,          \
 	     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         SWIFT,        \
 	     SKULL_BASH,   REST,         THUNDER_WAVE, SUBSTITUTE,   SHADOW_BALL,  \
-		 STRENGTH,     FLASH
+		 HYPER_VOICE,  STRENGTH,     FLASH
 	; end
 
 	db 0 ; padding
