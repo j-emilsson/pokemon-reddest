@@ -91,6 +91,8 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
         - Fighting/Flying
     -   Gastly/Haunter/Gengar
         - Ghost
+    -   Geodude/Graveler/Golem
+        - Rock/Fighting
     -	Gyarados
         - Water/Dragon
     -   Horsea/Seadra

@@ -1,9 +1,9 @@
 	db DEX_GEODUDE ; pokedex id
 
-	db  40,  80, 100,  20,  30
+	db  65,  95, 100,  25,  40 ; 365
 	;   hp  atk  def  spd  spc
 
-	db ROCK, GROUND ; type
+	db ROCK, FIGHTING ; type
 	db 255 ; catch rate
 	db 86 ; base exp
 

@@ -1313,6 +1313,59 @@ TentacruelEvosMoves:
 	db 52, SLUDGE_BOMB
 	db 0
 
+GeodudeEvosMoves:
+; Evolutions
+	db EV_LEVEL, 25, GRAVELER
+	db 0
+; Learnset
+	db 8, DEFENSE_CURL
+	db 12, ROCK_THROW
+	db 17, KARATE_CHOP
+	db 22, SELFDESTRUCT
+	db 26, IRON_HEAD
+	db 31, COUNTER
+	db 37, EARTHQUAKE
+	db 41, ROCK_SLIDE
+	db 44, DRAIN_PUNCH
+	db 47, DOUBLE_EDGE
+	db 50, EXPLOSION
+	db 0
+
+GravelerEvosMoves:
+; Evolutions
+	db EV_LEVEL, 40, GOLEM
+	db 0
+; Learnset
+	db 8, DEFENSE_CURL
+	db 12, ROCK_THROW
+	db 17, KARATE_CHOP
+	db 22, SELFDESTRUCT
+	db 28, IRON_HEAD
+	db 34, COUNTER
+	db 39, EARTHQUAKE
+	db 43, ROCK_SLIDE
+	db 46, DRAIN_PUNCH
+	db 49, DOUBLE_EDGE
+	db 52, EXPLOSION
+	db 0
+
+GolemEvosMoves:
+; Evolutions
+	db 0
+; Learnset
+	db 8, DEFENSE_CURL
+	db 12, ROCK_THROW
+	db 17, KARATE_CHOP
+	db 22, SELFDESTRUCT
+	db 28, IRON_HEAD
+	db 34, COUNTER
+	db 39, EARTHQUAKE
+	db 45, ROCK_SLIDE
+	db 48, DRAIN_PUNCH
+	db 51, DOUBLE_EDGE
+	db 54, EXPLOSION
+	db 0
+
 PonytaEvosMoves:
 ; Evolutions
 	db EV_LEVEL, 40, RAPIDASH
@@ -1384,6 +1437,42 @@ SlowbroEvosMoves:
 	db 48, AMNESIA
 	db 51, FLAMETHROWER
 	db 54, PSYCHIC_M
+	db 0
+
+MagnemiteEvosMoves:
+; Evolutions
+	db EV_LEVEL, 30, MAGNETON
+	db 0
+; Learnset
+	db 11, THUNDERSHOCK
+	db 14, SUPERSONIC
+	db 18, SONICBOOM
+	db 22, THUNDER_WAVE
+	db 26, SCREECH
+	db 32, SWIFT
+	db 36, FLASH_CANNON
+	db 40, THUNDERBOLT
+	db 43, BARRIER
+	db 47, LIGHT_SCREEN
+	db 51, THUNDER
+	db 0
+
+MagnetonEvosMoves:
+; Evolutions
+	db 0
+; Learnset
+	db 11, THUNDERSHOCK
+	db 14, SUPERSONIC
+	db 18, SONICBOOM
+	db 22, THUNDER_WAVE
+	db 26, SCREECH
+	db 30, TRI_ATTACK
+	db 35, SWIFT
+	db 39, FLASH_CANNON
+	db 44, THUNDERBOLT
+	db 47, BARRIER
+	db 50, LIGHT_SCREEN
+	db 54, THUNDER
 	db 0
 
 FarfetchdEvosMoves:
@@ -2343,19 +2432,6 @@ MissingNo20EvosMoves:
 ; Learnset
 	db 0
 
-GravelerEvosMoves:
-; Evolutions
-	db EV_LEVEL, 40, GOLEM
-	db 0
-; Learnset
-	db 11, DEFENSE_CURL
-	db 16, ROCK_THROW
-	db 21, SELFDESTRUCT
-	db 29, HARDEN
-	db 36, EARTHQUAKE
-	db 43, EXPLOSION
-	db 0
-
 MachokeEvosMoves:
 ; Evolutions
 	db EV_TRADE, 1, MACHAMP
@@ -2390,18 +2466,6 @@ HitmonchanEvosMoves:
 	db 53, COUNTER
 	db 0
 
-GolemEvosMoves:
-; Evolutions
-	db 0
-; Learnset
-	db 11, DEFENSE_CURL
-	db 16, ROCK_THROW
-	db 21, SELFDESTRUCT
-	db 29, HARDEN
-	db 36, EARTHQUAKE
-	db 43, EXPLOSION
-	db 0
-
 MissingNo32EvosMoves:
 ; Evolutions
 	db 0
@@ -2412,22 +2476,6 @@ MissingNo34EvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
-	db 0
-
-MagnetonEvosMoves:
-; Evolutions
-	db 0
-; Learnset
-	db 21, SONICBOOM
-	db 25, THUNDERSHOCK
-	db 29, SUPERSONIC
-	db 30, TRI_ATTACK
-	db 38, THUNDER_WAVE
-	db 42, THUNDERBOLT
-	db 46, SWIFT
-	db 52, LIGHT_SCREEN
-	db 54, SCREECH
-	db 56, THUNDER
 	db 0
 
 MissingNo38EvosMoves:
@@ -2756,37 +2804,10 @@ MissingNoA2EvosMoves:
 ; Learnset
 	db 0
 
-GeodudeEvosMoves:
-; Evolutions
-	db EV_LEVEL, 25, GRAVELER
-	db 0
-; Learnset
-	db 11, DEFENSE_CURL
-	db 16, ROCK_THROW
-	db 21, SELFDESTRUCT
-	db 26, HARDEN
-	db 31, EARTHQUAKE
-	db 36, EXPLOSION
-	db 0
-
 MissingNoACEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
-	db 0
-
-MagnemiteEvosMoves:
-; Evolutions
-	db EV_LEVEL, 30, MAGNETON
-	db 0
-; Learnset
-	db 21, SONICBOOM
-	db 25, THUNDERSHOCK
-	db 29, SUPERSONIC
-	db 35, THUNDER_WAVE
-	db 41, SWIFT
-	db 44, LIGHT_SCREEN
-	db 47, SCREECH
 	db 0
 
 MissingNoAEEvosMoves:

@@ -1,9 +1,9 @@
 	db DEX_GRAVELER ; pokedex id
 
-	db  55,  95, 115,  35,  45
+	db  80, 110, 115,  65,  55 ; 480
 	;   hp  atk  def  spd  spc
 
-	db ROCK, GROUND ; type
+	db ROCK, FIGHTING ; type
 	db 120 ; catch rate
 	db 134 ; base exp
 

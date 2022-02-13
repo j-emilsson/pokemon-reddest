@@ -1,6 +1,6 @@
 	db DEX_MAGNEMITE ; pokedex id
 
-	db  25,  35,  70,  45,  95
+	db  25,  35,  70,  45,  95 ; 365
 	;   hp  atk  def  spd  spc
 
 	db ELECTRIC, STEEL ; type
@@ -17,7 +17,7 @@
 	tmhm TOXIC,        TAKE_DOWN,    DOUBLE_EDGE,  RAGE,         THUNDERBOLT,  \
 	     THUNDER,      TELEPORT,     MIMIC,        DOUBLE_TEAM,  REFLECT,      \
 	     BIDE,         SWIFT,        REST,         THUNDER_WAVE, SUBSTITUTE,   \
-	     FLASH
+	     IRON_HEAD,    FLASH_CANNON, FLASH
 	; end
 
 	db 0 ; padding
