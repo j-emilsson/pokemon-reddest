@@ -16,10 +16,10 @@
 	; tm/hm learnset
 	tmhm RAZOR_WIND,   SWORDS_DANCE, MEGA_KICK,    TOXIC,        BODY_SLAM,    \
 	     TAKE_DOWN,    DOUBLE_EDGE,  BUBBLEBEAM,   WATER_GUN,    ICE_BEAM,     \
-	     BLIZZARD,     HYPER_BEAM,   SUBMISSION,   SEISMIC_TOSS, RAGE,         \
+	     BLIZZARD,     HYPER_BEAM,   SUBMISSION,   SEISMIC_TOSS, \
 	     MEGA_DRAIN,   DIG,          MIMIC,        DOUBLE_TEAM,  REFLECT,      \
-	     BIDE,         SKULL_BASH,   REST,         ROCK_SLIDE,   SUBSTITUTE,   \
-		 GIGA_DRAIN,   EARTH_POWER,  CUT,          SURF
+	     SKULL_BASH,   REST,         ROCK_SLIDE,   SUBSTITUTE,   \
+		 GIGA_DRAIN,   CUT,          SURF
 	; end
 
 	db 0 ; padding

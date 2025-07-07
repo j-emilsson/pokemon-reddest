@@ -4,10 +4,10 @@ TechnicalMachinePrices:
 	nybble 3 ; TM01
 	nybble 2 ; TM02
 	nybble 2 ; TM03
-	nybble 1 ; TM04
+	;nybble 1 ; TM04
 	nybble 3 ; TM05
 	nybble 4 ; TM06
-	nybble 2 ; TM07
+	;nybble 2 ; TM07
 	nybble 4 ; TM08
 	nybble 3 ; TM09
 	nybble 4 ; TM10
@@ -20,21 +20,21 @@ TechnicalMachinePrices:
 	nybble 3 ; TM17
 	nybble 2 ; TM18
 	nybble 3 ; TM19
-	nybble 2 ; TM20
+	;nybble 2 ; TM20
 	nybble 5 ; TM21
 	nybble 5 ; TM22
 	nybble 5 ; TM23
 	nybble 2 ; TM24
 	nybble 5 ; TM25
 	nybble 4 ; TM26
-	nybble 5 ; TM27
+	;nybble 5 ; TM27
 	nybble 2 ; TM28
 	nybble 4 ; TM29
 	nybble 1 ; TM30
 	nybble 2 ; TM31
 	nybble 1 ; TM32
 	nybble 1 ; TM33
-	nybble 2 ; TM34
+	;nybble 2 ; TM34
 	nybble 4 ; TM35
 	nybble 2 ; TM36
 	nybble 2 ; TM37
@@ -51,6 +51,8 @@ TechnicalMachinePrices:
 	nybble 4 ; TM48
 	nybble 4 ; TM49
 	nybble 2 ; TM50
+	; end of original TMs
+	; start of added tms
 	nybble 2 ; TM51
 	nybble 4 ; TM52
 	nybble 2 ; TM53
@@ -61,14 +63,28 @@ TechnicalMachinePrices:
 	nybble 2 ; TM58
 	nybble 2 ; TM59
 	nybble 2 ; TM60
-	nybble 5 ; TM61
-	nybble 2 ; TM62
-	nybble 2 ; TM63
-	nybble 4 ; TM64
-	nybble 3 ; TM65
-	nybble 4 ; TM66
-	nybble 4 ; TM67
-	nybble 2 ; TM68
-	nybble 2 ; TM69
-	nybble 2 ; TM70
+	;nybble 5 ; TM61
+	;nybble 2 ; TM62
+	;nybble 2 ; TM63
+	;nybble 4 ; TM64
+	;nybble 3 ; TM65
+	;nybble 4 ; TM66
+	;nybble 4 ; TM67
+	;nybble 2 ; TM68
+	;nybble 2 ; TM69
+	;nybble 2 ; TM70
+	;nybble 2 ; TM71
+	;nybble 2 ; TM72
+	;nybble 2 ; TM73
+	;nybble 2 ; TM74
+	;nybble 2 ; TM75
+	;nybble 2 ; TM76
+	;nybble 2 ; TM77
+	;nybble 2 ; TM78
+	;nybble 2 ; TM79
+	;nybble 2 ; TM80
+	;nybble 2 ; TM81
+	;nybble 2 ; TM82
+	;nybble 2 ; TM83
+	; end of added tms
 	end_nybble_array NUM_TMS

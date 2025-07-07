@@ -1,6 +1,6 @@
 	db DEX_LAPRAS ; pokedex id
 
-	db 130,  50,  80,  65, 125 ; 575
+	db 130,  40,  80,  75, 125 ; 575
 	;   hp  atk  def  spd  spc
 
 	db WATER, ICE ; type
@@ -14,13 +14,13 @@
 	db GROWTH_SLOW ; growth rate
 
 	; tm/hm learnset
-	tmhm TOXIC,        HORN_DRILL,   BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  \
+	tmhm TOXIC,           BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  \
 	     BUBBLEBEAM,   WATER_GUN,    ICE_BEAM,     BLIZZARD,     HYPER_BEAM,   \
-	     RAGE,         SOLARBEAM,    DRAGON_RAGE,  THUNDERBOLT,  THUNDER,      \
-	     FISSURE,      PSYCHIC_M,    MIMIC,        DOUBLE_TEAM,  REFLECT,      \
-	     BIDE,         SKULL_BASH,   DREAM_EATER,  REST,         PSYWAVE,      \
-	     SUBSTITUTE,   OUTRAGE,      DRAGON_BREATH,IRON_HEAD,    DRAGON_PULSE, \
-		 SURF,         STRENGTH
+	     SOLARBEAM,    DRAGON_RAGE,  THUNDERBOLT,  THUNDER,      \
+	           PSYCHIC_M,    MIMIC,        DOUBLE_TEAM,  REFLECT,      \
+	     SKULL_BASH,   DREAM_EATER,  REST,         PSYWAVE,      \
+	     SUBSTITUTE,   DRAGON_BREATH,SHOCK_WAVE,   DRAGON_PULSE, SURF,         \
+		 STRENGTH
 	; end
 
 	db 0 ; padding

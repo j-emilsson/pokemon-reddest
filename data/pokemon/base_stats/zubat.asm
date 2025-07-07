@@ -14,10 +14,10 @@
 	db GROWTH_MEDIUM_FAST ; growth rate
 
 	; tm/hm learnset
-	tmhm RAZOR_WIND,   WHIRLWIND,    TOXIC,        TAKE_DOWN,    DOUBLE_EDGE,  \
-	     RAGE,         MEGA_DRAIN,   MIMIC,        DOUBLE_TEAM,  BIDE,         \
+	tmhm RAZOR_WIND,   TOXIC,        TAKE_DOWN,    DOUBLE_EDGE,  \
+	              MEGA_DRAIN,   MIMIC,        DOUBLE_TEAM,           \
 	     SWIFT,        REST,         SUBSTITUTE,   SLUDGE_BOMB,  SHADOW_BALL,  \
-		 CRUNCH,       GIGA_DRAIN,   AIR_SLASH,    DARK_PULSE,   FLY
+		 GIGA_DRAIN,   DARK_PULSE,   FLY
 	; end
 
 	db 0 ; padding

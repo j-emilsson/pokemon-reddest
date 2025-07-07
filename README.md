@@ -27,9 +27,30 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
   
 - ### Updated some existing moves 
     - Trapping moves (Bind, Clamp, Fire Spin, Wrap) are now 2-5 hitting moves instead
+    - Splash is now Water type, has 40 power and increases evasion by 1 stage
     - Cut is now Steel type and has 60 power
     - Sky Attack has been changed to now attack immediately and also has a 30% chance to flinch
     - Strength is now Rock type
+    - Sonic Boom is now Electric type and has 40 power
+    - Struggle is now Typeless and can hit anything
+    - Submission now has 120 power, 100% accuracy and 15 PP
+    - Low Kick now has 60 power
+    - Rolling Kick now has 90 power
+    - Pay Day now has 100 power
+
+- ### Removed OHKO moves
+    - Guillotine
+    - Horn Drill
+    - Fissure
+
+- ### Removed/replaced some bad moves
+    - Vicegrip
+    - Whirlwind
+    - Roar
+    - Mist
+    - Rage
+    - Bide
+    - Poison Gas
 
 - ### New moves from later gens
     - Feint Attack
@@ -44,6 +65,7 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
     - Giga Drain
     - Hyper Voice
     - Leaf Blade
+    - Shock Wave
     - Iron Head
     - Flash Cannon
     - Aura Sphere
@@ -53,11 +75,17 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
     - Poison Jab
     - Power Gem
     - Bug Buzz
+    - Rock Wrecker
     - Dark Pulse
     - Dragon Pulse
     - Moonblast
     - Play Rough
     - Shadow Bone
+    - Plasma Fists
+    - Thunderous Kick (Electric)
+
+### New custom moves
+    - Super Lick
 
 - ### Different starters
     - Jolteon
@@ -67,16 +95,20 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
 - ### Adjusted base stats of most Pokémon
 
 - ### Adjusted typings of certain Pokémon
-    -	Arbok
+    -	Ekans/Arbok
         - Poison/Dark
     -   Arcanine
         - Fire/Dark
+    -   Beedrill
+        - Bug/Dark
     -   Bellsprout/Weepinbell/Victreebel
         - Grass/Dark
     -	Blastoise
         - Water/Steel
     -   Bulbasaur/Ivysaur/Venusaur
         - Grass/Ground
+    -   Butterfree
+        - Bug/Psychic
     -	Charizard
         - Fire/Dragon
     -	Clefairy/Clefable
@@ -101,6 +133,8 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
         - Normal/Fairy
     -   Kangaskhan
         - Normal/Ground
+    -   Lickitung
+        - Normal/Fighting
     -   Machop/Machoke/Machamp
         - Fighting/Ground
     -   Magmar
@@ -123,6 +157,8 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
         - Poison/Dark
     -   Onix
         - Rock/Dark
+    -   Parasect
+        - Grass/Ghost
     -   Pinsir
         - Bug/Fighting
     -   Porygon
@@ -130,13 +166,13 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
     -	Psyduck/Golduck
         - Water/Psychic
     -   Rattata/Raticate
-        - Dark/Normal
+        - Normal/Dark
+    -   Sandshrew/Sandslash
+        - Ground/Steel
     -   Spearow/Fearow
         - Flying/Dark
     -   Tauros
         - Normal/Steel
-    -   Venonat/Venomoth
-        - Bug/Psychic
     -	Weezing
         - Poison/Fairy
 

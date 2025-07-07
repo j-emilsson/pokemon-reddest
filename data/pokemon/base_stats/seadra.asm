@@ -15,10 +15,10 @@
 
 	; tm/hm learnset
 	tmhm TOXIC,        TAKE_DOWN,    DOUBLE_EDGE,  BUBBLEBEAM,   WATER_GUN,    \
-	     ICE_BEAM,     BLIZZARD,     HYPER_BEAM,   RAGE,         MIMIC,        \
-	     DOUBLE_TEAM,  BIDE,         SWIFT,        SKULL_BASH,   REST,         \
-	     SUBSTITUTE,   SLUDGE_BOMB,  OUTRAGE,      DRAGON_BREATH,IRON_HEAD,    \
-		 FLASH_CANNON, DRAGON_PULSE, SURF
+	     ICE_BEAM,     BLIZZARD,     HYPER_BEAM,   MIMIC,        \
+	     DOUBLE_TEAM,  SWIFT,        SKULL_BASH,   REST,         \
+	     SUBSTITUTE,   SLUDGE_BOMB,  DRAGON_BREATH,FLASH_CANNON, DRAGON_PULSE, \
+		 SURF
 	; end
 
 	db 0 ; padding

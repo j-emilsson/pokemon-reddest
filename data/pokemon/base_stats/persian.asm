@@ -1,6 +1,6 @@
 	db DEX_PERSIAN ; pokedex id
 
-	db  75, 105,  70, 125,  75 ; 525
+	db  75, 110,  70, 130,  75 ; 535
 	;   hp  atk  def  spd  spc
 
 	db NORMAL, DARK ; type
@@ -15,11 +15,10 @@
 
 	; tm/hm learnset
 	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  BUBBLEBEAM,   \
-	     WATER_GUN,    HYPER_BEAM,   PAY_DAY,      RAGE,         THUNDERBOLT,  \
-	     THUNDER,      DIG,          MIMIC,        DOUBLE_TEAM,  BIDE,         \
+	     WATER_GUN,    HYPER_BEAM,   PAY_DAY,      THUNDERBOLT,  \
+	     THUNDER,      DIG,          MIMIC,        DOUBLE_TEAM,  \
 	     SWIFT,        SKULL_BASH,   DREAM_EATER,  REST,         SUBSTITUTE,   \
-		 SHADOW_BALL,  CRUNCH,       HYPER_VOICE,  IRON_HEAD,    POWER_GEM,    \
-		 DARK_PULSE,   PLAY_ROUGH,   CUT,          FLASH
+		 SHADOW_BALL,  DARK_PULSE,   CUT,          FLASH
 	; end
 
 	db 0 ; padding

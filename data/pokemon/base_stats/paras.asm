@@ -1,6 +1,6 @@
 	db DEX_PARAS ; pokedex id
 
-	db  70,  80,  65,  35,  50 ; 350
+	db  80,  85,  65,  35,  50 ; 365
 	;   hp  atk  def  spd  spc
 
 	db BUG, GRASS ; type
@@ -15,10 +15,10 @@
 
 	; tm/hm learnset
 	tmhm SWORDS_DANCE, TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  \
-	     COUNTER,      RAGE,         MEGA_DRAIN,   SOLARBEAM,    DIG,          \
-	     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         SKULL_BASH,   \
-	     REST,         SUBSTITUTE,   SLUDGE_BOMB,  GIGA_DRAIN,   LEAF_BLADE,   \
-		 CUT,          FLASH
+	     COUNTER,      MEGA_DRAIN,   SOLARBEAM,    DIG,          \
+	     MIMIC,        DOUBLE_TEAM,  REFLECT,      SKULL_BASH,   \
+	     REST,         SUBSTITUTE,   SLUDGE_BOMB,  GIGA_DRAIN,   CUT,          \
+		 FLASH
 	; end
 
 	db 0 ; padding

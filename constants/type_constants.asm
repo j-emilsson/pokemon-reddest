@@ -51,6 +51,9 @@ TYPES EQU const_value
 	const DARK     ; $1B
 	const FAIRY    ; $1C
 	
+	; ---- Gen‑1 style typeless (“???/—”) used only by Struggle
+	const TYPELESS   ; $1D
+
 NUM_TYPES EQU const_value
 
 ; These are for the Physical Special split

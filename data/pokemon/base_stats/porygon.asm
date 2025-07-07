@@ -15,9 +15,9 @@
 
 	; tm/hm learnset
 	tmhm TOXIC,        TAKE_DOWN,    DOUBLE_EDGE,  ICE_BEAM,     BLIZZARD,     \
-	     HYPER_BEAM,   RAGE,         SOLARBEAM,    THUNDERBOLT,  THUNDER,      \
+	     HYPER_BEAM,   SOLARBEAM,    THUNDERBOLT,  THUNDER,      \
 	     PSYCHIC_M,    TELEPORT,     MIMIC,        DOUBLE_TEAM,  REFLECT,      \
-	     BIDE,         SWIFT,        SKULL_BASH,   DREAM_EATER,  REST,         \
+	     SWIFT,        SKULL_BASH,   DREAM_EATER,  REST,         \
 	     THUNDER_WAVE, PSYWAVE,      TRI_ATTACK,   SUBSTITUTE,   SHADOW_BALL,  \
 		 DARK_PULSE,   FLASH
 	; end

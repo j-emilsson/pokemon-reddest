@@ -15,10 +15,9 @@
 
 	; tm/hm learnset
 	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  HYPER_BEAM,   \
-	     RAGE,         EARTHQUAKE,   FISSURE,      DIG,          MIMIC,        \
-	     DOUBLE_TEAM,  BIDE,         REST,         ROCK_SLIDE,   TRI_ATTACK,   \
-		 SUBSTITUTE,   SLUDGE_BOMB,  IRON_HEAD,    FLASH_CANNON, EARTH_POWER,  \
-		 CUT
+	     EARTHQUAKE,         DIG,          MIMIC,        \
+	     DOUBLE_TEAM,  REST,         ROCK_SLIDE,   TRI_ATTACK,   \
+		 SUBSTITUTE,   SLUDGE_BOMB,  FLASH_CANNON, CUT
 	; end
 
 	db 0 ; padding

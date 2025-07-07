@@ -2048,7 +2048,8 @@ wSeafoamIslandsB3FCurScript:: db
 wRoute23CurScript:: db
 wSeafoamIslandsB4FCurScript:: db
 wRoute18Gate1FCurScript:: db
-;wPalletTownBattleCurScript:: db
+wPalletTownBattleCurScript:: db
+wRoute1CurScript:: db
 ;	ds 1
 wRoute2CurScript:: db
 	ds 1

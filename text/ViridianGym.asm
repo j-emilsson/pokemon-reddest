@@ -63,16 +63,15 @@ _GiovanniEarthBadgeInfoText::
 
 _ReceivedTM27Text::
 	text "<PLAYER> received"
-	line "TM27!@"
+	line "TM26!@"
 	text_end
 
 _TM27ExplanationText::
 	text_start
 
-	para "TM27 is FISSURE!"
-	line "It will take out"
-	cont "#MON with just"
-	cont "one hit!"
+	para "TM26 is EARTHQUAKE!"
+	line "It is a powerful"
+	cont "GROUND-type move!"
 
 	para "I made it when I"
 	line "ran the GYM here,"

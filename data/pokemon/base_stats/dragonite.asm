@@ -14,14 +14,13 @@
 	db GROWTH_SLOW ; growth rate
 
 	; tm/hm learnset
-	tmhm RAZOR_WIND,   TOXIC,        HORN_DRILL,   BODY_SLAM,    TAKE_DOWN,    \
+	tmhm RAZOR_WIND,   TOXIC,           BODY_SLAM,    TAKE_DOWN,    \
 	     DOUBLE_EDGE,  BUBBLEBEAM,   WATER_GUN,    ICE_BEAM,     BLIZZARD,     \
-	     HYPER_BEAM,   RAGE,         DRAGON_RAGE,  THUNDERBOLT,  THUNDER,      \
-	     EARTHQUAKE,   MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         \
+	     HYPER_BEAM,   DRAGON_RAGE,  THUNDERBOLT,  THUNDER,      \
+	     EARTHQUAKE,   MIMIC,        DOUBLE_TEAM,  REFLECT,      \
 	     FIRE_BLAST,   SWIFT,        SKULL_BASH,   SKY_ATTACK,   REST,         \
-	     THUNDER_WAVE, ROCK_SLIDE,   SUBSTITUTE,   OUTRAGE,      DRAGON_BREATH,\
-		 IRON_HEAD,    AIR_SLASH,    DRAGON_PULSE, CUT,          FLY,          \
-		 SURF,         STRENGTH
+	     THUNDER_WAVE, ROCK_SLIDE,   SUBSTITUTE,   DRAGON_BREATH,DRAGON_PULSE, \
+		 CUT,          FLY,          SURF,         STRENGTH
 	; end
 
 	db 0 ; padding

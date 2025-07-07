@@ -16,12 +16,12 @@
 	; tm/hm learnset
 	tmhm MEGA_PUNCH,   MEGA_KICK,    TOXIC,        BODY_SLAM,    TAKE_DOWN,    \
 	     DOUBLE_EDGE,  BUBBLEBEAM,   WATER_GUN,    ICE_BEAM,     BLIZZARD,     \
-	     SUBMISSION,   COUNTER,      SEISMIC_TOSS, RAGE,         SOLARBEAM,    \
+	     SUBMISSION,   COUNTER,      SEISMIC_TOSS, SOLARBEAM,    \
 	     THUNDERBOLT,  THUNDER,      DIG,          PSYCHIC_M,    TELEPORT,     \
-	     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         METRONOME,    \
+	     MIMIC,        DOUBLE_TEAM,  REFLECT,      METRONOME,    \
 	     FIRE_BLAST,   SKULL_BASH,   SOFTBOILED,   DREAM_EATER,  REST,         \
 	     THUNDER_WAVE, PSYWAVE,      TRI_ATTACK,   SUBSTITUTE,   SHADOW_BALL,  \
-		 DRAIN_PUNCH,  PLAY_ROUGH,   STRENGTH,     FLASH
+		 DRAIN_PUNCH,  STRENGTH,     FLASH
 	; end
 
 	db 0 ; padding

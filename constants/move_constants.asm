@@ -16,14 +16,14 @@
 	const ICE_PUNCH    ; 08
 	const THUNDERPUNCH ; 09
 	const SCRATCH      ; 0a
-	const VICEGRIP     ; 0b
-	const GUILLOTINE   ; 0c
+	;const VICEGRIP     ; 0b
+	;const GUILLOTINE   ; 0c
 	const RAZOR_WIND   ; 0d
 	const SWORDS_DANCE ; 0e
 	const CUT          ; 0f
 	const GUST         ; 10
 	const WING_ATTACK  ; 11
-	const WHIRLWIND    ; 12
+	;const WHIRLWIND    ; 12
 	const FLY          ; 13
 	const BIND         ; 14
 	const SLAM         ; 15
@@ -37,7 +37,7 @@
 	const HEADBUTT     ; 1d
 	const HORN_ATTACK  ; 1e
 	const FURY_ATTACK  ; 1f
-	const HORN_DRILL   ; 20
+	;const HORN_DRILL   ; 20
 	const TACKLE       ; 21
 	const BODY_SLAM    ; 22
 	const WRAP         ; 23
@@ -51,7 +51,7 @@
 	const LEER         ; 2b
 	const BITE         ; 2c
 	const GROWL        ; 2d
-	const ROAR         ; 2e
+	;const ROAR         ; 2e
 	const SING         ; 2f
 	const SUPERSONIC   ; 30
 	const SONICBOOM    ; 31
@@ -59,7 +59,7 @@
 	const ACID         ; 33
 	const EMBER        ; 34
 	const FLAMETHROWER ; 35
-	const MIST         ; 36
+	;const MIST         ; 36
 	const WATER_GUN    ; 37
 	const HYDRO_PUMP   ; 38
 	const SURF         ; 39
@@ -95,7 +95,7 @@
 	const THUNDER      ; 57
 	const ROCK_THROW   ; 58
 	const EARTHQUAKE   ; 59
-	const FISSURE      ; 5a
+	;const FISSURE      ; 5a
 	const DIG          ; 5b
 	const TOXIC        ; 5c
 	const CONFUSION    ; 5d
@@ -104,7 +104,7 @@
 	const MEDITATE     ; 60
 	const AGILITY      ; 61
 	const QUICK_ATTACK ; 62
-	const RAGE         ; 63
+	;const RAGE         ; 63
 	const TELEPORT     ; 64
 	const NIGHT_SHADE  ; 65
 	const MIMIC        ; 66
@@ -122,7 +122,7 @@
 	const HAZE         ; 72
 	const REFLECT      ; 73
 	const FOCUS_ENERGY ; 74
-	const BIDE         ; 75
+	;const BIDE         ; 75
 	const METRONOME    ; 76
 	const MIRROR_MOVE  ; 77
 	const SELFDESTRUCT ; 78
@@ -144,7 +144,7 @@
 	const HI_JUMP_KICK ; 88
 	const GLARE        ; 89
 	const DREAM_EATER  ; 8a
-	const POISON_GAS   ; 8b
+	;const POISON_GAS   ; 8b
 	const BARRAGE      ; 8c
 	const LEECH_LIFE   ; 8d
 	const LOVELY_KISS  ; 8e
@@ -182,6 +182,7 @@
 	const EXTREME_SPEED; ae
 	const GIGA_DRAIN   ; af
 	const HYPER_VOICE  ; b0
+	const SHOCK_WAVE   ; b1
 	const LEAF_BLADE   ; b1
 	const IRON_HEAD    ; b2
 	const FLASH_CANNON ; b3
@@ -192,11 +193,17 @@
 	const POISON_JAB   ; b8
 	const POWER_GEM    ; b9
 	const BUG_BUZZ     ; ba
+	const ROCK_WRECKER ; bb
 	const DARK_PULSE   ; bb
 	const DRAGON_PULSE ; bc
+	const FAIRY_WIND   ; bd
 	const MOONBLAST    ; bd
 	const PLAY_ROUGH   ; be
-	const SHADOW_BONE  ; bf ; end of added moves
+	const SHADOW_BONE  ; bf
+	const PLASMA_FISTS ; c0
+	const THUNDEROUS_KICK ; c2
+	const SUPER_LICK   ; c1
+	; end of added moves
 NUM_ATTACKS EQU const_value - 1
 
 	; Moves do double duty as animation identifiers.

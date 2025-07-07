@@ -15,10 +15,9 @@
 
 	; tm/hm learnset
 	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  HYPER_BEAM,   \
-	     RAGE,         MEGA_DRAIN,   EARTHQUAKE,   FISSURE,      DIG,          \
-	     MIMIC,        DOUBLE_TEAM,  BIDE,         SKULL_BASH,   REST,         \
-	     ROCK_SLIDE,   SUBSTITUTE,   SLUDGE_BOMB,  CRUNCH,       GIGA_DRAIN,   \
-		 POISON_JAB,   DARK_PULSE,   STRENGTH
+	     MEGA_DRAIN,   EARTHQUAKE,         DIG,          MIMIC,        \
+		 DOUBLE_TEAM,  SKULL_BASH,   REST,         ROCK_SLIDE,   SUBSTITUTE,   \
+		 SLUDGE_BOMB,  GIGA_DRAIN,   POISON_JAB,   DARK_PULSE,   STRENGTH
 	; end
 
 	db 0 ; padding

@@ -1,12 +1,23 @@
 PalletTown_Script:
+	;call PalletTownScript_515e1
+	;CheckEvent EVENT_OAK_CUTSCENE_DONE
+    ;ret z ; If Oak hasn't appeared, skip the rest
+	
+	 
+	; Force trainer check every step
+    ;call CheckFightingMapTrainers
 	call PalletTownScript_515e1
-	; call EnableAutoTextBoxDrawing
-    ; ld hl, PalletTownTrainerHeaders
-    ; ld de, PalletTown_BattleScriptPointers
-    ; ld a, [wPalletTownBattleCurScript]
-    ; call ExecuteCurMapScriptInTable
-    ; ld [wPalletTownBattleCurScript], a
-    ; ret
+
+/* 	CheckEvent EVENT_OAK_CUTSCENE_DONE
+    ret z ; If Oak hasn't appeared, skip the rest
+
+	call EnableAutoTextBoxDrawing
+    ld hl, PalletTownTrainerHeaders
+    ld de, PalletTown_BattleScriptPointers
+    ld a, [wPalletTownBattleCurScript]
+    call ExecuteCurMapScriptInTable
+    ld [wPalletTownBattleCurScript], a */
+    ;ret 
 
 PalletTownScript_515e1:
 	CheckEvent EVENT_GOT_POKEBALLS_FROM_OAK
@@ -28,10 +39,10 @@ PalletTown_ScriptPointers:
 	dw PalletTownScript5
 	dw PalletTownScript6	
 	
-; PalletTown_BattleScriptPointers:
-	; dw CheckFightingMapTrainers
-	; dw DisplayEnemyTrainerTextAndStartBattle
-	; dw EndTrainerBattle
+/*  PalletTown_BattleScriptPointers:
+	dw CheckFightingMapTrainers
+	dw DisplayEnemyTrainerTextAndStartBattle
+	dw EndTrainerBattle */
 
 PalletTownScript0:
 	CheckEvent EVENT_FOLLOWED_OAK_INTO_LAB
@@ -52,6 +63,13 @@ PalletTownScript0:
 	ld a, $FC
 	ld [wJoyIgnore], a
 	SetEvent EVENT_OAK_APPEARED_IN_PALLET
+/* 
+	call EnableAutoTextBoxDrawing
+    ld hl, PalletTownTrainerHeaders
+    ld de, PalletTown_BattleScriptPointers
+    ld a, [wPalletTownBattleCurScript]
+    call ExecuteCurMapScriptInTable
+    ld [wPalletTownBattleCurScript], a */
 
 	; trigger the next script
 	ld a, 1
@@ -143,6 +161,11 @@ PalletTownScript4:
 	; trigger the next script
 	ld a, 5
 	ld [wPalletTownCurScript], a
+/* 	SetEvent EVENT_OAK_CUTSCENE_DONE
+	ld a, 0
+	ld [wPalletTownCurScript], a
+	ld a, 0
+	ld [wPalletTownBattleCurScript], a */
 	ret
 
 PalletTownScript5:
@@ -230,26 +253,26 @@ PalletTownText7: ; sign by Blue's house
 	text_far _PalletTownText7
 	text_end
 	
-; PalletTownTrainerHeaders:
-	; def_trainers
-; PalletTownTrainerHeader0:
-    ; trainer EVENT_BEAT_PALLET_TOWN_TRAINER_0, 3, PalletTownBattleText1, PalletTownEndBattleText1, PalletTownAfterBattleText1
-	; db -1 ; end
+/* PalletTownTrainerHeaders:
+	def_trainers 6
+PalletTownTrainerHeader0:
+    trainer EVENT_BEAT_PALLET_TOWN_TRAINER_0, 6, PalletTownBattleText1, PalletTownEndBattleText1, PalletTownAfterBattleText1
+	db -1 ; end
 	
-; PalletTownText8:
-    ; text_asm
-    ; ld hl, PalletTownTrainerHeader0
-    ; call TalkToTrainer
-    ; jp TextScriptEnd
+PalletTownText8:
+    text_asm
+    ld hl, PalletTownTrainerHeader0
+    call TalkToTrainer
+    jp TextScriptEnd
 
-; PalletTownBattleText1:
-    ; text_far _PalletTownBattleText1
-    ; text_end
+PalletTownBattleText1:
+    text_far _PalletTownBattleText1
+    text_end
 
-; PalletTownEndBattleText1:
-    ; text_far _PalletTownEndBattleText1
-    ; text_end
+PalletTownEndBattleText1:
+    text_far _PalletTownEndBattleText1
+    text_end
 
-; PalletTownAfterBattleText1:
-    ; text_far _PalletTownAfterBattleText1
-    ; text_end
+PalletTownAfterBattleText1:
+    text_far _PalletTownAfterBattleText1
+    text_end */

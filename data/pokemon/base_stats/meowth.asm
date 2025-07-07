@@ -15,11 +15,10 @@
 
 	; tm/hm learnset
 	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  BUBBLEBEAM,   \
-	     WATER_GUN,    PAY_DAY,      RAGE,         THUNDERBOLT,  THUNDER,      \
-	     DIG,          MIMIC,        DOUBLE_TEAM,  BIDE,         SWIFT,        \
+	     WATER_GUN,    PAY_DAY,      THUNDERBOLT,  THUNDER,      \
+	     DIG,          MIMIC,        DOUBLE_TEAM,  SWIFT,        \
 	     SKULL_BASH,   DREAM_EATER,  REST,         SUBSTITUTE,   SHADOW_BALL,  \
-		 CRUNCH,       HYPER_VOICE,  IRON_HEAD,    DARK_PULSE,   PLAY_ROUGH,   \
-		 CUT,          FLASH
+		 DARK_PULSE,   CUT,          FLASH
 	; end
 
 	db 0 ; padding

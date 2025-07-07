@@ -15,10 +15,10 @@
 
 	; tm/hm learnset
 	tmhm SWORDS_DANCE, TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  \
-	     RAGE,         MEGA_DRAIN,   SOLARBEAM,    EARTHQUAKE,   FISSURE,      \
-		 DIG,          MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         \
-		 REST,         SUBSTITUTE,   SLUDGE_BOMB,  OUTRAGE,      GIGA_DRAIN,   \
-		 EARTH_POWER,  CUT,          STRENGTH,     FLASH
+	     MEGA_DRAIN,   SOLARBEAM,    EARTHQUAKE,         \
+		 DIG,          MIMIC,        DOUBLE_TEAM,  REFLECT,      \
+		 REST,         SUBSTITUTE,   SLUDGE_BOMB,  GIGA_DRAIN,   CUT,          \
+		 STRENGTH,     FLASH
 	; end
 
 	db 0 ; padding

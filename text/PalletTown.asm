@@ -55,19 +55,20 @@ _PalletTownText7::
 	text "<RIVAL>'s house "
 	done
 	
-; _PalletTownBattleText1::
-    ; text "Hey! You have"
-    ; line "#MON! Come on!"
-    ; cont "Let's battle'em!"
-    ; done
+/* _PalletTownBattleText1::
+    text "Hey! You have"
+    line "#MON! Come on!"
+    cont "Let's battle'em!"
+    done
 
-; _PalletTownEndBattleText1::
-    ; text "No!"
-    ; line "I lost!"
-    ; cont "Nooo!"
-    ; done
+_PalletTownEndBattleText1::
+    text "No!"
+    line "I lost!"
+    cont "Nooo!"
+    done
 
-; _PalletTownAfterBattleText1::
-    ; text "Ssh! Go away! You"
-    ; line "already beat me!"
-    ; done
+_PalletTownAfterBattleText1::
+    text "Ssh! Go away! You"
+    line "already beat me!"
+    done
+  */

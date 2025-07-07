@@ -40,3 +40,21 @@ _Route2AfterBattleText1::
 	line "just lucky!"
     cont "I will be back..."
     done
+
+ _Route2BattleText2::
+    text "Hey! You have"
+    line "#MON! Come on!"
+    cont "Let's battle'em!"
+    done
+
+_Route2EndBattleText2::
+    text "No!"
+    line "I lost!"
+    cont "Nooo!"
+    done
+
+_Route2AfterBattleText2::
+    text "Ssh! Go away! You"
+    line "already beat me!"
+    done
+ 

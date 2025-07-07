@@ -3,7 +3,7 @@
 	db  70, 115,  60, 115,  80 ; 520
 	;   hp  atk  def  spd  spc
 
-	db BUG, POISON ; type
+	db BUG, DARK ; type
 	db 45 ; catch rate
 	db 159 ; base exp
 
@@ -15,10 +15,10 @@
 
 	; tm/hm learnset
 	tmhm SWORDS_DANCE, TOXIC,        TAKE_DOWN,    DOUBLE_EDGE,  HYPER_BEAM,   \
-	     RAGE,         MEGA_DRAIN,   SOLARBEAM,    MIMIC,        DOUBLE_TEAM,  \
-	     REFLECT,      BIDE,         SWIFT,        SKULL_BASH,   SKY_ATTACK,   \
-		 REST,         SUBSTITUTE,   SLUDGE_BOMB,  OUTRAGE,      GIGA_DRAIN,   \
-		 AIR_SLASH,    POISON_JAB,   CUT,          FLY
+	     MEGA_DRAIN,   SOLARBEAM,    MIMIC,        DOUBLE_TEAM,  REFLECT,      \
+		 SWIFT,        SKULL_BASH,   SKY_ATTACK,   REST,         SUBSTITUTE,   \
+		 SLUDGE_BOMB,  GIGA_DRAIN,   POISON_JAB,   DARK_PULSE,   CUT,          \
+		 FLY
 	; end
 
 	db 0 ; padding

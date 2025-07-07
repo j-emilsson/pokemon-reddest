@@ -1,6 +1,6 @@
 	db DEX_ONIX ; pokedex id
 
-	db  85, 135, 115, 115,  75 ; 600
+	db  85, 135, 125, 115,  85 ; 630
 	;   hp  atk  def  spd  spc
 
 	db ROCK, DARK ; type
@@ -10,15 +10,15 @@
 	INCBIN "gfx/pokemon/front/onix.pic", 0, 1 ; sprite dimensions
 	dw OnixPicFront, OnixPicBack
 
-	db TACKLE, SCREECH, NO_MOVE, NO_MOVE ; level 1 learnset
+	db ROCK_THROW, SCREECH, NO_MOVE, NO_MOVE ; level 1 learnset
 	db GROWTH_SLOW ; growth rate
 
 	; tm/hm learnset
-	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  RAGE,         \
-	     EARTHQUAKE,   FISSURE,      DIG,          MIMIC,        DOUBLE_TEAM,  \
-	     BIDE,         SELFDESTRUCT, SKULL_BASH,   REST,         EXPLOSION,    \
-	     ROCK_SLIDE,   SUBSTITUTE,   DRAGON_BREATH,IRON_HEAD,    FLASH_CANNON, \
-		 EARTH_POWER,  DARK_PULSE,   DRAGON_PULSE, STRENGTH
+	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  \
+	     EARTHQUAKE,         DIG,          MIMIC,        DOUBLE_TEAM,  \
+	     SELFDESTRUCT, SKULL_BASH,   REST,         EXPLOSION,    \
+	     ROCK_SLIDE,   SUBSTITUTE,   DRAGON_BREATH,FLASH_CANNON, DARK_PULSE,   \
+		 DRAGON_PULSE, STRENGTH
 	; end
 
 	db 0 ; padding

@@ -2,12 +2,16 @@
 
 ; Pallet Town events
 	const_def
+	const_skip 1
 	const EVENT_FOLLOWED_OAK_INTO_LAB
 	const_skip 2
 	const EVENT_HALL_OF_FAME_DEX_RATING
-	const_skip 2
+	const_skip 1
+	;const EVENT_BEAT_PALLET_TOWN_TRAINER_0
+	const_skip 1
 	const EVENT_PALLET_AFTER_GETTING_POKEBALLS
-	const_skip 17
+	;const EVENT_OAK_CUTSCENE_DONE 
+	const_skip 16
 	const EVENT_GOT_TOWN_MAP
 	const EVENT_ENTERED_BLUES_HOUSE
 	const EVENT_DAISY_WALKING
@@ -22,7 +26,7 @@
 	const EVENT_OAK_APPEARED_IN_PALLET
 
 ; Viridian City events
-	const_next $28
+	const_next $2A
 	const EVENT_VIRIDIAN_GYM_OPEN
 	const EVENT_GOT_TM42
 	const_skip 14
@@ -31,6 +35,7 @@
 	const_skip 22
 	const EVENT_GOT_TM27
 	const EVENT_BEAT_VIRIDIAN_GYM_GIOVANNI
+	const_skip 6
 	const EVENT_BEAT_VIRIDIAN_GYM_TRAINER_0
 	const EVENT_BEAT_VIRIDIAN_GYM_TRAINER_1
 	const EVENT_BEAT_VIRIDIAN_GYM_TRAINER_2
@@ -221,11 +226,13 @@
 ; Route 1 events
 	const_next $3C0
 	const EVENT_GOT_POTION_SAMPLE
+	const EVENT_BEAT_ROUTE_1_TRAINER_0
 
 ; Route 2 events
 	const_next $3D0
 	const_skip
 	const EVENT_BEAT_ROUTE_2_TRAINER_0
+	const EVENT_BEAT_ROUTE_2_TRAINER_1
 	const_next $3D8
 	const EVENT_GOT_HM05
 
@@ -773,10 +780,10 @@
 	const_skip 8
 	const EVENT_BEAT_ARTICUNO
 	
-; Custom events
-	;const_next $9DB
-	;const_skip
-	;const EVENT_BEAT_PALLET_TOWN_TRAINER_0
+/* ; Custom events
+	const_next $9DB
+	const_def 1
+	 */
 
 ; End of events
 	const_next $A00

@@ -14,12 +14,11 @@
 	db GROWTH_SLOW ; growth rate
 
 	; tm/hm learnset
-	tmhm SWORDS_DANCE, TOXIC,        HORN_DRILL,   BODY_SLAM,    TAKE_DOWN,    \
-	     DOUBLE_EDGE,  RAGE,         THUNDERBOLT,  THUNDER,      EARTHQUAKE,   \
-	     FISSURE,      DIG,          MIMIC,        DOUBLE_TEAM,  BIDE,         \
+	tmhm SWORDS_DANCE, TOXIC,           BODY_SLAM,    TAKE_DOWN,    \
+	     DOUBLE_EDGE,  THUNDERBOLT,  THUNDER,      EARTHQUAKE,   \
+	           DIG,          MIMIC,        DOUBLE_TEAM,  \
 	     FIRE_BLAST,   SKULL_BASH,   REST,         ROCK_SLIDE,   SUBSTITUTE,   \
-		 CRUNCH,       IRON_HEAD,    FLASH_CANNON, EARTH_POWER,  POISON_JAB,   \
-		 DRAGON_PULSE, STRENGTH
+		 FLASH_CANNON, POISON_JAB,   DRAGON_PULSE, STRENGTH
 	; end
 
 	db 0 ; padding

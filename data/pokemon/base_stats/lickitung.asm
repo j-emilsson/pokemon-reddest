@@ -1,9 +1,9 @@
 	db DEX_LICKITUNG ; pokedex id
 
-	db  130, 95,  95,  70,  90 ; 570
+	db  155, 110, 100, 50, 80 ; 575
 	;   hp  atk  def  spd  spc
 
-	db NORMAL, NORMAL ; type
+	db NORMAL, FIGHTING ; type
 	db 45 ; catch rate
 	db 127 ; base exp
 
@@ -17,10 +17,11 @@
 	tmhm MEGA_PUNCH,   SWORDS_DANCE, MEGA_KICK,    TOXIC,        BODY_SLAM,    \
 	     TAKE_DOWN,    DOUBLE_EDGE,  BUBBLEBEAM,   WATER_GUN,    ICE_BEAM,     \
 	     BLIZZARD,     HYPER_BEAM,   SUBMISSION,   COUNTER,      SEISMIC_TOSS, \
-	     RAGE,         SOLARBEAM,    THUNDERBOLT,  THUNDER,      EARTHQUAKE,   \
-	     FISSURE,      MIMIC,        DOUBLE_TEAM,  BIDE,         SELFDESTRUCT, \
+	     SOLARBEAM,    THUNDERBOLT,  THUNDER,      EARTHQUAKE,   \
+	           MIMIC,        DOUBLE_TEAM,  SELFDESTRUCT, \
 		 FIRE_BLAST,   SKULL_BASH,   DREAM_EATER,  REST,         ROCK_SLIDE,   \
-		 SUBSTITUTE,   SHADOW_BALL,  CUT,          SURF,         STRENGTH
+		 SUBSTITUTE,   SHADOW_BALL,  SHOCK_WAVE,   DRAIN_PUNCH,  POISON_JAB,   \
+		 CUT,          SURF,         STRENGTH
 	; end
 
 	db 0 ; padding

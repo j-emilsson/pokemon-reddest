@@ -46,7 +46,7 @@ MIN_NEUTRAL_DAMAGE EQU 2
 MAX_NEUTRAL_DAMAGE EQU 999
 
 ; fixed damage constants
-SONICBOOM_DAMAGE   EQU 20
+SONICBOOM_DAMAGE   EQU 40
 DRAGON_RAGE_DAMAGE EQU 40
 
 ; type effectiveness factors, scaled by 10

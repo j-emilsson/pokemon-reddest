@@ -13,9 +13,10 @@ PalletTown_Object:
 	bg_event 11,  5, 7 ; PalletTownText7
 
 	def_object_events
+	;object_event 11, 0, SPRITE_YOUNGSTER, STAY, LEFT, 8, OPP_YOUNGSTER, 14
 	object_event  8,  5, SPRITE_OAK, STAY, NONE, 1 ; person
 	object_event  3,  8, SPRITE_GIRL, WALK, ANY_DIR, 2 ; person
 	object_event 11, 14, SPRITE_FISHER, WALK, ANY_DIR, 3 ; person
-	;object_event 11, 0, SPRITE_YOUNGSTER, STAY, LEFT, 8, OPP_YOUNGSTER, 14 ; person
+	;object_event 11, 6, SPRITE_YOUNGSTER, STAY, LEFT, 8, OPP_YOUNGSTER, 14; trainer - 8 = event id (match second argument in script file for trainer), 14 = trainer id (as per order number for the trainer class in parties.asm)
 
 	def_warps_to PALLET_TOWN

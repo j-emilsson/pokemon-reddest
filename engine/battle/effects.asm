@@ -11,10 +11,14 @@ _JumpMoveEffect:
 	ld a, [wEnemyMoveEffect]
 .next1
 	dec a ; subtract 1, there is no special effect for 00
-	add a ; x2, 16bit pointers
+/* 	add a ; x2, 16bit pointers
 	ld hl, MoveEffectPointerTable
 	ld b, 0
-	ld c, a
+	ld c, a */
+	ld bc, MoveEffectPointerTable
+	ld h, 0
+	ld l, a
+	add hl, hl
 	add hl, bc
 	ld a, [hli]
 	ld h, [hl]
@@ -934,9 +938,9 @@ SwitchAndTeleportEffect:
 	cp TELEPORT
 	jr z, .printText
 	ld hl, RanAwayScaredText
-	cp ROAR
+/* 	cp ROAR
 	jr z, .printText
-	ld hl, WasBlownAwayText
+	ld hl, WasBlownAwayText */
 .printText
 	jp PrintText
 

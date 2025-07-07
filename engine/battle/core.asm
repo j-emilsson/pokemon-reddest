@@ -3495,7 +3495,8 @@ CheckPlayerStatusConditions:
 	jp .returnToHL ; if using a two-turn move, we need to recharge the first turn
 
 .BideCheck
-	ld hl, wPlayerBattleStatus1
+	ret
+/* 	ld hl, wPlayerBattleStatus1
 	bit STORING_ENERGY, [hl] ; is mon using bide?
 	jr z, .ThrashingAboutCheck
 	xor a
@@ -3542,7 +3543,7 @@ CheckPlayerStatusConditions:
 	ld a, BIDE
 	ld [wPlayerMoveNum], a
 	ld hl, handleIfPlayerMoveMissed ; skip damage calculation, DecrementPP and MoveHitTest
-	jp .returnToHL
+	jp .returnToHL */
 
 .ThrashingAboutCheck
 	bit THRASHING_ABOUT, [hl] ; is mon using thrash or petal dance?
@@ -3581,7 +3582,8 @@ CheckPlayerStatusConditions:
 	jp .returnToHL
 
 .RageCheck
-	ld a, [wPlayerBattleStatus2]
+	ret
+/* 	ld a, [wPlayerBattleStatus2]
 	bit USING_RAGE, a ; is mon using rage?
 	jp z, .checkPlayerStatusConditionsDone ; if we made it this far, mon can move normally this turn
 	ld a, RAGE
@@ -3591,7 +3593,7 @@ CheckPlayerStatusConditions:
 	xor a
 	ld [wPlayerMoveEffect], a
 	ld hl, PlayerCanExecuteMove
-	jp .returnToHL
+	jp .returnToHL */
 
 .returnToHL
 	xor a
@@ -4806,7 +4808,7 @@ ApplyAttackToEnemyPokemon:
 	jr z, .storeDamage
 	cp NIGHT_SHADE
 	jr z, .storeDamage
-	ld b, SONICBOOM_DAMAGE ; 20
+	ld b, SONICBOOM_DAMAGE ; 40
 	cp SONICBOOM
 	jr z, .storeDamage
 	ld b, DRAGON_RAGE_DAMAGE ; 40
@@ -5070,7 +5072,7 @@ SubstituteBrokeText:
 ; this function raises the attack modifier of a pokemon using Rage when that pokemon is attacked
 HandleBuildingRage:
 ; values for the player turn
-	ld hl, wEnemyBattleStatus2
+	/* ld hl, wEnemyBattleStatus2
 	ld de, wEnemyMonStatMods
 	ld bc, wEnemyMoveNum
 	ldh a, [hWhoseTurn]
@@ -5107,7 +5109,7 @@ HandleBuildingRage:
 	ld [hl], a ; restore the target pokemon's move number to Rage
 	ldh a, [hWhoseTurn]
 	xor $01 ; flip turn back to the way it was
-	ldh [hWhoseTurn], a
+	ldh [hWhoseTurn], a */
 	ret
 
 BuildingRageText:
@@ -6017,7 +6019,8 @@ CheckEnemyStatusConditions:
 	ld hl, ExecuteEnemyMoveDone
 	jp .enemyReturnToHL ; if using a two-turn move, enemy needs to recharge the first turn
 .checkIfUsingBide
-	ld hl, wEnemyBattleStatus1
+	ret
+/* 	ld hl, wEnemyBattleStatus1
 	bit STORING_ENERGY, [hl] ; is mon using bide?
 	jr z, .checkIfThrashingAbout
 	xor a
@@ -6065,7 +6068,7 @@ CheckEnemyStatusConditions:
 	ld [wEnemyMoveNum], a
 	call SwapPlayerAndEnemyLevels
 	ld hl, handleIfEnemyMoveMissed ; skip damage calculation, DecrementPP and MoveHitTest
-	jp .enemyReturnToHL
+	jp .enemyReturnToHL */
 .checkIfThrashingAbout
 	bit THRASHING_ABOUT, [hl] ; is mon using thrash or petal dance?
 	jr z, .checkIfUsingMultiturnMove
@@ -6100,7 +6103,8 @@ CheckEnemyStatusConditions:
 	jp nz, .enemyReturnToHL
 	jp .enemyReturnToHL
 .checkIfUsingRage
-	ld a, [wEnemyBattleStatus2]
+	ret
+/* 	ld a, [wEnemyBattleStatus2]
 	bit USING_RAGE, a ; is mon using rage?
 	jp z, .checkEnemyStatusConditionsDone ; if we made it this far, mon can move normally this turn
 	ld a, RAGE
@@ -6110,7 +6114,7 @@ CheckEnemyStatusConditions:
 	xor a
 	ld [wEnemyMoveEffect], a
 	ld hl, EnemyCanExecuteMove
-	jp .enemyReturnToHL
+	jp .enemyReturnToHL */
 .enemyReturnToHL
 	xor a ; set Z flag
 	ret

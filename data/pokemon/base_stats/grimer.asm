@@ -10,15 +10,15 @@
 	INCBIN "gfx/pokemon/front/grimer.pic", 0, 1 ; sprite dimensions
 	dw GrimerPicFront, GrimerPicBack
 
-	db POUND, DISABLE, POISON_GAS, NO_MOVE ; level 1 learnset
+	db POUND, DISABLE, NO_MOVE, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_FAST ; growth rate
 
 	; tm/hm learnset
-	tmhm TOXIC,        BODY_SLAM,    RAGE,         MEGA_DRAIN,   THUNDERBOLT,  \
-	     THUNDER,      DIG,          MIMIC,        DOUBLE_TEAM,  BIDE,         \
+	tmhm TOXIC,        BODY_SLAM,    MEGA_DRAIN,   THUNDERBOLT,  \
+	     THUNDER,      DIG,          MIMIC,        DOUBLE_TEAM,  \
 	     SELFDESTRUCT, FIRE_BLAST,   REST,         EXPLOSION,    ROCK_SLIDE,   \
-		 SUBSTITUTE,   SLUDGE_BOMB,  SHADOW_BALL,  CRUNCH,       GIGA_DRAIN,   \
-		 POISON_JAB,   STRENGTH
+		 SUBSTITUTE,   SLUDGE_BOMB,  SHADOW_BALL,  GIGA_DRAIN,   POISON_JAB,   \
+		 STRENGTH
 	; end
 
 	db 0 ; padding

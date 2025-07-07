@@ -34,6 +34,7 @@ SHOW EQU $15
 	const HS_SAFFRON_CITY_D                ; 16
 	const HS_SAFFRON_CITY_E                ; 17
 	const HS_SAFFRON_CITY_F                ; 18
+	const HS_ROUTE_1_INFERNO			   ; 19
 	const HS_ROUTE_2_INFERNO			   ; 19
 	const HS_ROUTE_2_ITEM_1                ; 19 X
 	const HS_ROUTE_2_ITEM_2                ; 1A X

@@ -3,7 +3,7 @@
 	db  80,  55,  70, 105, 105 ; 520
 	;   hp  atk  def  spd  spc
 
-	db BUG, PSYCHIC ; type
+	db BUG, POISON ; type
 	db 75 ; catch rate
 	db 138 ; base exp
 
@@ -14,11 +14,11 @@
 	db GROWTH_MEDIUM_FAST ; growth rate
 
 	; tm/hm learnset
-	tmhm RAZOR_WIND,   WHIRLWIND,    TOXIC,        TAKE_DOWN,    DOUBLE_EDGE,  \
-	     HYPER_BEAM,   RAGE,         MEGA_DRAIN,   SOLARBEAM,    PSYCHIC_M,    \
-	     TELEPORT,     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         \
+	tmhm RAZOR_WIND,   TOXIC,        TAKE_DOWN,    DOUBLE_EDGE,  \
+	     HYPER_BEAM,   MEGA_DRAIN,   SOLARBEAM,    PSYCHIC_M,    \
+	     TELEPORT,     MIMIC,        DOUBLE_TEAM,  REFLECT,      \
 	     SWIFT,        REST,         PSYWAVE,      SUBSTITUTE,   SLUDGE_BOMB,  \
-		 GIGA_DRAIN,   BUG_BUZZ,     FLY,          FLASH
+		 GIGA_DRAIN,   FLY,          FLASH
 	; end
 
 	db 0 ; padding

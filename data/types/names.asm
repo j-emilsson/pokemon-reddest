@@ -49,6 +49,8 @@ TypeNames:
 	dw .Dark ; new dark type
 	dw .Fairy ; new fairy type
 
+	dw .Typeless ; new type for Struggle
+
 	assert_table_length NUM_TYPES
 
 .Normal:   db "NORMAL@"
@@ -70,3 +72,4 @@ TypeNames:
 .Dark:	   db "DARK@"
 .Steel:    db "STEEL@"
 .Fairy:	   db "FAIRY@"
+.Typeless: db "TYPELESS@"

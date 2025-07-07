@@ -10,15 +10,14 @@
 	INCBIN "gfx/pokemon/front/pinsir.pic", 0, 1 ; sprite dimensions
 	dw PinsirPicFront, PinsirPicBack
 
-	db VICEGRIP, HARDEN, NO_MOVE, NO_MOVE ; level 1 learnset
+	db BIND, HARDEN, NO_MOVE, NO_MOVE ; level 1 learnset
 	db GROWTH_SLOW ; growth rate
 
 	; tm/hm learnset
 	tmhm SWORDS_DANCE, TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  \
-	     HYPER_BEAM,   SUBMISSION,   COUNTER,      SEISMIC_TOSS, RAGE,         \
-	     EARTHQUAKE,   MIMIC,        DOUBLE_TEAM,  BIDE,         REST,         \
-	     ROCK_SLIDE,   SUBSTITUTE,   OUTRAGE,      DRAIN_PUNCH,  CUT,          \
-		 STRENGTH
+	     HYPER_BEAM,   SUBMISSION,   COUNTER,      SEISMIC_TOSS, \
+	     EARTHQUAKE,   MIMIC,        DOUBLE_TEAM,  REST,         \
+	     ROCK_SLIDE,   SUBSTITUTE,   DRAIN_PUNCH,  CUT,          STRENGTH
 	; end
 
 	db 0 ; padding

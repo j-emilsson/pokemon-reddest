@@ -78,7 +78,7 @@ YoungsterData:
 ; Unused
 	db 17, SPEAROW, RATTATA, RATTATA, SPEAROW, 0
 ; Pallet town
-	;db 5, PSYDUCK, 0
+	;db 1, ONIX, 0
 BugCatcherData:
 ; Viridian Forest
 	db 6, WEEDLE, CATERPIE, 0
@@ -214,6 +214,8 @@ PokemaniacData:
 	db 23, CUBONE, SLOWPOKE, 0
 ; Route 2
 	db 10, PIKACHU, 0
+; Pallet town
+	;db 1, ONIX, 0
 
 SuperNerdData:
 ; Mt. Moon 1F
@@ -523,7 +525,8 @@ ProfOakData:
 	db $FF, 66, TAUROS, 67, EXEGGUTOR, 68, ARCANINE, 70, GYARADOS, 75, JOLTEON, 0
 
 ChiefData:
-; none
+; Route 1
+	db 5, ONIX, 0
 
 ScientistData:
 ; Unused
