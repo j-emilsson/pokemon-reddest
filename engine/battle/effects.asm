@@ -938,9 +938,9 @@ SwitchAndTeleportEffect:
 	cp TELEPORT
 	jr z, .printText
 	ld hl, RanAwayScaredText
- 	cp ROAR
-	jr z, .printText
-	ld hl, WasBlownAwayText
+ 	;cp ROAR
+	;jr z, .printText
+	;ld hl, WasBlownAwayText
 .printText
 	jp PrintText
 

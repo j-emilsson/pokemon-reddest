@@ -10,14 +10,14 @@ AttackAnimationPointers:
 	dw IcePunchAnim
 	dw ThunderPunchAnim
 	dw ScratchAnim
-	dw VicegripAnim
-	dw GuillotineAnim
+	;dw VicegripAnim
+	;dw GuillotineAnim
 	dw RazorWindAnim
 	dw SwordsDanceAnim
 	dw CutAnim
 	dw GustAnim
 	dw WingAttackAnim
-	dw WhirlwindAnim
+	;dw WhirlwindAnim
 	dw FlyAnim
 	dw BindAnim
 	dw SlamAnim
@@ -31,7 +31,7 @@ AttackAnimationPointers:
 	dw HeatButtAnim
 	dw HornAttackAnim
 	dw FuryAttackAnim
-	dw HornDrillAnim
+	;dw HornDrillAnim
 	dw TackleAnim
 	dw BodySlamAnim
 	dw WrapAnim
@@ -45,7 +45,7 @@ AttackAnimationPointers:
 	dw LeerAnim
 	dw BiteAnim
 	dw GrowlAnim
-	dw RoarAnim
+	;dw RoarAnim
 	dw SingAnim
 	dw SupersonicAnim
 	dw SonicBoomAnim
@@ -89,7 +89,7 @@ AttackAnimationPointers:
 	dw ThunderAnim
 	dw RockThrowAnim
 	dw EarthquakeAnim
-	dw FissureAnim
+	;dw FissureAnim
 	dw DigAnim
 	dw ToxicAnim
 	dw ConfusionAnim
@@ -138,7 +138,7 @@ AttackAnimationPointers:
 	dw HiJumpKickAnim
 	dw GlareAnim
 	dw DreamEaterAnim
-	dw PoisonGasAnim
+	;dw PoisonGasAnim
 	dw BarrageAnim
 	dw LeechLifeAnim
 	dw LovelyKissAnim
@@ -315,13 +315,13 @@ ScratchAnim:
 	battle_anim SCRATCH, SUBANIM_0F, 0, 6
 	db -1 ; end
 
-VicegripAnim:
+/* VicegripAnim:
 	battle_anim VICEGRIP, SUBANIM_2A, 0, 8
-	db -1 ; end
+	db -1 ; end */
 
-GuillotineAnim:
+/* GuillotineAnim:
 	battle_anim GUILLOTINE, SUBANIM_2A, 0, 6
-	db -1 ; end
+	db -1 ; end */
 
 RazorWindAnim:
 	battle_anim RAZOR_WIND, SUBANIM_16, 0, 4
@@ -350,10 +350,10 @@ WingAttackAnim:
 	battle_anim WING_ATTACK, SUBANIM_04, 1, 6
 	db -1 ; end
 
-WhirlwindAnim:
+/* WhirlwindAnim:
 	battle_anim WHIRLWIND, SUBANIM_10, 1, 6
 	battle_anim NO_MOVE, SE_SLIDE_ENEMY_MON_OFF
-	db -1 ; end
+	db -1 ; end */
 
 FlyAnim:
 	battle_anim FLY, SUBANIM_04, 1, 6
@@ -416,13 +416,13 @@ FuryAttackAnim:
 	battle_anim NO_MOVE, SUBANIM_46, 0, 2
 	db -1 ; end
 
-HornDrillAnim:
+/* HornDrillAnim:
 	battle_anim HORN_DRILL, SUBANIM_05, 1, 2
 	battle_anim NO_MOVE, SUBANIM_05, 1, 2
 	battle_anim NO_MOVE, SUBANIM_05, 1, 2
 	battle_anim NO_MOVE, SUBANIM_05, 1, 2
 	battle_anim NO_MOVE, SUBANIM_05, 1, 2
-	db -1 ; end
+	db -1 ; end */
 
 TackleAnim:
 	battle_anim LEECH_SEED, SE_MOVE_MON_HORIZONTALLY
@@ -501,11 +501,11 @@ GrowlAnim:
 	battle_anim GROWL, SUBANIM_12, 1, 6
 	db -1 ; end
 
-RoarAnim:
+/* RoarAnim:
 	battle_anim ROAR, SUBANIM_15, 1, 6
 	battle_anim ROAR, SUBANIM_15, 1, 6
 	battle_anim ROAR, SUBANIM_15, 1, 6
-	db -1 ; end
+	db -1 ; end */
 
 SingAnim:
 	battle_anim SING, SUBANIM_12, 1, 6
@@ -766,12 +766,12 @@ EarthquakeAnim:
 	battle_anim EARTHQUAKE, SE_SHAKE_SCREEN
 	db -1 ; end
 
-FissureAnim:
+/* FissureAnim:
 	battle_anim EARTHQUAKE, SE_DARK_SCREEN_FLASH
 	battle_anim NO_MOVE, SE_SHAKE_SCREEN
 	battle_anim EARTHQUAKE, SE_DARK_SCREEN_FLASH
 	battle_anim NO_MOVE, SE_SHAKE_SCREEN
-	db -1 ; end
+	db -1 ; end */
 
 DigAnim:
 	battle_anim DIG, SUBANIM_04, 1, 6
@@ -1069,9 +1069,9 @@ DreamEaterAnim:
 	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
 	db -1 ; end
 
-PoisonGasAnim:
+/* PoisonGasAnim:
 	battle_anim POISON_GAS, SUBANIM_19, 1, 6
-	db -1 ; end
+	db -1 ; end */
 
 BarrageAnim:
 	battle_anim BARRAGE, SUBANIM_41, 1, 3

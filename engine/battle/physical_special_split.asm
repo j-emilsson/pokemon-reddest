@@ -20,14 +20,14 @@ _PhysicalSpecialSplit:: ; Determines if a move is Physical or Special
 	db PHYSICAL ; ICE_PUNCH    ; 08
 	db PHYSICAL ; THUNDERPUNCH ; 09
 	db PHYSICAL ; SCRATCH      ; 0a
-	db PHYSICAL ; VICEGRIP     ; 0b
-	db PHYSICAL ; GUILLOTINE   ; 0c
+	;db PHYSICAL ; VICEGRIP     ; 0b
+	;db PHYSICAL ; GUILLOTINE   ; 0c
 	db SPECIAL  ; RAZOR_WIND   ; 0d
 	db STATUS   ; SWORDS_DANCE ; 0e
 	db PHYSICAL ; CUT          ; 0f
 	db SPECIAL  ; GUST         ; 10
 	db PHYSICAL ; WING_ATTACK  ; 11
-	db STATUS   ; WHIRLWIND    ; 12
+	;db STATUS   ; WHIRLWIND    ; 12
 	db PHYSICAL ; FLY          ; 13
 	db PHYSICAL ; BIND         ; 14
 	db PHYSICAL ; SLAM         ; 15
@@ -41,7 +41,7 @@ _PhysicalSpecialSplit:: ; Determines if a move is Physical or Special
 	db PHYSICAL ; HEADBUTT     ; 1d
 	db PHYSICAL ; HORN_ATTACK  ; 1e
 	db PHYSICAL ; FURY_ATTACK  ; 1f
-	db PHYSICAL ; HORN_DRILL   ; 20
+	;db PHYSICAL ; HORN_DRILL   ; 20
 	db PHYSICAL ; TACKLE       ; 21
 	db PHYSICAL ; BODY_SLAM    ; 22
 	db PHYSICAL ; WRAP         ; 23
@@ -55,7 +55,7 @@ _PhysicalSpecialSplit:: ; Determines if a move is Physical or Special
 	db STATUS   ; LEER         ; 2b
 	db PHYSICAL ; BITE         ; 2c
 	db STATUS   ; GROWL        ; 2d
-	db STATUS   ; ROAR         ; 2e
+	;db STATUS   ; ROAR         ; 2e
 	db STATUS   ; SING         ; 2f
 	db STATUS   ; SUPERSONIC   ; 30
 	db SPECIAL  ; SONICBOOM    ; 31
@@ -99,7 +99,7 @@ _PhysicalSpecialSplit:: ; Determines if a move is Physical or Special
 	db SPECIAL  ; THUNDER      ; 57
 	db PHYSICAL ; ROCK_THROW   ; 58
 	db PHYSICAL ; EARTHQUAKE   ; 59
-	db PHYSICAL ; FISSURE      ; 5a
+	;db PHYSICAL ; FISSURE      ; 5a
 	db PHYSICAL ; DIG          ; 5b
 	db STATUS   ; TOXIC        ; 5c
 	db SPECIAL  ; CONFUSION    ; 5d
@@ -148,7 +148,7 @@ _PhysicalSpecialSplit:: ; Determines if a move is Physical or Special
 	db PHYSICAL ; HI_JUMP_KICK ; 88
 	db STATUS   ; GLARE        ; 89
 	db SPECIAL  ; DREAM_EATER  ; 8a
-	db STATUS   ; POISON_GAS   ; 8b
+	;db STATUS   ; POISON_GAS   ; 8b
 	db PHYSICAL ; BARRAGE      ; 8c
 	db PHYSICAL ; LEECH_LIFE   ; 8d
 	db STATUS   ; LOVELY_KISS  ; 8e
