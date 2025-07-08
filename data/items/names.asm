@@ -125,7 +125,7 @@ ItemNames::
 	li "TM24"
 	li "TM25"
 	li "TM26"
-	;li "TM27"
+	li "TM27"
 	li "TM28"
 	li "TM29"
 	li "TM30"
@@ -182,5 +182,6 @@ ItemNames::
 	;li "TM81"
 	;li "TM82"
 	;li "TM83"
+	;li "TM84"
 	assert_list_length NUM_ITEMS + NUM_FLOORS + NUM_TMS
 	

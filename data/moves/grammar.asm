@@ -6,7 +6,7 @@ ExclamationPointMoveSets:
 
 ; set 1
 	db RECOVER
-	;db BIDE
+	db BIDE
 	db SELFDESTRUCT
 	db AMNESIA
 	db 0 ; end set
@@ -23,7 +23,7 @@ ExclamationPointMoveSets:
 ; set 3
 	db POUND
 	db SCRATCH
-	;db VICEGRIP
+	db VICEGRIP
 	db WING_ATTACK
 	db FLY
 	db BIND
@@ -36,7 +36,7 @@ ExclamationPointMoveSets:
 	db LEER
 	db BITE
 	db GROWL
-	;db ROAR
+	db ROAR
 	db SING
 	db PECK
 	db COUNTER
@@ -44,7 +44,7 @@ ExclamationPointMoveSets:
 	db ABSORB
 	db STRING_SHOT
 	db EARTHQUAKE
-	;db FISSURE
+	db FISSURE
 	db DIG
 	db TOXIC
 	db SCREECH
@@ -56,7 +56,7 @@ ExclamationPointMoveSets:
 	db LICK
 	db CLAMP
 	db CONSTRICT
-	;db POISON_GAS
+	db POISON_GAS
 	db LEECH_LIFE
 	db BUBBLE
 	db FLASH

@@ -27,7 +27,7 @@ TechnicalMachinePrices:
 	nybble 2 ; TM24
 	nybble 5 ; TM25
 	nybble 4 ; TM26
-	;nybble 5 ; TM27
+	nybble 5 ; TM27
 	nybble 2 ; TM28
 	nybble 4 ; TM29
 	nybble 1 ; TM30
@@ -86,5 +86,6 @@ TechnicalMachinePrices:
 	;nybble 2 ; TM81
 	;nybble 2 ; TM82
 	;nybble 2 ; TM83
+	;nybble 2 ; TM84
 	; end of added tms
 	end_nybble_array NUM_TMS

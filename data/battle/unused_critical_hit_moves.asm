@@ -6,4 +6,5 @@ UnusedHighCriticalMoves:
 	db SLASH
 	db SKY_ATTACK
 	db LEAF_BLADE
+	db SHADOW_CLAW
 	db -1 ; end

@@ -24,6 +24,9 @@ rgbds-0.5.2/
 *.pyc
 *$py.class
 
+# .old. files
+*.old.*
+
 # save game files
 *.sgm
 *.sav

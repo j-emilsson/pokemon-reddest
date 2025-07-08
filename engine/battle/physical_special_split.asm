@@ -20,14 +20,14 @@ _PhysicalSpecialSplit:: ; Determines if a move is Physical or Special
 	db PHYSICAL ; ICE_PUNCH    ; 08
 	db PHYSICAL ; THUNDERPUNCH ; 09
 	db PHYSICAL ; SCRATCH      ; 0a
-	;db PHYSICAL ; VICEGRIP     ; 0b
-	;db PHYSICAL ; GUILLOTINE   ; 0c
+	db PHYSICAL ; VICEGRIP     ; 0b
+	db PHYSICAL ; GUILLOTINE   ; 0c
 	db SPECIAL  ; RAZOR_WIND   ; 0d
 	db STATUS   ; SWORDS_DANCE ; 0e
 	db PHYSICAL ; CUT          ; 0f
 	db SPECIAL  ; GUST         ; 10
 	db PHYSICAL ; WING_ATTACK  ; 11
-	;db STATUS   ; WHIRLWIND    ; 12
+	db STATUS   ; WHIRLWIND    ; 12
 	db PHYSICAL ; FLY          ; 13
 	db PHYSICAL ; BIND         ; 14
 	db PHYSICAL ; SLAM         ; 15
@@ -41,7 +41,7 @@ _PhysicalSpecialSplit:: ; Determines if a move is Physical or Special
 	db PHYSICAL ; HEADBUTT     ; 1d
 	db PHYSICAL ; HORN_ATTACK  ; 1e
 	db PHYSICAL ; FURY_ATTACK  ; 1f
-	;db PHYSICAL ; HORN_DRILL   ; 20
+	db PHYSICAL ; HORN_DRILL   ; 20
 	db PHYSICAL ; TACKLE       ; 21
 	db PHYSICAL ; BODY_SLAM    ; 22
 	db PHYSICAL ; WRAP         ; 23
@@ -55,7 +55,7 @@ _PhysicalSpecialSplit:: ; Determines if a move is Physical or Special
 	db STATUS   ; LEER         ; 2b
 	db PHYSICAL ; BITE         ; 2c
 	db STATUS   ; GROWL        ; 2d
-	;db STATUS   ; ROAR         ; 2e
+	db STATUS   ; ROAR         ; 2e
 	db STATUS   ; SING         ; 2f
 	db STATUS   ; SUPERSONIC   ; 30
 	db SPECIAL  ; SONICBOOM    ; 31
@@ -63,7 +63,7 @@ _PhysicalSpecialSplit:: ; Determines if a move is Physical or Special
 	db SPECIAL  ; ACID         ; 33
 	db SPECIAL  ; EMBER        ; 34
 	db SPECIAL  ; FLAMETHROWER ; 35
-	;db STATUS   ; MIST         ; 36
+	db STATUS   ; MIST         ; 36
 	db SPECIAL  ; WATER_GUN    ; 37
 	db SPECIAL  ; HYDRO_PUMP   ; 38
 	db SPECIAL  ; SURF         ; 39
@@ -99,7 +99,7 @@ _PhysicalSpecialSplit:: ; Determines if a move is Physical or Special
 	db SPECIAL  ; THUNDER      ; 57
 	db PHYSICAL ; ROCK_THROW   ; 58
 	db PHYSICAL ; EARTHQUAKE   ; 59
-	;db PHYSICAL ; FISSURE      ; 5a
+	db PHYSICAL ; FISSURE      ; 5a
 	db PHYSICAL ; DIG          ; 5b
 	db STATUS   ; TOXIC        ; 5c
 	db SPECIAL  ; CONFUSION    ; 5d
@@ -108,7 +108,7 @@ _PhysicalSpecialSplit:: ; Determines if a move is Physical or Special
 	db STATUS   ; MEDITATE     ; 60
 	db STATUS   ; AGILITY      ; 61
 	db PHYSICAL ; QUICK_ATTACK ; 62
-	;db PHYSICAL ; RAGE         ; 63
+	db PHYSICAL ; RAGE         ; 63
 	db STATUS   ; TELEPORT     ; 64
 	db SPECIAL  ; NIGHT_SHADE  ; 65
 	db STATUS   ; MIMIC        ; 66
@@ -126,7 +126,7 @@ _PhysicalSpecialSplit:: ; Determines if a move is Physical or Special
 	db STATUS   ; HAZE         ; 72
 	db STATUS   ; REFLECT      ; 73
 	db STATUS   ; FOCUS_ENERGY ; 74
-	;db PHYSICAL ; BIDE         ; 75
+	db PHYSICAL ; BIDE         ; 75
 	db STATUS   ; METRONOME    ; 76
 	db STATUS   ; MIRROR_MOVE  ; 77
 	db PHYSICAL ; SELFDESTRUCT ; 78
@@ -148,7 +148,7 @@ _PhysicalSpecialSplit:: ; Determines if a move is Physical or Special
 	db PHYSICAL ; HI_JUMP_KICK ; 88
 	db STATUS   ; GLARE        ; 89
 	db SPECIAL  ; DREAM_EATER  ; 8a
-	;db STATUS   ; POISON_GAS   ; 8b
+	db STATUS   ; POISON_GAS   ; 8b
 	db PHYSICAL ; BARRAGE      ; 8c
 	db PHYSICAL ; LEECH_LIFE   ; 8d
 	db STATUS   ; LOVELY_KISS  ; 8e
@@ -175,7 +175,7 @@ _PhysicalSpecialSplit:: ; Determines if a move is Physical or Special
 	db PHYSICAL ; SLASH        ; a3
 	db STATUS   ; SUBSTITUTE   ; a4
 	db PHYSICAL ; STRUGGLE     ; a5
-	db PHYSICAL ; FEINT_ATTACK ; a6
+	;db PHYSICAL ; FEINT_ATTACK ; a6
 	db SPECIAL  ; SLUDGE_BOMB  ; a7
 	db PHYSICAL ; FLAME_WHEEL  ; a8
 	db PHYSICAL ; OUTRAGE      ; a9
@@ -189,6 +189,7 @@ _PhysicalSpecialSplit:: ; Determines if a move is Physical or Special
 	db SPECIAL  ; SHOCK_WAVE   ; b1
 	db PHYSICAL ; LEAF_BLADE   ; b1
 	db PHYSICAL ; IRON_HEAD    ; b2
+	db PHYSICAL ; SHADOW_CLAW  ; b2
 	db SPECIAL  ; FLASH_CANNON ; b3
 	db SPECIAL  ; AURA_SPHERE  ; b4
 	db PHYSICAL ; DRAIN_PUNCH  ; b5
@@ -203,8 +204,8 @@ _PhysicalSpecialSplit:: ; Determines if a move is Physical or Special
 	db SPECIAL  ; FAIRY_WIND   ; bd
 	db SPECIAL  ; MOONBLAST    ; bd
 	db PHYSICAL ; PLAY_ROUGH   ; be
-	db PHYSICAL ; SHADOW_BONE  ; bf
+	;db PHYSICAL ; SHADOW_BONE  ; bf
 	db PHYSICAL ; PLASMA_FISTS ; c0
 	db PHYSICAL ; THUNDEROUS_KICK ; c1
-	db PHYSICAL ; SUPER_LICK   ; c1
+	;db PHYSICAL ; SUPER_LICK   ; c1
 	

@@ -72,7 +72,7 @@ SPDSPCDV_TRAINER EQU $88
 
 ; wPlayerBattleStatus1 or wEnemyBattleStatus1 bit flags
 	const_def
-	const STORING_ENERGY           ; 0 ; Bide
+	const STORING_ENERGY          ; 0 ; Bide
 	const THRASHING_ABOUT          ; 1 ; e.g. Thrash
 	const ATTACKING_MULTIPLE_TIMES ; 2 ; e.g. Double Kick, Fury Attack
 	const FLINCHED                 ; 3
@@ -89,7 +89,7 @@ SPDSPCDV_TRAINER EQU $88
 	const_skip                ; 3 ; unused
 	const HAS_SUBSTITUTE_UP   ; 4
 	const NEEDS_TO_RECHARGE   ; 5 ; Hyper Beam
-	const USING_RAGE          ; 6
+	const USING_RAGE         ; 6 ; Rage
 	const SEEDED              ; 7
 
 ; wPlayerBattleStatus3 or wEnemyBattleStatus3 bit flags
