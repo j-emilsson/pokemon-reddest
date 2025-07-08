@@ -1,9 +1,9 @@
 	db DEX_RATICATE ; pokedex id
 
-	db  85,  95,  95, 110,  65 ; 515
+	db  90,  95,  95, 110,  65 ; 520
 	;   hp  atk  def  spd  spc
 
-	db DARK, NORMAL ; type
+	db NORMAL, DARK ; type
 	db 90 ; catch rate
 	db 116 ; base exp
 
@@ -18,8 +18,8 @@
 	     BUBBLEBEAM,   WATER_GUN,    ICE_BEAM,     BLIZZARD,     HYPER_BEAM,   \
 	     COUNTER,      THUNDERBOLT,  THUNDER,      DIG,          \
 	     MIMIC,        DOUBLE_TEAM,  SWIFT,        SKULL_BASH,   \
-		 REST,         SUBSTITUTE,   SLUDGE_BOMB,  SHADOW_BALL,  DARK_PULSE,   \
-		 CUT,          STRENGTH
+		 REST,         SUBSTITUTE,   SLUDGE_BOMB,  SHADOW_BALL,  SHOCK_WAVE,   \
+		 DARK_PULSE,   CUT,          STRENGTH
 	; end
 
 	db 0 ; padding

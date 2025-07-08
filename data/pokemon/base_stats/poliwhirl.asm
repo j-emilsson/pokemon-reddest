@@ -1,6 +1,6 @@
 	db DEX_POLIWHIRL ; pokedex id
 
-	db  65,  65,  65,  90,  50
+	db  90,  80,  65,  90,  65 ; 455
 	;   hp  atk  def  spd  spc
 
 	db WATER, WATER ; type

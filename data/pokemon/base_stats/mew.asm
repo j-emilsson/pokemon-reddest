@@ -1,6 +1,6 @@
 	db DEX_MEW ; pokedex id
 
-	db 100, 100, 100, 155, 130 ; 715
+	db 100, 100, 100, 150, 140 ; 730
 	;   hp  atk  def  spd  spc
 
 	db PSYCHIC, FLYING ; type

@@ -1,6 +1,6 @@
 	db DEX_PONYTA ; pokedex id
 
-	db  60,  90,  55, 110,  60
+	db  50,  80,  50, 110,  50 ; 390
 	;   hp  atk  def  spd  spc
 
 	db FIRE, FIRE ; type

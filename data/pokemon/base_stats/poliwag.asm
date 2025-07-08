@@ -1,6 +1,6 @@
 	db DEX_POLIWAG ; pokedex id
 
-	db  40,  50,  40,  90,  40
+	db  60,  50,  45,  90,  45 ; 335
 	;   hp  atk  def  spd  spc
 
 	db WATER, WATER ; type

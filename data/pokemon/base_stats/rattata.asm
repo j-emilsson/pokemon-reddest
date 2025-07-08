@@ -3,7 +3,7 @@
 	db  50,  65,  65,  80,  40
 	;   hp  atk  def  spd  spc
 
-	db DARK, NORMAL ; type
+	db NORMAL, DARK ; type
 	db 255 ; catch rate
 	db 57 ; base exp
 

@@ -1,6 +1,6 @@
 	db DEX_PORYGON ; pokedex id
 
-	db  85,  60,  70,  90, 135 ; 575
+	db  90,  60,  90, 110, 135 ; 575
 	;   hp  atk  def  spd  spc
 
 	db PSYCHIC, ELECTRIC ; type
@@ -19,7 +19,8 @@
 	     PSYCHIC_M,    TELEPORT,     MIMIC,        DOUBLE_TEAM,  REFLECT,      \
 	     SWIFT,        SKULL_BASH,   DREAM_EATER,  REST,         \
 	     THUNDER_WAVE, PSYWAVE,      TRI_ATTACK,   SUBSTITUTE,   SHADOW_BALL,  \
-		 DARK_PULSE,   FLASH
+		 GIGA_DRAIN,   SHOCK_WAVE,   FLASH_CANNON, DARK_PULSE,   DRAGON_PULSE, \
+		 FLASH
 	; end
 
 	db 0 ; padding

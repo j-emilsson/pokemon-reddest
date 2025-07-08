@@ -1,6 +1,6 @@
 	db DEX_PRIMEAPE ; pokedex id
 
-	db 120, 115,  60,  95,  65 ; 520
+	db 110, 120,  60, 120,  60 ; 530
 	;   hp  atk  def  spd  spc
 
 	db FIGHTING, DARK ; type
