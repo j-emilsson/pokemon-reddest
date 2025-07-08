@@ -1,6 +1,6 @@
 	db DEX_IVYSAUR ; pokedex id
 
-	db  60,  62,  63,  60,  80
+	db  60,  62,  63,  60,  80 ; 405
 	;   hp  atk  def  spd  spc
 
 	db GRASS, GROUND ; type

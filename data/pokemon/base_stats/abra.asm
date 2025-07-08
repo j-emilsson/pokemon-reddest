@@ -1,6 +1,6 @@
 	db DEX_ABRA ; pokedex id
 
-	db  35,  20,  30,  90, 105
+	db  35,  20,  30,  90, 105 ; 385
 	;   hp  atk  def  spd  spc
 
 	db PSYCHIC, PSYCHIC ; type

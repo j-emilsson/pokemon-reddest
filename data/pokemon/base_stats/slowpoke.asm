@@ -1,6 +1,6 @@
 	db DEX_SLOWPOKE ; pokedex id
 
-	db  100, 55,  85,  15,  65
+	db  100, 55,  85,  15,  65 ; 385
 	;   hp  atk  def  spd  spc
 
 	db WATER, PSYCHIC ; type

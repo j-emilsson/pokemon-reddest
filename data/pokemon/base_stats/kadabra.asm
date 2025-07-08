@@ -1,6 +1,6 @@
 	db DEX_KADABRA ; pokedex id
 
-	db  50,  35,  45, 105, 120
+	db  50,  35,  45, 105, 120 ; 475
 	;   hp  atk  def  spd  spc
 
 	db PSYCHIC, PSYCHIC ; type

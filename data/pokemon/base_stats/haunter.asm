@@ -1,6 +1,6 @@
 	db DEX_HAUNTER ; pokedex id
 
-	db  50,  45,  50, 100, 115
+	db  50,  45,  50, 100, 115 ; 475
 	;   hp  atk  def  spd  spc
 
 	db GHOST, GHOST ; type
