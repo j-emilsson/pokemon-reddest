@@ -26,7 +26,7 @@ MoveEffectPointerTable:
 	dw StatModifierDownEffect    ; EVASION_DOWN1_EFFECT
 	dw ConversionEffect          ; CONVERSION_EFFECT
 	dw HazeEffect                ; HAZE_EFFECT
-	dw BideEffect               ; BIDE_EFFECT
+	dw BideEffect                ; BIDE_EFFECT
 	dw ThrashPetalDanceEffect    ; THRASH_PETAL_DANCE_EFFECT
 	dw SwitchAndTeleportEffect   ; SWITCH_AND_TELEPORT_EFFECT
 	dw TwoToFiveAttacksEffect    ; TWO_TO_FIVE_ATTACKS_EFFECT

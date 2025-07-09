@@ -126,7 +126,7 @@ _PhysicalSpecialSplit:: ; Determines if a move is Physical or Special
 	db STATUS   ; HAZE         ; 72
 	db STATUS   ; REFLECT      ; 73
 	db STATUS   ; FOCUS_ENERGY ; 74
-	db PHYSICAL ; BIDE         ; 75
+	;db PHYSICAL ; BIDE         ; 75
 	db STATUS   ; METRONOME    ; 76
 	db STATUS   ; MIRROR_MOVE  ; 77
 	db PHYSICAL ; SELFDESTRUCT ; 78
