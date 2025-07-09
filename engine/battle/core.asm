@@ -3256,7 +3256,7 @@ MirrorMoveCheck:
 	ld b, [hl]
 	or b
 	ret z ; don't do anything else if the enemy fainted
-	call HandleBuildingRage
+	;call HandleBuildingRage
 
 	ld hl, wPlayerBattleStatus1
 	bit ATTACKING_MULTIPLE_TIMES, [hl]
@@ -3581,12 +3581,14 @@ CheckPlayerStatusConditions:
 	jp .returnToHL
 
 .RageCheck
- 	ld a, [wPlayerBattleStatus2]
+	/*xor a
+	ret*/
+  	ld a, [wPlayerBattleStatus2]
 	bit USING_RAGE, a ; is mon using rage?
 	jp z, .checkPlayerStatusConditionsDone ; if we made it this far, mon can move normally this turn
-	ld a, RAGE
+	ld a, 0
 	ld [wd11e], a
-	call GetMoveName
+	ld hl, .DummyMoveName
 	call CopyToStringBuffer
 	xor a
 	ld [wPlayerMoveEffect], a
@@ -3601,6 +3603,10 @@ CheckPlayerStatusConditions:
 	ld a, $1
 	and a
 	ret
+
+.DummyMoveName:
+	db "RAGE@"
+	db "@"
 
 FastAsleepText:
 	text_far _FastAsleepText
@@ -5068,7 +5074,7 @@ SubstituteBrokeText:
 	text_end
 
 ; this function raises the attack modifier of a pokemon using Rage when that pokemon is attacked
-HandleBuildingRage:
+/*HandleBuildingRage:
 ; values for the player turn
 	ld hl, wEnemyBattleStatus2
 	ld de, wEnemyMonStatMods
@@ -5112,7 +5118,7 @@ HandleBuildingRage:
 
 BuildingRageText:
 	text_far _BuildingRageText
-	text_end
+	text_end*/
 
 ; copy last move for Mirror Move
 ; sets zero flag on failure and unsets zero flag on success
@@ -5803,7 +5809,7 @@ EnemyCheckIfMirrorMoveEffect:
 	ld b, [hl]
 	or b
 	ret z
-	call HandleBuildingRage
+	;call HandleBuildingRage
 	ld hl, wEnemyBattleStatus1
 	bit ATTACKING_MULTIPLE_TIMES, [hl] ; is mon hitting multiple times? (example: double kick)
 	jr z, .notMultiHitMove
@@ -6103,9 +6109,9 @@ CheckEnemyStatusConditions:
  	ld a, [wEnemyBattleStatus2]
 	bit USING_RAGE, a ; is mon using rage?
 	jp z, .checkEnemyStatusConditionsDone ; if we made it this far, mon can move normally this turn
-	ld a, RAGE
+	ld a, 0
 	ld [wd11e], a
-	call GetMoveName
+	ld hl, .DummyMoveName
 	call CopyToStringBuffer
 	xor a
 	ld [wEnemyMoveEffect], a
@@ -6118,6 +6124,9 @@ CheckEnemyStatusConditions:
 	ld a, $1
 	and a ; clear Z flag
 	ret
+.DummyMoveName:
+	db "RAGE@"
+	db "@"
 
 GetCurrentMove:
 	ldh a, [hWhoseTurn]

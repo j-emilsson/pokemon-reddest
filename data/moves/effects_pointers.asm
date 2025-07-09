@@ -81,7 +81,7 @@ MoveEffectPointerTable:
 	dw NULL                      ; unused effect
 	dw SubstituteEffect          ; SUBSTITUTE_EFFECT
 	dw HyperBeamEffect           ; HYPER_BEAM_EFFECT
-	dw RageEffect               ; RAGE_EFFECT
+	dw RageEffect                ; RAGE_EFFECT
 	dw MimicEffect               ; MIMIC_EFFECT
 	dw NULL                      ; METRONOME_EFFECT
 	dw LeechSeedEffect           ; LEECH_SEED_EFFECT

@@ -98,7 +98,7 @@ MoveNames::
 	li "MEDITATE"
 	li "AGILITY"
 	li "QUICK ATTACK"
-	li "RAGE"
+	;li "RAGE"
 	li "TELEPORT"
 	li "NIGHT SHADE"
 	li "MIMIC"

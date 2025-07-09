@@ -108,7 +108,7 @@ _PhysicalSpecialSplit:: ; Determines if a move is Physical or Special
 	db STATUS   ; MEDITATE     ; 60
 	db STATUS   ; AGILITY      ; 61
 	db PHYSICAL ; QUICK_ATTACK ; 62
-	db PHYSICAL ; RAGE         ; 63
+	;db PHYSICAL ; RAGE         ; 63
 	db STATUS   ; TELEPORT     ; 64
 	db SPECIAL  ; NIGHT_SHADE  ; 65
 	db STATUS   ; MIMIC        ; 66

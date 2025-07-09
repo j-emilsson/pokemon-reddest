@@ -98,7 +98,7 @@ AttackAnimationPointers:
 	dw MeditateAnim
 	dw AgilityAnim
 	dw QuickAttackAnim
-	dw RageAnim
+	;dw RageAnim
 	dw TeleportAnim
 	dw NightShadeAnim
 	dw MimicAnim
@@ -815,10 +815,10 @@ QuickAttackAnim:
 	battle_anim NO_MOVE, SE_SHOW_MON_PIC
 	db -1 ; end
 
-RageAnim:
+/* RageAnim:
 	battle_anim RAGE, SUBANIM_01, 0, 6
-	db -1 ; end
-
+	db -1 ; end */
+ 
 TeleportAnim:
 	battle_anim TELEPORT, SE_SQUISH_MON_PIC
 	battle_anim NO_MOVE, SE_SHOOT_BALLS_UPWARD
