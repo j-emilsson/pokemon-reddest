@@ -15,11 +15,23 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
 
 - ### Fixed 100% Accuracy Bug
 
+- ### Allow attacks after waking up from SLEEP
+
+- ### POISON, BURN and LEECH do 8th of max HP instead of 16th
+
+- ### Infinite TMs
+
+- ### Improved catching system
+
+- ### Increased money won from battles
+
 - ### Move Relearner and Move Deleter
 
 - ### Purchasable TMs in PokéMarts
 
 - ### Trade evolutions has been changed to level up evolutions
+
+- ### Increased bag space
 
 - ### Another rival
 
@@ -179,6 +191,8 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
 
 ## Credit
 The pret team for the pokered disassemblies, which this repository is based on: [pret/pokered](https://github.com/pret/pokered)
+
+The pret team and its contributors for the wiki tutorials: [Tutorials](https://github.com/pret/pokered/wiki/Tutorials)
 
 TheFakeMateo for physical/special split: [rpp-backup](https://github.com/JustRegularLuna/rpp-backup)
 

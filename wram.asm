@@ -1750,9 +1750,10 @@ wPokedexOwnedEnd::
 wPokedexSeen:: flag_array NUM_POKEMON
 wPokedexSeenEnd::
 
-wNumBagItems:: db
+;wNumBagItems:: db
 ; item, quantity
-wBagItems:: ds BAG_ITEM_CAPACITY * 2 + 1
+;wBagItems:: ds BAG_ITEM_CAPACITY * 2 + 1
+ds 42
 
 wPlayerMoney:: ds 3 ; BCD
 
@@ -1843,7 +1844,20 @@ wWarpEntries:: ds 32 * 4 ; Y, X, warp ID, map ID
 ; if $ff, the player's coordinates are not updated when entering the map
 wDestinationWarpID:: db
 
+;	ds 128
+	;;;;;;;;; note: CHANGED: this empty space is now used for bigger bag space
+	UNION
+		;original size of this empty space
 	ds 128
+
+	NEXTU
+	wNumBagItems:: db
+	; item, quantity
+	wBagItems:: ds BAG_ITEM_CAPACITY * 2 + 1 ; now holds 50 items
+	;;;;
+	; 26 bytes left to use
+	ENDU
+	;;;;;;;;;;
 
 ; number of signs in the current map (up to 16)
 wNumSigns:: db

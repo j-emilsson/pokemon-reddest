@@ -182,8 +182,8 @@ ItemUseBall:
 ; Ultra/Safari Ball: [0, 150]
 ; Loop until an acceptable number is found.
 
-.loop
-	call Random
+/*.loop
+ 	call Random
 	ld b, a
 
 ; Get the item ID.
@@ -313,7 +313,147 @@ ItemUseBall:
 	ld b, a
 	ldh a, [hQuotient + 3]
 	cp b
-	jr c, .failedToCapture
+	jr c, .failedToCapture */
+
+; Gen 3 Style Catching by ZetaPhoenix
+; HP calc
+	xor a
+	ldh [hMultiplicand], a
+	ld hl, wEnemyMonHP
+	ld a, [hli]
+	ldh [hMultiplicand + 1], a
+	ld a, [hl]
+	ldh [hMultiplicand + 2], a
+	ld a, 85
+	ldh [hMultiplier], a
+	call Multiply
+	ld a, [wEnemyMonMaxHP]
+	ld b, a
+	ld a, [wEnemyMonMaxHP + 1]
+	ld c, 1
+.loop
+	srl b
+	jr c, .lastRotate
+	jr z, .foundEnd
+.lastRotate
+	rra
+	sla c
+	jr nc, .noOverflow
+	ld c, $FF
+.noOverflow
+	jr .loop
+.foundEnd
+	and a
+	jr nz, .notDividingBy0
+	inc a
+.notDividingBy0
+	ldh [hDivisor], a
+	ld b, 4 ; number of bytes in dividend
+	call Divide
+	ld a, c
+	ldh [hDivisor], a
+	call Divide
+	ldh a, [hQuotient + 1]
+	and a
+	jr z, .curHPLowerOrEqualThanMaxHP1
+	ld a, 85
+	ldh [hQuotient + 3], a
+.curHPLowerOrEqualThanMaxHP1
+	ldh a, [hQuotient + 2]
+	and a
+	jr z, .curHPLowerOrEqualThanMaxHP2
+	ld a, 85
+	ldh [hQuotient + 3], a
+.curHPLowerOrEqualThanMaxHP2
+	ldh a, [hQuotient + 3]
+	cp 86
+	jr c, .curHPLowerOrEqualThanMaxHP3
+	ld a, 85
+.curHPLowerOrEqualThanMaxHP3
+	ld b, a
+	sla b
+	ld a, 255
+	sub b
+	ld b, a		; multiplier
+	ld c, 255	; divisor	
+	xor a
+	ldh [hMultiplicand], a
+	ldh [hMultiplicand + 1], a
+	ld a, [wEnemyMonActualCatchRate]
+	ldh [hMultiplicand + 2], a
+	ld a, b
+	ldh [hMultiplier], a
+	call Multiply
+	ld a, c
+	ldh [hDivisor], a
+	ld b, 4 ; number of bytes in dividend
+	call Divide
+	
+; read ball table
+	ld a, [wcf91]
+	cp MASTER_BALL
+	jr z, .captured
+	ld b, a
+	ld hl, BallMultipliers
+.checkLoop
+	ld a, [hli]
+	cp b
+	jr z, .ballFound
+	cp -1
+	jr z, .failedToCapture
+	inc hl
+	inc hl
+	jr .checkLoop
+.ballFound
+	ld b, [hl]
+	inc hl
+	ld c, [hl]
+	ld a, b
+	ldh [hMultiplier], a
+	call Multiply
+	ld a, c
+	ldh [hDivisor], a
+	ld b, 4 ; number of bytes in dividend
+	call Divide
+	
+; read status
+	ld b, 1
+	ld c, 1
+	ld a, [wEnemyMonStatus]
+	and a
+	jr z, .ailmentMultiplierFound
+	ld b, 3
+	ld c, 2
+	and (1 << FRZ) | SLP
+	jr z, .ailmentMultiplierFound
+	ld b, 2
+	ld c, 1
+.ailmentMultiplierFound
+	ld a, b
+	ldh [hMultiplier], a
+	call Multiply
+	ld a, c
+	ldh [hDivisor], a
+	ld b, 4 ; number of bytes in dividend
+	call Divide
+	
+; threshold check
+	ldh a, [hQuotient]
+	and a
+	jr nz, .captured
+	ldh a, [hQuotient + 1]
+	and a
+	jr nz, .captured
+	ldh a, [hQuotient + 2]
+	and a
+	jr nz, .captured
+	ldh a, [hQuotient + 3]
+	cp 255
+	jr z, .captured
+	ld b, a
+	call Random
+	cp b
+	jr nc, .failedToCapture
 
 .captured
 	jr .skipShakeCalculations
@@ -2234,13 +2374,14 @@ ItemUseTMHM:
 	ld [wcf91], a
 	pop af
 	ld [wWhichPokemon], a
-	ld a, b
+/* 	ld a, b ; this is for inifiniate usage of TMs
 	and a
 	ret z
 	ld a, [wcf91]
 	call IsItemHM
 	ret c
-	jp RemoveUsedItem
+	jp RemoveUsedItem */
+	ret
 
 BootedUpTMText:
 	text_far _BootedUpTMText
@@ -2934,3 +3075,11 @@ CheckMapForMon:
 	jr nz, .loop
 	dec hl
 	ret
+
+BallMultipliers:
+; 	db ITEM_ID, Numerator, Denominator
+	db POKE_BALL   , 1, 1	; x1
+	db GREAT_BALL  , 3, 2	; x1.5
+	db SAFARI_BALL , 3, 2   ; x1.5
+	db ULTRA_BALL  , 2, 1	; x2
+	db -1 ; end
