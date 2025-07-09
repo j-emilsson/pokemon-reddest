@@ -62,9 +62,9 @@ SleepEffect:
 .setSleepCounter
 ; set target's sleep counter to a random number between 1 and 7
 	call BattleRandom
-	and $7
-	jr z, .setSleepCounter
-	ld [de], a
+	and $7 ; gives 0–7
+	jr z, .setSleepCounter ; retry if 0
+	ld [de], a ; store turns asleep in the status byte
 	call PlayCurrentMoveAnimation2
 	ld hl, FellAsleepText
 	jp PrintText
