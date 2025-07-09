@@ -184,6 +184,7 @@ PlayerMon2Text:
 	ld b, [hl]
 	ld a, [de]
 	sbc b
+	jr c, .gainedHP ; if we underflow, print default text
 	ldh [hMultiplicand + 1], a
 	ld a, 25
 	ldh [hMultiplier], a
@@ -217,6 +218,12 @@ PlayerMon2Text:
 	cp 70
 	ret c
 	ld hl, GoodText ; HP went down 70% or more
+	ret
+
+.gainedHP
+	pop bc
+	pop de
+	ld hl, EnoughText ; default text, a custom message can be used here for this
 	ret
 
 EnoughText:

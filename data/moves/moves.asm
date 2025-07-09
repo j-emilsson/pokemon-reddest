@@ -223,3 +223,4 @@ Moves:
 	move THUNDEROUS_KICK, DEFENSE_DOWN1_EFFECT,        90, ELECTRIC,     100, 10 ; start of gen 8 moves
 	;move SUPER_LICK,      DRAIN_HP_EFFECT,       	   90, GHOST,        100, 10 ; start of custom moves
 	assert_table_length NUM_ATTACKS
+	MovesEndOfList:

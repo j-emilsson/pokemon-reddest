@@ -25,17 +25,21 @@ HiddenItemNear:
 	jr nz, .loop ; if the item has already been obtained
 ; check if the item is within 4-5 tiles (depending on the direction of item)
 	ld a, [wYCoord]
-	call Sub5ClampTo0
+	call Sub4ClampTo0
 	cp d
+	jr z, .y_zflag
 	jr nc, .loop
+.y_zflag
 	ld a, [wYCoord]
 	add 4
 	cp d
 	jr c, .loop
 	ld a, [wXCoord]
-	call Sub5ClampTo0
+	call Sub4ClampTo0
 	cp e
+	jr z, .x_zflag
 	jr nc, .loop
+.x_zflag
 	ld a, [wXCoord]
 	add 5
 	cp e
@@ -43,9 +47,9 @@ HiddenItemNear:
 	scf
 	ret
 
-Sub5ClampTo0:
-; subtract 5 but clamp to 0
-	sub 5
+Sub4ClampTo0:
+; subtract 4 but clamp to 0
+	sub 4
 	cp $f0
 	ret c
 	xor a

@@ -78,6 +78,9 @@ CheckForHiddenObject::
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
+	push hl
+	call UpdateSprites
+	pop hl
 	ret
 .noMatch
 	ld a, $ff

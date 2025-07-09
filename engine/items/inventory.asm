@@ -34,6 +34,7 @@ AddItemToInventory_::
 	cp b ; does the current item in the table match the item being added?
 	jp z, .increaseItemQuantity ; if so, increase the item's quantity
 	inc hl
+.checkIfEndOfInventory
 	ld a, [hl]
 	cp $ff ; is it the end of the table?
 	jr nz, .notAtEndOfInventory
@@ -73,7 +74,8 @@ AddItemToInventory_::
 ; if so, store 99 in the current slot and store the rest in a new slot
 	ld a, 99
 	ld [hli], a
-	jp .notAtEndOfInventory
+	;jp .notAtEndOfInventory
+	jp .checkIfEndOfInventory ; go back to the end of the inventory
 .increaseItemQuantityFailed
 	pop hl
 	and a

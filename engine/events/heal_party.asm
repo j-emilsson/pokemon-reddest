@@ -35,13 +35,34 @@ HealParty:
 	push bc
 
 	ld hl, Moves
+	;ld de, hl
+	ld a, l
+	ld e, a
+	ld a, h
+	ld d, a
 	ld bc, MOVE_LENGTH
 	call AddNTimes
+
+	ld a, l
+	sub e
+	ld a, h
+	sbc d
+	ld a, 0
+	jr c, .basePP_loaded    ; if HL is < Moves, this is a glitch move and load 0 PP
+	ld de, MovesEndOfList
+	ld a, l
+	sub e
+	ld a, h
+	sbc d
+	ld a, 0
+	jr nc, .basePP_loaded    ; if HL is >= MovesEndOfList, this is a glitch move and load 0 PP
+
 	ld de, wcd6d
 	ld a, BANK(Moves)
 	call FarCopyData
 	ld a, [wcd6d + 5] ; PP is byte 5 of move data
 
+.basePP_loaded
 	pop bc
 	pop de
 	pop hl
