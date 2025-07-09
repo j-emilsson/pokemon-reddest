@@ -25,6 +25,10 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
 
 - ### Increased money won from battles
 
+- ### Facing enemy trainers when they see you
+
+- ### Added Pokeball icon to show already-owned Pokemon
+
 - ### Move Relearner and Move Deleter
 
 - ### Purchasable TMs in PokéMarts

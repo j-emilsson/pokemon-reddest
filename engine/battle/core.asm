@@ -1886,6 +1886,23 @@ DrawEnemyHUDAndHPBar:
 	lb bc, 4, 12
 	call ClearScreenArea
 	callfar PlaceEnemyHUDTiles
+	push hl ; adds caught icon to battle HUD for already-owned mons
+	ld a, [wEnemyMonSpecies2]
+	ld [wd11e], a
+	callfar IndexToPokedex
+	ld a, [wd11e]
+	dec a
+	ld c, a
+	ld b, FLAG_TEST
+	ld hl, wPokedexOwned
+	predef FlagActionPredef
+	ld a, c
+	and a
+	jr z, .notOwned
+	hlcoord 1, 1
+	ld [hl], $72 ; adds Poké Ball icon from font_battle_extra_pokeball.png
+.notOwned
+	pop hl
 	ld de, wEnemyMonNick
 	hlcoord 1, 0
 	call CenterMonName
