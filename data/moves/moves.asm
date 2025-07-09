@@ -77,7 +77,7 @@ Moves:
 	move ACID,         	  DEFENSE_DOWN_SIDE_EFFECT,    40, POISON,       100, 30
 	move EMBER,        	  BURN_SIDE_EFFECT1,           40, FIRE,         100, 25
 	move FLAMETHROWER, 	  BURN_SIDE_EFFECT1,           90, FIRE,         100, 15
-	move MIST,            MIST_EFFECT,                  0, ICE,          100, 30
+	;move MIST,            MIST_EFFECT,                  0, ICE,          100, 30
 	move WATER_GUN,    	  NO_ADDITIONAL_EFFECT,        40, WATER,        100, 25
 	move HYDRO_PUMP,   	  NO_ADDITIONAL_EFFECT,       110, WATER,         80,  5
 	move SURF,         	  NO_ADDITIONAL_EFFECT,        90, WATER,        100, 15

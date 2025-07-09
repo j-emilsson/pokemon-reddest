@@ -53,7 +53,7 @@ AttackAnimationPointers:
 	dw AcidAnim
 	dw EmberAnim
 	dw FlamethrowerAnim
-	dw MistAnim
+	;dw MistAnim
 	dw WaterGunAnim
 	dw HydroPumpAnim
 	dw SurfAnim
@@ -549,11 +549,11 @@ FlamethrowerAnim:
 	battle_anim FLAMETHROWER, SUBANIM_0D, 1, 6
 	db -1 ; end
 
-MistAnim:
+/* MistAnim:
 	battle_anim NO_MOVE, SE_LIGHT_SCREEN_PALETTE
 	battle_anim SURF, SE_WATER_DROPLETS_EVERYWHERE
 	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
-	db -1 ; end
+	db -1 ; end */
 
 WaterGunAnim:
 	battle_anim WATER_GUN, SUBANIM_2C, 0, 6

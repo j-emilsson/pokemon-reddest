@@ -53,7 +53,7 @@ MoveNames::
 	li "ACID"
 	li "EMBER"
 	li "FLAMETHROWER"
-	li "MIST"
+	;li "MIST"
 	li "WATER GUN"
 	li "HYDRO PUMP"
 	li "SURF"

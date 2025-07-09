@@ -4818,20 +4818,40 @@ ApplyAttackToEnemyPokemon:
 	ld b, DRAGON_RAGE_DAMAGE ; 40
 	cp DRAGON_RAGE
 	jr z, .storeDamage
-; Psywave
-	ld a, [hl]
+; Original Psywave
+/* 	ld a, [hl]
 	ld b, a
 	srl a
 	add b
-	ld b, a ; b = level * 1.5
+	ld b, a ; b = level * 1.5 */
 ; loop until a random number in the range [1, b) is found
-.loop
+/* .loop
 	call BattleRandom
 	and a
 	jr z, .loop
 	cp b
 	jr nc, .loop
-	ld b, a
+	ld b, a*/
+; Reworked Psywave: random damage between 50 and 120
+/* .loop
+	call BattleRandom    ; A = 0–255
+	cp 71                ; if A > 71, reject (we want 0–70)
+	jr nc, .loop         ; retry
+	add 50               ; A = 50–120
+	ld b, a              ; b = final damage */
+; Reworked Psywave: random damage between user's level and 120
+	ld a, 120        ; A = 120
+	sub b            ; A = 120 - level
+	ld c, a          ; C = range = 120 - level
+.loop
+	call BattleRandom
+	cp c             ; is A >= range?
+	jr nc, .loop     ; try again
+	add b            ; A = level + rand(0 to range-1)
+
+.store
+	ld b, a          ; store final damage in B
+
 .storeDamage ; store damage value at b
 	ld hl, wDamage
 	xor a

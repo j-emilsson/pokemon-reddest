@@ -37,13 +37,14 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
     - Low Kick now has 60 power
     - Rolling Kick now has 90 power
     - Pay Day now has 100 power
+    - Psywave now deals random damage between user's level and 120 power
 
 - ### Removed OHKO moves
     - Guillotine
     - Horn Drill
     - Fissure
 
-- ### Removed/replaced some bad moves
+- ### Removed bad moves
     - Vicegrip
     - Whirlwind
     - Roar
@@ -94,7 +95,7 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
 
 - ### Adjusted base stats of most Pokémon
 
-- ### Adjusted typings of certain Pokémon
+- ### Adjusted typings of Pokémon
     -	Ekans/Arbok
         - Poison/Dark
     -   Arcanine

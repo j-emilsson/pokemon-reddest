@@ -63,7 +63,7 @@ _PhysicalSpecialSplit:: ; Determines if a move is Physical or Special
 	db SPECIAL  ; ACID         ; 33
 	db SPECIAL  ; EMBER        ; 34
 	db SPECIAL  ; FLAMETHROWER ; 35
-	db STATUS   ; MIST         ; 36
+	;db STATUS   ; MIST         ; 36
 	db SPECIAL  ; WATER_GUN    ; 37
 	db SPECIAL  ; HYDRO_PUMP   ; 38
 	db SPECIAL  ; SURF         ; 39
