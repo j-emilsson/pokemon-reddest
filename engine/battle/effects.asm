@@ -580,12 +580,12 @@ StatModifierDownEffect:
 	ld hl, wPlayerMonStatMods
 	ld de, wEnemyMoveEffect
 	ld bc, wPlayerBattleStatus1
-	ld a, [wLinkState]
+/* 	ld a, [wLinkState] ; removes enemy trainer's 25% chance to miss status moves
 	cp LINK_STATE_BATTLING
 	jr z, .statModifierDownEffect
 	call BattleRandom
 	cp 25 percent + 1 ; chance to miss by in regular battle
-	jp c, MoveMissed
+	jp c, MoveMissed */
 .statModifierDownEffect
 	call CheckTargetSubstitute ; can't hit through substitute
 	jp nz, MoveMissed

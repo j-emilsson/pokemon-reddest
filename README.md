@@ -29,6 +29,10 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
 
 - ### Added Pokeball icon to show already-owned Pokemon
 
+- ### Removed enemy trainer's 25% chance to miss status moves
+
+- ### Added in-battle EXP bar
+
 - ### Move Relearner and Move Deleter
 
 - ### Purchasable TMs in PokéMarts
