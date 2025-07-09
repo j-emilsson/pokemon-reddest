@@ -4,6 +4,8 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
 
 ## Features
 
+- ### Adjusted base stats and movesets of all Pokémon
+
 - ### New types
     - Dark
     - Steel
@@ -11,9 +13,13 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
 
 - ### Physical/special split
 
-- ### Fixed Focus Energy Bug
+- ### Fixed various bugs
 
-- ### Fixed 100% Accuracy Bug
+  - Focus Energy bug
+  - 100% Accuracy bug
+  - Substitute bug
+  - Dual-type move effectivness misreport
+  - HP-draining moves and Dream Eater may hit through a Substitute
 
 - ### Allow attacks after waking up from SLEEP
 
@@ -32,6 +38,8 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
 - ### Removed enemy trainer's 25% chance to miss status moves
 
 - ### Added in-battle EXP bar
+
+- ### Added Gen 7 Critial Hit chance mechanic
 
 - ### Move Relearner and Move Deleter
 
@@ -105,15 +113,13 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
     - Plasma Fists
     - Thunderous Kick (Electric)
 
-### New custom moves
+- ### New custom moves
     - Super Lick
 
 - ### Different starters
     - Jolteon
     - Flareon
     - Vaporeon
-
-- ### Adjusted base stats of most Pokémon
 
 - ### Adjusted typings of Pokémon
     -	Ekans/Arbok
