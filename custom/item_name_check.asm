@@ -1,17 +1,8 @@
-NamePointers::
-; entries correspond to *_NAME constants
-	dw MonsterNames
-	dw MoveNames
-	dw UnusedBadgeNames
-	dw ItemNames
-	dw wPartyMonOT ; player's OT names list
-	dw wEnemyMonOT ; enemy's OT names list
-	dw TrainerNames
-
-GetName::
-	;farcall GetName_Custom
-	;ret
-	; arguments:
+; Input: a = item ID
+    ;        wNameListType is assumed already loaded
+    ; Output: carry set if it *is* a TM/HM (GetMachineName should be called)
+GetName_Custom::
+; arguments:
 ; [wd0b5] = which name
 ; [wNameListType] = which list
 ; [wPredefBank] = bank of list
@@ -28,9 +19,18 @@ GetName::
 		"A bug in GetName will get TM/HM names for moves above ${x:HM01}."
 	ASSERT NUM_TRAINERS < HM01, \
 		"A bug in GetName will get TM/HM names for trainers above ${x:HM01}."
+/*
+	push bc
+	ld b, a
+	ld a, [wNameListType]
+	cp ITEM_NAME
+	ld a, b
+	pop bc
+	jr nz, .notMachine
+*/
 	cp HM01
 	jp nc, GetMachineName
-
+;.notMachine
 	ldh a, [hLoadedROMBank]
 	push af
 	push hl

@@ -134,8 +134,9 @@ DisplayListMenuIDLoop::
 	ld a, [wListMenuID]
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;needed to make Mateo's move deleter/relearner work
-	cp a, MOVESLISTMENU
-	jr z, .skipStoringItemName
+	;cp a, MOVESLISTMENU
+	;jr z, .skipStoringItemName
+	farcall CheckMovesListMenu
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	cp ITEMLISTMENU
 	jr nz, .skipGettingQuantity
@@ -172,7 +173,7 @@ DisplayListMenuIDLoop::
 	ld hl, wd730
 	res 6, [hl] ; turn on letter printing delay
 	jp BankswitchBack
-.skipStoringItemName	;skip here if skipping storing item name
+/* .skipStoringItemName	;skip here if skipping storing item name
 	ld a, CHOSE_MENU_ITEM
 	ld [wMenuExitMethod], a
 	ld a, [wCurrentMenuItem]
@@ -181,7 +182,7 @@ DisplayListMenuIDLoop::
 	ld [hJoy7], a ; joypad state update flag
 	ld hl, wd730
 	res 6, [hl] ; turn on letter printing delay
-	jp BankswitchBack
+	jp BankswitchBack */
 .checkOtherKeys ; check B, SELECT, Up, and Down keys
 	bit BIT_B_BUTTON, a
 	jp nz, ExitListMenu ; if so, exit the menu

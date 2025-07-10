@@ -1798,7 +1798,8 @@ _AnimationSlideMonOff:
 ; This is a bug. The lower right corner tile of the mon back pic is blanked
 ; while the mon is sliding off the screen. It should compare with the max tile
 ; plus one instead.
-	cp $61
+	;cp $61
+	cp $62
 	ret c
 	ld a, " "
 	ret
@@ -1808,7 +1809,8 @@ _AnimationSlideMonOff:
 	sub 7
 ; This has the same problem as above, but it has no visible effect because
 ; the lower right tile is in the first column to slide off the screen.
-	cp $30
+	;cp $30
+	cp $31
 	ret c
 	ld a, " "
 	ret

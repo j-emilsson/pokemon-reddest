@@ -71,6 +71,21 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
 - The hidden 40-coin stash in the Game Corner only gives half
 - The splash screen adds 2 more stars than it should
 - The PC screen in the healing machine doesn't flash correctly
+- GetName applies to all names rather than only item names
+- wd732 isn't cleared when starting a new game at the Cycling Road
+- Bad emulators cause the 'ED' tile to not display correctly
+- The player can escape from the Safari Zone by resetting the game or via poison damage
+- NPCs can receive the wrong movement byte and behave incorrectly
+- Tile collision detection while on certain tiles causes bad performance and strange behaviour if more tiles are added to collision arrays
+- Fix Trainer Fly Glitch
+- Disable fishing and surfing in statues
+- Stuck in the wall when following Oak to his Lab
+- Sliding of trainer and Pokémon graphics can cause tearing
+- The lower-right tile of Pokémon backsprites are deleted when sliding offscreen
+- Minimize and Substitute can cause sprite glitches with enemy Pokémon
+- OAM updates can be interrupted by V-Blank
+- Trainer Card transition screens can show brief garbage on DMG
+- Double Edge looks weird when the opponent uses it
 
 - ### Allow attacks after waking up from SLEEP
 

@@ -88,6 +88,8 @@ TrainerFlagAction::
 	predef_jump FlagActionPredef
 
 TalkToTrainer::
+	;farcall TalkToTrainer_Custom
+	;ret
 	call StoreTrainerHeaderPointer
 	xor a
 	call ReadTrainerHeaderInfo     ; read flag's bit
@@ -128,6 +130,8 @@ TalkToTrainer::
 
 ; checks if any trainers are seeing the player and wanting to fight
 CheckFightingMapTrainers::
+	;farcall CheckFightingMapTrainers_Custom
+	;ret
 IF DEF(_DEBUG)
 	call DebugPressedOrHeldB
 	jr nz, .trainerNotEngaging
@@ -160,6 +164,8 @@ ENDC
 
 ; display the before battle text after the enemy trainer has walked up to the player's sprite
 DisplayEnemyTrainerTextAndStartBattle::
+	;farcall DisplayEnemyTrainerTextAndStartBattle_Custom
+	;ret
 	ld a, [wd730]
 	and $1
 	ret nz ; return if the enemy trainer hasn't finished walking to the player's sprite
@@ -224,7 +230,13 @@ ResetButtonPressedAndMapScript::
 	ldh [hJoyHeld], a
 	ldh [hJoyPressed], a
 	ldh [hJoyReleased], a
-	ld [wCurMapScript], a               ; reset battle status
+	ld [wCurMapScript], a        ; reset battle status
+	;farcall ResetTrainerAfterBattleFlags
+	ld hl, wd730
+	res 0, [hl] ; clear NPC movement flag to avoid potential softlocks
+	set 3, [hl] ; set Trainer encounter reset flag to avoid Mew Glitch
+	ld hl, wFlags_0xcd60
+	res 0, [hl] ; player is no longer engaged by any trainer
 	ret
 
 ; calls TrainerWalkUpToPlayer
@@ -264,6 +276,8 @@ SpritePositionBankswitch::
 	jp Bankswitch ; indirect jump to one of the four functions
 
 CheckForEngagingTrainers::
+	;farcall CheckForEngagingTrainers_Custom
+	;ret
 	xor a
 	call ReadTrainerHeaderInfo       ; read trainer flag's bit (unused)
 	ld d, h                          ; store trainer header address in de
@@ -399,6 +413,8 @@ CheckIfAlreadyEngaged::
 	ret
 
 PlayTrainerMusic::
+	;farcall PlayTrainerMusic_Custom
+	;ret
 	ld a, [wEngagedTrainerClass]
 	cp OPP_RIVAL1
 	ret z

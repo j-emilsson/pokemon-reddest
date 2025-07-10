@@ -363,3 +363,14 @@ SECTION "bank1F", ROMX
 INCLUDE "engine/movie/evolution.asm"
 INCLUDE "engine/overworld/elevator.asm"
 INCLUDE "engine/items/tm_prices.asm"
+
+; Custom functions
+SECTION "custom", ROMX, BANK[$2D]
+INCLUDE "custom/safari_zone_blackout.asm"
+;INCLUDE "custom/trainer_flags.asm"
+;INCLUDE "custom/trainers_custom.asm"
+INCLUDE "custom/item_name_check.asm"
+INCLUDE "custom/video_copy.asm"
+INCLUDE "custom/check_moveslistmenu.asm"
+INCLUDE "custom/update_sprites.asm"
+INCLUDE "custom/vblank.asm"
