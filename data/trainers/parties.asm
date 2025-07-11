@@ -662,6 +662,8 @@ CooltrainerFData:
 
 BrockData:
 	db $FF, 12, GEODUDE, 14, ONIX, 0
+; Rematch
+	db $FF, 62, DUGTRIO, 63, OMASTAR, 63, KABUTOPS, 64, GOLEM, 64, AERODACTYL, 65, ONIX, 0
 
 MistyData:
 	db $FF, 18, STARYU, 21, STARMIE, 0

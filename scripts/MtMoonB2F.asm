@@ -9,12 +9,16 @@ MtMoonB2F_Script:
 	ret z
 	ld hl, CoordsData_49d37
 	call ArePlayerCoordsInArray
-	jr nc, .asm_49d31
 	ld hl, wd72e
+	jr nc, .asm_49d31
+	;ld hl, wd72e
+	ld a, [wd732]
+	bit 6, a
+	jr nz, .asm_49d31
 	set 4, [hl]
 	ret
 .asm_49d31
-	ld hl, wd72e
+	;ld hl, wd72e
 	res 4, [hl]
 	ret
 

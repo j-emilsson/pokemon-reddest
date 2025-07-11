@@ -780,10 +780,11 @@
 	const_skip 8
 	const EVENT_BEAT_ARTICUNO
 	
-/* ; Custom events
-	const_next $9DB
-	const_def 1
-	 */
+; ### Custom events ###
+
+; Post Game events
+	const_next $9E0
+	const EVENT_PLAYER_IS_CHAMPION
 
 ; End of events
 	const_next $A00

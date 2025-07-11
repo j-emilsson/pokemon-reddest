@@ -118,12 +118,14 @@ DisplayTitleScreen:
 	call LoadScreenTilesFromBuffer2
 	call EnableLCD
 
-IF DEF(_RED)
-	ld a, STARTER1 ; which Pokemon to show first on the title screen
+/* IF DEF(_RED)
+	ld a, ONIX ; which Pokemon to show first on the title screen
 ENDC
 IF DEF(_BLUE)
-	ld a, STARTER2 ; which Pokemon to show first on the title screen
-ENDC
+	ld a, ONIX ; which Pokemon to show first on the title screen
+ENDC */
+	ld a, ONIX
+
 	ld [wTitleMonSpecies], a
 	call LoadTitleMonSprite
 
@@ -390,7 +392,7 @@ CopyrightTextString:
 
 INCLUDE "data/pokemon/title_mons.asm"
 
-; prints version text (red, blue)
+; prints version text (reddest)
 PrintGameVersionOnTitleScreen:
 	hlcoord 7, 8
 	ld de, VersionOnTitleScreenText
@@ -398,12 +400,15 @@ PrintGameVersionOnTitleScreen:
 
 ; these point to special tiles specifically loaded for that purpose and are not usual text
 VersionOnTitleScreenText:
-IF DEF(_RED)
+/* IF DEF(_RED)
 	db $60,$61,$7F,$65,$66,$67,$68,$69,"@" ; "Red Version"
 ENDC
 IF DEF(_BLUE)
 	db $61,$62,$63,$64,$65,$66,$67,$68,"@" ; "Blue Version"
-ENDC
+ENDC */
+	db $60,$61,$62,$63,$64,$65,$66,"@" ; "Reddest"
+	;db $60,$61,$62,$63,$64,$65,"@" ; Reddest_thin
+	;db $60,$61,$62,$63,$64,$65,$65,$65,"@"
 
 NintenText: db "NINTEN@"
 SonyText:   db "SONY@"

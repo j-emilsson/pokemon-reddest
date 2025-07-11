@@ -20,6 +20,7 @@ PALETTE_SIZE EQU NUM_PAL_COLORS * PAL_COLOR_SIZE
 	const SET_PAL_SLOTS                ; $05
 	const SET_PAL_TITLE_SCREEN         ; $06
 	const SET_PAL_NIDORINO_INTRO       ; $07
+	;const SET_PAL_ONIX_INTRO       ; $07
 	const SET_PAL_GENERIC              ; $08
 	const SET_PAL_OVERWORLD            ; $09
 	const SET_PAL_PARTY_MENU           ; $0A

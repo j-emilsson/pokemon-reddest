@@ -1,6 +1,10 @@
 CreditsTextPointers:
 ; entries correspond to CRED_* constants
 	table_width 2, CreditsTextPointers
+	dw CredReddest
+	dw CredCreator
+	dw CredDisassembly
+	dw CredPret
 	dw CredVersion
 	dw CredTajiri
 	dw CredTaOota
@@ -67,6 +71,14 @@ CreditsTextPointers:
 	dw CredPAAD
 	assert_table_length NUM_CRED_STRINGS
 
+CredReddest:
+	db -6, "REDDEST CREATOR@"
+CredCreator:
+	db -4, "INFERNATOR@"
+CredDisassembly:
+	db -7, "POKERED DISASSEMBLY@"
+CredPret:
+	db -2, "PRET@"
 CredVersion: ; this 1 byte difference makes all bank addresses offset by 1 in the blue version
 IF DEF(_RED)
 	db -8, "RED VERSION STAFF@"

@@ -131,7 +131,7 @@ PewterCityScript4:
 	call DisplayTextID
 	ld a, $3c
 	ldh [hSpriteScreenYCoord], a
-	ld a, $40
+	ld a, $50
 	ldh [hSpriteScreenXCoord], a
 	ld a, 22
 	ldh [hSpriteMapYCoord], a

@@ -1473,6 +1473,7 @@ wFBMode:: db
 ; 1 = big
 wLinkCableAnimBulgeToggle::
 wIntroNidorinoBaseTile::
+;wIntroOnixBaseTile::
 wOutwardSpiralCurrentDirection::
 wDropletTile::
 wNewTileBlockID::

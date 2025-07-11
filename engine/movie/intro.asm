@@ -1,5 +1,6 @@
 	const_def -1
 	const MOVE_NIDORINO_RIGHT
+	;const MOVE_ONIX_RIGHT
 	const MOVE_GENGAR_RIGHT
 	const MOVE_GENGAR_LEFT
 
@@ -22,6 +23,7 @@ PlayIntro:
 
 PlayIntroScene:
 	ld b, SET_PAL_NIDORINO_INTRO
+	;ld b, SET_PAL_ONIX_INTRO
 	call RunPaletteCommand
 	ldpal a, SHADE_BLACK, SHADE_DARK, SHADE_LIGHT, SHADE_WHITE
 	ldh [rBGP], a
@@ -38,6 +40,8 @@ PlayIntroScene:
 	lb bc, 6, 6
 	call InitIntroNidorinoOAM
 	lb de, 80 / 2, MOVE_NIDORINO_RIGHT
+	;call InitIntroOnixOAM
+	;lb de, 80 / 2, MOVE_ONIX_RIGHT
 	call IntroMoveMon
 	ret c
 
@@ -48,11 +52,16 @@ PlayIntroScene:
 	ld [wIntroNidorinoBaseTile], a
 	ld de, IntroNidorinoAnimation1
 	call AnimateIntroNidorino
+/* 	ld [wIntroOnixBaseTile], a
+	ld de, IntroOnixAnimation1
+	call AnimateIntroOnix */
 ; hop
 	ld a, SFX_INTRO_HOP
 	call PlaySound
 	ld de, IntroNidorinoAnimation2
 	call AnimateIntroNidorino
+	/* ld de, IntroOnixAnimation2
+	call AnimateIntroOnix */
 	ld c, 10
 	call CheckForUserInterruption
 	ret c
@@ -62,11 +71,15 @@ PlayIntroScene:
 	call PlaySound
 	ld de, IntroNidorinoAnimation1
 	call AnimateIntroNidorino
+	/* ld de, IntroOnixAnimation1
+	call AnimateIntroOnix */
 ; hop
 	ld a, SFX_INTRO_HOP
 	call PlaySound
 	ld de, IntroNidorinoAnimation2
 	call AnimateIntroNidorino
+	/* ld de, IntroOnixAnimation2
+	call AnimateIntroOnix */
 	ld c, 30
 	call CheckForUserInterruption
 	ret c
@@ -96,6 +109,9 @@ PlayIntroScene:
 	ld [wIntroNidorinoBaseTile], a
 	ld de, IntroNidorinoAnimation3
 	call AnimateIntroNidorino
+	/* ld [wIntroOnixBaseTile], a
+	ld de, IntroOnixAnimation3
+	call AnimateIntroOnix */
 	ld c, 30
 	call CheckForUserInterruption
 	ret c
@@ -115,11 +131,16 @@ PlayIntroScene:
 	ld [wIntroNidorinoBaseTile], a
 	ld de, IntroNidorinoAnimation4
 	call AnimateIntroNidorino
+/* 	ld [wIntroOnixBaseTile], a
+	ld de, IntroOnixAnimation4
+	call AnimateIntroOnix */
 ; hop
 	ld a, SFX_INTRO_HOP
 	call PlaySound
 	ld de, IntroNidorinoAnimation5
 	call AnimateIntroNidorino
+	/* ld de, IntroOnixAnimation5
+	call AnimateIntroOnix */
 	ld c, 20
 	call CheckForUserInterruption
 	ret c
@@ -128,6 +149,9 @@ PlayIntroScene:
 	ld [wIntroNidorinoBaseTile], a
 	ld de, IntroNidorinoAnimation6
 	call AnimateIntroNidorino
+	/* ld [wIntroOnixBaseTile], a
+	ld de, IntroOnixAnimation6
+	call AnimateIntroOnix */
 	ld c, 30
 	call CheckForUserInterruption
 	ret c
@@ -139,6 +163,9 @@ PlayIntroScene:
 	ld [wIntroNidorinoBaseTile], a
 	ld de, IntroNidorinoAnimation7
 	jp AnimateIntroNidorino
+	/* ld [wIntroOnixBaseTile], a
+	ld de, IntroOnixAnimation7
+	jp AnimateIntroOnix */
 
 AnimateIntroNidorino:
 	ld a, [de]
@@ -156,6 +183,22 @@ AnimateIntroNidorino:
 	pop de
 	inc de
 	jr AnimateIntroNidorino
+/* AnimateIntroOnix:
+	ld a, [de]
+	cp ANIMATION_END
+	ret z
+	ld [wBaseCoordY], a
+	inc de
+	ld a, [de]
+	ld [wBaseCoordX], a
+	push de
+	ld c, 6 * 6
+	call UpdateIntroOnixOAM
+	ld c, 5
+	call DelayFrames
+	pop de
+	inc de
+	jr AnimateIntroOnix */
 
 UpdateIntroNidorinoOAM:
 	ld hl, wOAMBuffer
@@ -175,8 +218,27 @@ UpdateIntroNidorinoOAM:
 	dec c
 	jr nz, .loop
 	ret
+/* UpdateIntroOnixOAM:
+	ld hl, wOAMBuffer
+	ld a, [wIntroOnixBaseTile]
+	ld d, a
+.loop
+	ld a, [wBaseCoordY]
+	add [hl]
+	ld [hli], a ; Y
+	ld a, [wBaseCoordX]
+	add [hl]
+	ld [hli], a ; X
+	ld a, d
+	ld [hli], a ; tile
+	inc hl
+	inc d
+	dec c
+	jr nz, .loop
+	ret */
 
 InitIntroNidorinoOAM:
+;InitIntroOnixOAM:
 	ld hl, wOAMBuffer
 	ld d, 0
 .loop
@@ -237,6 +299,8 @@ IntroMoveMon:
 	ld a, e
 	cp MOVE_NIDORINO_RIGHT
 	jr z, .moveNidorinoRight
+	/* cp MOVE_ONIX_RIGHT
+	jr z, .moveOnixRight */
 	cp MOVE_GENGAR_LEFT
 	jr z, .moveGengarLeft
 ; move Gengar right
@@ -245,6 +309,7 @@ IntroMoveMon:
 	dec a
 	jr .next
 .moveNidorinoRight
+;.moveOnixRight
 	push de
 	ld a, 2
 	ld [wBaseCoordX], a
@@ -252,6 +317,7 @@ IntroMoveMon:
 	ld [wBaseCoordY], a
 	ld c, 6 * 6
 	call UpdateIntroNidorinoOAM
+	;call UpdateIntroOnixOAM
 	pop de
 .moveGengarLeft
 	ldh a, [hSCX]
@@ -360,10 +426,12 @@ EmptyFunc2:
 	ret
 
 IntroNidorinoAnimation0:
+;IntroOnixAnimation0:
 	db 0, 0
 	db ANIMATION_END
 
 IntroNidorinoAnimation1:
+;IntroOnixAnimation1:
 ; This is a sequence of pixel movements for part of the Nidorino animation. This
 ; list describes how Nidorino should hop.
 ; First byte is y movement, second byte is x movement
@@ -375,6 +443,7 @@ IntroNidorinoAnimation1:
 	db ANIMATION_END
 
 IntroNidorinoAnimation2:
+;IntroOnixAnimation2:
 ; This is a sequence of pixel movements for part of the Nidorino animation.
 ; First byte is y movement, second byte is x movement
 	db  0,  0
@@ -385,6 +454,7 @@ IntroNidorinoAnimation2:
 	db ANIMATION_END
 
 IntroNidorinoAnimation3:
+;IntroOnixAnimation3:
 ; This is a sequence of pixel movements for part of the Nidorino animation.
 ; First byte is y movement, second byte is x movement
 	db   0, 0
@@ -395,6 +465,7 @@ IntroNidorinoAnimation3:
 	db ANIMATION_END
 
 IntroNidorinoAnimation4:
+;IntroOnixAnimation4:
 ; This is a sequence of pixel movements for part of the Nidorino animation.
 ; First byte is y movement, second byte is x movement
 	db  0,  0
@@ -405,6 +476,7 @@ IntroNidorinoAnimation4:
 	db ANIMATION_END
 
 IntroNidorinoAnimation5:
+;IntroOnixAnimation5:
 ; This is a sequence of pixel movements for part of the Nidorino animation.
 ; First byte is y movement, second byte is x movement
 	db  0, 0
@@ -415,6 +487,7 @@ IntroNidorinoAnimation5:
 	db ANIMATION_END
 
 IntroNidorinoAnimation6:
+;IntroOnixAnimation6:
 ; This is a sequence of pixel movements for part of the Nidorino animation.
 ; First byte is y movement, second byte is x movement
 	db 0, 0
@@ -424,6 +497,7 @@ IntroNidorinoAnimation6:
 	db ANIMATION_END
 
 IntroNidorinoAnimation7:
+;IntroOnixAnimation7:
 ; This is a sequence of pixel movements for part of the Nidorino animation.
 ; First byte is y movement, second byte is x movement
 	db -8, -16
@@ -460,6 +534,13 @@ FightIntroFrontMon2:
 FightIntroFrontMon3:
 	INCBIN "gfx/intro/blue_jigglypuff_3.2bpp"
 ENDC
+
+/* FightIntroFrontMon:
+	INCBIN "gfx/intro/onix_1.2bpp"
+FightIntroFrontMon2:
+	INCBIN "gfx/intro/onix_2.2bpp"
+FightIntroFrontMon3:
+	INCBIN "gfx/intro/onix_3.2bpp" */
 
 FightIntroFrontMonEnd:
 

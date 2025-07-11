@@ -97,6 +97,7 @@ HallofFameRoomScript1:
 	ld a, HS_CERULEAN_CAVE_GUY
 	ld [wMissableObjectIndex], a
 	predef HideObject
+	SetEvent EVENT_PLAYER_IS_CHAMPION
 	ld a, $2
 	ld [wHallOfFameCurScript], a
 	ret

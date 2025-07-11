@@ -139,6 +139,12 @@ BlkPacket_NidorinoIntro:
 	ATTR_BLK_DATA %011, 0,0,0, 00,04, 19,13 ; letterbox: pal 0
 	ATTR_BLK_DATA %011, 1,1,0, 00,14, 19,17 ; lower black bar: pal 1
 	ds 12, 0
+/* BlkPacket_OnixIntro:
+	ATTR_BLK 3
+	ATTR_BLK_DATA %011, 1,1,0, 00,00, 19,03 ; upper black bar: pal 1
+	ATTR_BLK_DATA %011, 0,0,0, 00,04, 19,13 ; letterbox: pal 0
+	ATTR_BLK_DATA %011, 1,1,0, 00,14, 19,17 ; lower black bar: pal 1
+	ds 12, 0 */
 
 ; unused
 	db $03, 00,00, 19,03, $01
@@ -225,6 +231,7 @@ PalPacket_Titlescreen:    PAL_SET PAL_LOGO2, PAL_LOGO1, PAL_MEWMON, PAL_PURPLEMO
 PalPacket_TrainerCard:    PAL_SET PAL_MEWMON, PAL_BADGE, PAL_REDMON, PAL_YELLOWMON
 PalPacket_Generic:        PAL_SET PAL_MEWMON, 0, 0, 0
 PalPacket_NidorinoIntro:  PAL_SET PAL_PURPLEMON, PAL_BLACK, 0, 0
+;PalPacket_OnixIntro:  PAL_SET PAL_GREYMON, PAL_BLACK, 0, 0
 PalPacket_GameFreakIntro: PAL_SET PAL_GAMEFREAK, PAL_REDMON, PAL_VIRIDIAN, PAL_BLUEMON
 
 PalTrnPacket:  PAL_TRN

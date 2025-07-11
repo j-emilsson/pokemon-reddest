@@ -1,7 +1,9 @@
 _Route8BattleText1::
 	text "You look good at"
 	line "#MON, but"
-	cont "how's your chem?"
+	;cont "how's your chem?"
+	cont "how's your"
+	para "chemistry grade?"
 	done
 
 _Route8EndBattleText1::

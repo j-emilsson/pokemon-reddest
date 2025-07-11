@@ -125,6 +125,10 @@ SetPal_NidorinoIntro:
 	ld hl, PalPacket_NidorinoIntro
 	ld de, BlkPacket_NidorinoIntro
 	ret
+/* SetPal_OnixIntro:
+	ld hl, PalPacket_OnixIntro
+	ld de, BlkPacket_OnixIntro
+	ret */
 
 SetPal_GameFreakIntro:
 	ld hl, PalPacket_GameFreakIntro
@@ -250,6 +254,7 @@ SetPalFunctions:
 	dw SetPal_Slots
 	dw SetPal_TitleScreen
 	dw SetPal_NidorinoIntro
+	;dw SetPal_OnixIntro
 	dw SetPal_Generic
 	dw SetPal_Overworld
 	dw SetPal_PartyMenu

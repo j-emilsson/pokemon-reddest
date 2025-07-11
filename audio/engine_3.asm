@@ -1194,9 +1194,12 @@ Audio3_InitPitchSlideVars:
 	sbc b
 	ld d, a
 
+	push af
 	ld hl, wChannelPitchSlideTargetFrequencyHighBytes
 	add hl, bc
+	pop af
 	ld a, [hl]
+	sbc b
 	sub d
 	ld d, a
 	ld b, 0
