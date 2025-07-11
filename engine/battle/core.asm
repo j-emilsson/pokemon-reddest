@@ -1396,7 +1396,8 @@ EnemySendOutFirstMon:
 	ld a, [wLinkState]
 	cp LINK_STATE_BATTLING
 	jr z, .next4
-	ld a, [wOptions]
+	jr .next4 ; hard mode: unconditionally skip switch request
+	/* ld a, [wOptions]
 	bit BIT_BATTLE_SHIFT, a
 	jr nz, .next4
 	ld hl, TrainerAboutToUseText
@@ -1411,7 +1412,7 @@ EnemySendOutFirstMon:
 	jr nz, .next4
 	ld a, BATTLE_PARTY_MENU
 	ld [wPartyMenuTypeOrMessageID], a
-	call DisplayPartyMenu
+	call DisplayPartyMenu*/
 .next9
 	ld a, 1
 	ld [wCurrentMenuItem], a
@@ -2203,7 +2204,8 @@ DisplayBattleMenu::
 .throwSafariBallWasSelected
 	ld a, SAFARI_BALL
 	ld [wcf91], a
-	jr UseBagItem
+	;jr UseBagItem
+	jp UseBagItem
 
 .upperLeftMenuItemWasNotSelected ; a menu item other than the upper left item was selected
 	cp $2
@@ -2240,7 +2242,20 @@ BagWasSelected:
 	call DrawHUDsAndHPBars
 .next
 	ld a, [wBattleType]
-	dec a ; is it the old man tutorial?
+	;dec a ; is it the old man tutorial?
+	cp BATTLE_TYPE_OLD_MAN ; is it the old man battle?
+    jr z, .simulatedInputBattle
+
+	ld a, [wIsInBattle] ; Check if this is a wild battle or trainer battle
+	dec a
+	jr z, .normalMode ; Not a trainer battle
+
+	ld hl, ItemsCantBeUsedText ; items can't be used during trainer battles in hard mode
+	call PrintText
+	jp DisplayBattleMenu
+.normalMode
+	jr DisplayPlayerBag ; no, it is a normal battle
+.simulatedInputBattle
 	jr nz, DisplayPlayerBag ; no, it is a normal battle
 	ld hl, OldManItemList
 	ld a, l
@@ -2251,7 +2266,8 @@ BagWasSelected:
 
 OldManItemList:
 	db 1 ; # items
-	db POKE_BALL, 50
+	;db POKE_BALL, 50
+	db POKE_BALL, 1 ; changes the number of poke balls from 50 to 1 to maintain logic
 	db -1 ; end
 
 DisplayPlayerBag:
@@ -2336,6 +2352,10 @@ UseBagItem:
 
 ItemsCantBeUsedHereText:
 	text_far _ItemsCantBeUsedHereText
+	text_end
+
+ItemsCantBeUsedText:
+	text_far _ItemsCantBeUsedText
 	text_end
 
 PartyMenuOrRockOrRun:
@@ -6566,6 +6586,7 @@ LoadPlayerBackPic:
 	ASSERT BANK(RedPicBack) == BANK(OldManPicBack)
 	call UncompressSpriteFromDE
 	predef ScaleSpriteByTwo
+	;call LoadBackSpriteUnzoomed
 	ld hl, wOAMBuffer
 	xor a
 	ldh [hOAMTile], a ; initial tile number
@@ -7292,6 +7313,7 @@ LoadMonBackPic:
 	predef ScaleSpriteByTwo
 	ld de, vBackPic
 	call InterlaceMergeSpriteBuffers ; combine the two buffers to a single 2bpp sprite
+	;call LoadBackSpriteUnzoomed
 	ld hl, vSprites
 	ld de, vBackPic
 	ld c, (2*SPRITEBUFFERSIZE)/16 ; count of 16-byte chunks to be copied
@@ -7307,3 +7329,9 @@ PhysicalSpecialSplit:
 	call _PhysicalSpecialSplit
 	ld a, [wTempMoveID]
 	ret ; physical/special split end
+
+/* LoadBackSpriteUnzoomed:
+	ld a, $66
+	ld de, vBackPic
+	push de
+	jp LoadUncompressedBackSprite */

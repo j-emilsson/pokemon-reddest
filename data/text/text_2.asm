@@ -952,6 +952,11 @@ _ItemsCantBeUsedHereText::
 	line "used here."
 	prompt
 
+_ItemsCantBeUsedText::
+	text "Items can't be"
+	line "used in battles!"
+	prompt
+
 _AlreadyOutText::
 	text_ram wBattleMonNick
 	text " is"

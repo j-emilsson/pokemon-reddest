@@ -123,6 +123,15 @@ ItemUseBall:
 	ld a, [wBoxCount] ; is box full?
 	cp MONS_PER_BOX
 	jp z, BoxFullCannotThrowBall
+	
+; Hard mode, can't throw balls at pokemon above level cap
+	callfar GetLevelCap
+	ld a, [wMaxLevel]
+	ld b, a
+	ld a, [wEnemyMonLevel]
+	dec a ; force a carry if values are equal
+	cp b
+	jp nc, TooStrongToCatch
 
 .canUseBall
 	xor a
@@ -1477,9 +1486,17 @@ ItemUseMedicine:
 	push hl
 	ld bc, wPartyMon1Level - wPartyMon1
 	add hl, bc ; hl now points to level
+	push hl ; store mon's level
+	ld b, MAX_LEVEL
+	callfar GetLevelCap
+	ld a, [wMaxLevel]
+	ld b, a
+	pop hl ; retrieve mon's level
 	ld a, [hl] ; a = level
-	cp MAX_LEVEL
-	jr z, .vitaminNoEffect ; can't raise level above 100
+	;cp MAX_LEVEL
+	cp b ; level cap
+	;jr z, .vitaminNoEffect ; can't raise level above 100
+	jr nc, .vitaminNoEffect ; can't raise level above cap ; Carry is better than zero here.
 	inc a
 	ld [hl], a ; store incremented level
 	ld [wCurEnemyLVL], a
@@ -2426,6 +2443,10 @@ ItemUseNotTime:
 	ld hl, ItemUseNotTimeText
 	jr ItemUseFailed
 
+TooStrongToCatch:
+	ld hl, TooStrongToCatchText
+	jr ItemUseFailed
+
 ItemUseNotYoursToUse:
 	ld hl, ItemUseNotYoursToUseText
 	jr ItemUseFailed
@@ -2461,6 +2482,10 @@ ItemUseFailed:
 
 ItemUseNotTimeText:
 	text_far _ItemUseNotTimeText
+	text_end
+
+TooStrongToCatchText:
+	text_far _TooStrongToCatchText
 	text_end
 
 ItemUseNotYoursToUseText:
@@ -3096,6 +3121,8 @@ CheckMapForMon:
 	ld a, c
 	ld [de], a
 	inc de
+	inc hl
+	ret
 .nextEntry
 	inc hl
 	inc hl

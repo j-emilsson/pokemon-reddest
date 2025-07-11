@@ -2,6 +2,9 @@ DisplayPokemonCenterDialogue_::
 	call SaveScreenTilesToBuffer1 ; save screen
 	ld hl, PokemonCenterWelcomeText
 	call PrintText
+	ld a, [wPartyCount]
+	and a
+	jp z, .naotenho
 	ld hl, wd72e
 	bit 2, [hl]
 	set 1, [hl]
@@ -44,6 +47,13 @@ DisplayPokemonCenterDialogue_::
 	ld hl, PokemonCenterFarewellText
 	call PrintText
 	jp UpdateSprites
+.naotenho
+	ld hl, TemPokemonOuNao
+	jp PrintText
+
+TemPokemonOuNao:
+	text_far _TemPokemonOuNao
+	text_end
 
 PokemonCenterWelcomeText:
 	text_far _PokemonCenterWelcomeText

@@ -552,8 +552,13 @@ DisplayOptionMenu:
 	ld [wOptionsBattleAnimCursorX], a
 	jp .eraseOldMenuCursor
 .cursorInBattleStyle
-	ld a, [wOptionsBattleStyleCursorX] ; battle style cursor X coordinate
+	jr .lockedToSet
+	/* ld a, [wOptionsBattleStyleCursorX] ; battle style cursor X coordinate
 	xor $0b ; toggle between 1 and 10
+	ld [wOptionsBattleStyleCursorX], a
+	jp .eraseOldMenuCursor */
+.lockedToSet
+	ld a, 10 ; SET mode cursor position
 	ld [wOptionsBattleStyleCursorX], a
 	jp .eraseOldMenuCursor
 .pressedLeftInTextSpeed
@@ -627,6 +632,7 @@ SetOptionsFromCursorPositions:
 	jr .storeOptions
 .battleStyleShift
 	res 6, d
+	jr .battleStyleSet
 .storeOptions
 	ld a, d
 	ld [wOptions], a
@@ -656,6 +662,8 @@ SetCursorPositionsFromOptions:
 	hlcoord 0, 8
 	call .placeUnfilledRightArrow
 	sla c
+	ld a, 10
+	jr nz, .storeBattleStyleCursorX
 	ld a, 1
 	jr nc, .storeBattleStyleCursorX
 	ld a, 10

@@ -4,6 +4,11 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
 
 ## Features
 
+- ### Hard mode
+  - Forced Set Mode
+  - Gym Level Caps
+  - No items in battles
+
 - ### Adjusted base stats and movesets of all Pokémon
 
 - ### New types
@@ -107,7 +112,12 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
     - Battles can get stuck in a disabled state causing softlocks
     - Saves corrupted by mid-save shutoff are not handled
     - Multiple dialogs are able to be held on-screen with the A button
+    - Improve the Pokédex AREA functionality
+    - Make Custom Starter Dex Entries Show at Oak's Lab
+    - Left Shore can spawn Pokémon
 </details>
+
+- ### Another rival
 
 - ### Faster movement
   - Holding B gives:
@@ -117,6 +127,8 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
 
 - ### Gym Leader Rematches
   - Brock
+
+- ### Unique Party Menu Sprite Icons
 
 - ### Allow attacks after waking up from SLEEP
 
@@ -148,7 +160,7 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
 
 - ### Increased bag space
 
-- ### Another rival
+- ### Removed need of HM05 FLASH for Rock Tunnel
 
 - ### Updated power, accuracy, pp and additional effect changes on existing moves to latest gen
   
