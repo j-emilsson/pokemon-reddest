@@ -93,9 +93,9 @@ DisplayTitleScreen:
 	call DrawPlayerCharacter
 
 ; put a pokeball in the player's hand
-	ld hl, wOAMBuffer + $28
+/* 	ld hl, wOAMBuffer + $28
 	ld a, $74
-	ld [hl], a
+	ld [hl], a */
 
 ; place tiles for title screen copyright
 	hlcoord 2, 17
