@@ -1,6 +1,6 @@
 # Pokémon Reddest
 
-This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provided by the [pret team](https://github.com/pret).
+This is a ROM hack of Pokémon Red and Blue, based on the disassemblies, provided by the [pret team](https://github.com/pret).
 
 ## Features
 
@@ -119,6 +119,8 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
 
 - ### Another rival
 
+- ### Mini-boss at the end of each route (TODO)
+
 - ### Faster movement
   - Holding B gives:
     - 2x walking speed
@@ -161,6 +163,8 @@ This is a rom hack of Pokémon Red and Blue, based on the disassemblies, provide
 - ### Increased bag space
 
 - ### Removed need of HM05 FLASH for Rock Tunnel
+
+- ### Removed disobedience
 
 - ### Updated power, accuracy, pp and additional effect changes on existing moves to latest gen
   

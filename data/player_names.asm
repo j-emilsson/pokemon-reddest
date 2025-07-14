@@ -3,14 +3,12 @@ DefaultNamesPlayer:
 	db   "NEW NAME"
 	next "RED"
 	next "ASH"
-	next "JACK"
 	db   "@"
 
 DefaultNamesRival:
 	db   "NEW NAME"
 	next "BLUE"
 	next "GARY"
-	next "JOHN"
 	db   "@"
 ENDC
 
@@ -19,13 +17,15 @@ DefaultNamesPlayer:
 	db   "NEW NAME"
 	next "BLUE"
 	next "GARY"
-	next "JOHN"
 	db   "@"
 
 DefaultNamesRival:
 	db   "NEW NAME"
 	next "RED"
 	next "ASH"
-	next "JACK"
 	db   "@"
 ENDC
+
+; IMPORTANT: update this number, if modifying the number of available default names
+PLAYER_NAME_COUNT  EQU 3
+RIVAL_NAME_COUNT   EQU 3

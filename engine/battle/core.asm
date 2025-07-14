@@ -1396,8 +1396,14 @@ EnemySendOutFirstMon:
 	ld a, [wLinkState]
 	cp LINK_STATE_BATTLING
 	jr z, .next4
-	jr .next4 ; hard mode: unconditionally skip switch request
-	/* ld a, [wOptions]
+	jr .next4
+
+; check if player is on hard difficulty
+    ld a, [wDifficulty]
+    and a
+    jr nz, .next4 ; if hard difficulty is enabled (nz), skip switch request
+
+	ld a, [wOptions]
 	bit BIT_BATTLE_SHIFT, a
 	jr nz, .next4
 	ld hl, TrainerAboutToUseText
@@ -1412,7 +1418,7 @@ EnemySendOutFirstMon:
 	jr nz, .next4
 	ld a, BATTLE_PARTY_MENU
 	ld [wPartyMenuTypeOrMessageID], a
-	call DisplayPartyMenu*/
+	call DisplayPartyMenu
 .next9
 	ld a, 1
 	ld [wCurrentMenuItem], a
@@ -2248,12 +2254,18 @@ BagWasSelected:
 
 	ld a, [wIsInBattle] ; Check if this is a wild battle or trainer battle
 	dec a
-	jr z, .normalMode ; Not a trainer battle
+	jr z, .normalDifficulty ; Not a trainer battle
 
-	ld hl, ItemsCantBeUsedText ; items can't be used during trainer battles in hard mode
+; check if player is on normal difficulty
+    ld a, [wDifficulty]
+	and a
+	jr z, .normalDifficulty
+
+; hard difficulty
+	ld hl, ItemsCantBeUsedText ; items can't be used during trainer battles
 	call PrintText
 	jp DisplayBattleMenu
-.normalMode
+.normalDifficulty
 	jr DisplayPlayerBag ; no, it is a normal battle
 .simulatedInputBattle
 	jr nz, DisplayPlayerBag ; no, it is a normal battle
@@ -3186,8 +3198,26 @@ ExecutePlayerMove:
 	ld hl, wPlayerBattleStatus1
 	bit CHARGING_UP, [hl] ; charging up for attack
 	jr nz, PlayerCanExecuteChargingMove
-	call CheckForDisobedience
-	jp z, ExecutePlayerMoveDone
+	; remove disobedience
+	;call CheckForDisobedience
+	;jp z, ExecutePlayerMoveDone
+	; Disobedience removed, always allow moves
+	xor a
+	ld [wMonIsDisobedient], a
+
+	; fallback to normal move selection from menu
+    ld a, [wCurrentMenuItem]
+    ld c, a
+    ld b, 0
+    ld hl, wBattleMonMoves
+    add hl, bc
+    ld a, [hl]
+    ld [wPlayerSelectedMove], a
+    call GetCurrentMove
+
+    ; Clear zero flag (Z=0 means "move can proceed")
+    xor a
+    and a
 
 CheckIfPlayerNeedsToChargeUp:
 	ld a, [wPlayerMoveEffect]
@@ -4053,9 +4083,35 @@ OHKOText:
 	text_far _OHKOText
 	text_end
 
+/* CheckForDisobedience:
+	xor a
+	ld [wMonIsDisobedient], a
+
+	ld a, [wPlayerSelectedMove]
+	cp STRUGGLE
+	jr z, .monDoesNothing
+
+	; fallback to normal move
+	ld a, [wCurrentMenuItem]
+	ld c, a
+	ld b, 0
+	ld hl, wBattleMonMoves
+	add hl, bc
+	ld a, [hl]
+	ld [wPlayerSelectedMove], a
+	call GetCurrentMove
+
+	ld a, 1
+	and a ; clear Z flag
+	ret
+
+.monDoesNothing
+	xor a ; set Z flag (disobeyed)
+	ret
+ */
 ; checks if a traded mon will disobey due to lack of badges
 ; stores whether the mon will use a move in Z flag
-CheckForDisobedience:
+/* CheckForDisobedience:
 	xor a
 	ld [wMonIsDisobedient], a
 	ld a, [wLinkState]
@@ -4232,7 +4288,7 @@ CheckForDisobedience:
 	ret
 .cannotUseMove
 	xor a ; set Z flag
-	ret
+	ret */
 
 LoafingAroundText:
 	text_far _LoafingAroundText
@@ -7188,8 +7244,16 @@ _LoadTrainerPic:
 	ld d, a ; de contains pointer to trainer pic
 	ld a, [wLinkState]
 	and a
-	ld a, BANK("Pics 6") ; this is where all the trainer pics are (not counting Red's)
-	jr z, .loadSprite
+	;ld a, BANK("Pics 6") ; this is where all the trainer pics are (not counting Red's)
+	;jr z, .loadSprite
+	jr nz, .useRed
+	ld a, [wTrainerClass]
+	cp PROF_OAK ; first trainer class in "Trainer Pics 2"
+	ld a, BANK("Trainer Pics 2")
+	jr nc, .loadSprite
+	ld a, BANK("Trainer Pics 1")
+	jr .loadSprite
+.useRed
 	ld a, BANK(RedPicFront)
 .loadSprite
 	call UncompressSpriteFromDE

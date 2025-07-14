@@ -123,9 +123,17 @@ GainExperience:
 	ld [wd0b5], a
 	call GetMonHeader
 	ld d, MAX_LEVEL
+	
+; Check if player is on normal difficulty
+	ld a, [wDifficulty]
+	and a
+	jr z, .normalDifficulty
+
+; Level caps on hard difficulty
 	call GetLevelCap
 	ld a, [wMaxLevel]
 	ld d, a
+.normalDifficulty
 	callfar CalcExperience ; get max exp
 ; compare max exp with current exp
 	ldh a, [hExperience]

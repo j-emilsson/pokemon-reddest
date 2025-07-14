@@ -66,12 +66,20 @@ DayCareMText1:
 	ld [wMonDataLocation], a
 	call LoadMonData
 	callfar CalcLevelFromExperience
+
 	ld b, MAX_LEVEL
+; check if player is on normal difficulty	
+	ld a, [wDifficulty]
+	and a
 	ld a, b
 	ld [wMaxLevel], a
+	jr z, .normalDifficulty
+
+; level cap on hard mode
 	callfar GetLevelCap
 	ld a, [wMaxLevel]
 	ld b, a
+.normalDifficulty
 	ld a, d
 	;cp MAX_LEVEL
 	cp b

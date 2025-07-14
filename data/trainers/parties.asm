@@ -11,7 +11,7 @@ TrainerDataPointers:
 	dw BikerData
 	dw BurglarData
 	dw EngineerData
-	dw UnusedJugglerData
+	;dw UnusedJugglerData
 	dw FisherData
 	dw SwimmerData
 	dw CueBallData
@@ -25,7 +25,7 @@ TrainerDataPointers:
 	dw BlackbeltData
 	dw Green1Data
 	dw ProfOakData
-	dw ChiefData
+	;dw ChiefData
 	dw ScientistData
 	dw GiovanniData
 	dw RocketData
@@ -46,6 +46,7 @@ TrainerDataPointers:
 	dw ChannelerData
 	dw AgathaData
 	dw LanceData
+	dw InfernatorData
 
 ; if first byte != $FF, then
 	; first byte is level (of all pokemon on this team)
@@ -313,7 +314,7 @@ EngineerData:
 	db 21, MAGNEMITE, 0
 	db 18, MAGNEMITE, MAGNEMITE, MAGNETON, 0
 
-UnusedJugglerData:
+;UnusedJugglerData:
 ; none
 
 FisherData:
@@ -524,10 +525,10 @@ ProfOakData:
 	db $FF, 66, TAUROS, 67, EXEGGUTOR, 68, ARCANINE, 70, GYARADOS, 75, VAPOREON, 0
 	db $FF, 66, TAUROS, 67, EXEGGUTOR, 68, ARCANINE, 70, GYARADOS, 75, JOLTEON, 0
 
-; Used for INFERNO
+/* ; Used for INFERNO
 ChiefData:
 ; Route 1
-	db 5, ONIX, 0
+	db 5, ONIX, 0 */
 
 ScientistData:
 ; Unused
@@ -749,3 +750,7 @@ Green3Data:
 	db $FF, 70, RAICHU, 70, JYNX, 70, GYARADOS, 70, FARFETCHD, 72, CLOYSTER, 75, FLAREON, 0
 	db $FF, 70, RAICHU, 70, JYNX, 70, GYARADOS, 70, FARFETCHD, 72, EXEGGUTOR, 75, VAPOREON, 0
 	db $FF, 70, RAICHU, 70, JYNX, 70, GYARADOS, 70, FARFETCHD, 72, RHYDON, 75, JOLTEON, 0
+
+InfernatorData:
+; Route 1
+	db 5, ONIX, 0

@@ -57,6 +57,93 @@ OakSpeech:
 	call SpecialWarpIn
 	xor a
 	ldh [hTileAnimations], a
+
+	; REDDEST intro
+/* 	
+	; INFERNATOR
+	ld de, InfernatorPic
+	lb bc, BANK(InfernatorPic), $00
+ */
+
+	; INFERNATOR and ONIX
+ 	ld de, InfernatorOnixPic
+	lb bc, BANK(InfernatorOnixPic), $00
+	call IntroDisplayPicCenteredOrUpperRight
+	call FadeInIntroPic
+	ld hl, InfernatorSpeechText1
+	call PrintText
+	call ClearScreen
+
+.MenuCursorLoop ; difficulty menu
+	ld a, [wSkipPrintDifficultyText]
+	and a
+	jr nz, .skipPrint
+
+	ld hl, DifficultyText
+	call PrintText
+
+.skipPrint
+	call DifficultyChoice ; This might change wCurrentMenuItem internally!
+
+	; Was B pressed?
+	ldh a, [hJoy5]
+	bit 1, a ; B_BUTTON is bit 1
+	jr z, .notB
+
+	; B pressed — restore previous selection and skip printing next loop
+	ld a, $01
+	ld [wSkipPrintDifficultyText], a
+
+	ld a, [wSavedMenuItem]
+	ld [wCurrentMenuItem], a
+	jp .MenuCursorLoop
+
+.notB
+	xor a
+	ld [wSkipPrintDifficultyText], a ; reset flag
+
+	; Save selection (0 = HARD, 1 = NORMAL) - update as needed if reversed
+	ld a, [wCurrentMenuItem]
+	ld [wSavedMenuItem], a
+	; Preview text based on choice
+	and a
+	jr z, .ShowHard
+.ShowNormal:
+	ld hl, NormalDifficultyText
+	call PrintText
+	jr .Confirm
+.ShowHard:
+	ld hl, HardDifficultyText
+	call PrintText
+
+.Confirm:
+	call YesNoNormalHardChoice
+
+	ld a, [wCurrentMenuItem]
+	and a
+	jr z, .CommitDifficulty ; if "Yes" selected
+
+	; "No" or B pressed — restore previous selection and retry
+	ld a, [wSavedMenuItem]
+	ld [wCurrentMenuItem], a
+	jp .MenuCursorLoop
+
+.CommitDifficulty:
+	; Commit difficulty choice
+	ld a, [wSavedMenuItem]
+	xor 1 ; flip to desired internal value (0 = hard, 1 = normal internally → 1 = hard mode)
+	ld [wDifficulty], a
+
+	; Proceed with intro
+	ld de, InfernatorOnixPic
+	lb bc, BANK(InfernatorOnixPic), $00
+	call IntroDisplayPicCenteredOrUpperRight
+	call FadeInIntroPic
+	ld hl, InfernatorSpeechText2
+	call PrintText
+	call GBFadeOutToWhite
+	call ClearScreen ; clear the screen before resuming normal intro
+
 	ld a, [wd732]
 	bit 1, a ; possibly a debug mode bit
 	jp nz, .skipChoosingNames
@@ -156,6 +243,21 @@ OakSpeech:
 	call DelayFrames
 	call GBFadeOutToWhite
 	jp ClearScreen
+InfernatorSpeechText1:
+	text_far _InfernatorSpeechText1
+	text_end
+InfernatorSpeechText2:
+	text_far _InfernatorSpeechText2
+	text_end
+NormalDifficultyText:
+	text_far _NormalDifficultyText
+	text_end
+HardDifficultyText:
+	text_far _HardDifficultyText
+	text_end
+DifficultyText:
+	text_far _DifficultyText
+	text_end
 OakSpeechText1:
 	text_far _OakSpeechText1
 	text_end
@@ -235,3 +337,41 @@ IntroDisplayPicCenteredOrUpperRight:
 	xor a
 	ldh [hStartTileID], a
 	predef_jump CopyUncompressedPicToTilemap
+
+; displays difficulty choice
+DifficultyChoice::
+	call SaveScreenTilesToBuffer1
+	call InitDifficultyTextBoxParameters
+	jr DisplayDifficultyChoice
+
+InitDifficultyTextBoxParameters::
+  	ld a, DIFFICULTY_MENU
+	ld [wTwoOptionMenuID], a
+	hlcoord 5, 5
+	lb bc, 6, 6 ; Cursor Pos
+	ret
+	
+DisplayDifficultyChoice::
+	ld a, TWO_OPTION_MENU
+	ld [wTextBoxID], a
+	call DisplayTextBoxID
+	jp LoadScreenTilesFromBuffer1
+
+; display yes/no choice
+YesNoNormalHardChoice::
+	call SaveScreenTilesToBuffer1
+	call InitYesNoNormalHardTextBoxParameters
+	jr DisplayYesNoNormalHardChoice
+
+InitYesNoNormalHardTextBoxParameters::
+  	ld a, YES_NO_MENU
+	ld [wTwoOptionMenuID], a
+	hlcoord 7, 5
+	lb bc, 6, 8 ; Cursor Pos
+	ret
+	
+DisplayYesNoNormalHardChoice::
+	ld a, TWO_OPTION_MENU
+	ld [wTextBoxID], a
+	call DisplayTextBoxID
+	jp LoadScreenTilesFromBuffer1

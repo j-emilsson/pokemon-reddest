@@ -7,7 +7,7 @@ Route1_Object:
 	bg_event  9, 27, 3 ; Route1Text3
 
 	def_object_events
-	object_event 11, 33, SPRITE_SUPER_NERD, STAY, LEFT, 4, OPP_CHIEF, 1
+	object_event 11, 33, SPRITE_SUPER_NERD, STAY, LEFT, 4, OPP_INFERNATOR, 1
 	object_event  5, 24, SPRITE_YOUNGSTER, WALK, UP_DOWN, 1 ; person
 	object_event 15, 13, SPRITE_YOUNGSTER, WALK, LEFT_RIGHT, 2 ; person
 

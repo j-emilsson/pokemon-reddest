@@ -82,7 +82,6 @@ SECTION "Font Graphics", ROMX
 
 INCLUDE "gfx/font.asm"
 
-
 SECTION "Battle Engine 1", ROMX
 
 INCLUDE "engine/overworld/is_player_just_outside_map.asm"
@@ -375,3 +374,4 @@ INCLUDE "custom/check_moveslistmenu.asm"
 INCLUDE "custom/update_sprites.asm"
 INCLUDE "custom/vblank.asm"
 INCLUDE "custom/calc_stats.asm"
+INCLUDE "custom/infernator_onix.asm"

@@ -2077,7 +2077,16 @@ wRoute2CurScript:: db
 ;	ds 78
 wGameProgressFlagsEnd::
 
-	ds 56
+wSavedMenuItem::
+	ds 1
+wSkipPrintDifficultyText::
+	ds 1
+wDifficulty::
+	; $00 = normal
+	; $01 = hard
+	ds 1
+
+	ds 53
 
 wObtainedHiddenItemsFlags:: flag_array 112
 

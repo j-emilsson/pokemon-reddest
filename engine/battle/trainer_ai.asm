@@ -447,6 +447,21 @@ LanceAI:
 	ret nc
 	jp AIUseHyperPotion
 
+InfernatorAI:
+	; Check if the opposing Pokémon is strong against this one
+	call AICheckIfEnemySuperEffective
+	jp c, AISwitchIfEnoughMons
+
+	; Check for status condition
+	ld a, [wEnemyMonStatus]
+	and a
+	jp nz, AIUseFullHeal
+
+	; Check if HP is below 25%
+	ld a, 25
+	call AICheckIfHPBelowFraction
+	jp c, AIUseFullRestore
+
 GenericAI:
 	and a ; clear carry
 	ret
@@ -749,3 +764,101 @@ AIPrintItemUse_:
 AIBattleUseItemText:
 	text_far _AIBattleUseItemText
 	text_end
+
+AICheckIfEnemySuperEffective:
+	; Save enemy's types
+	ld a, [wEnemyMonType1]
+	ld b, a
+	ld a, [wEnemyMonType2]
+	ld c, a
+
+	; Initialize move index
+	ld hl, wBattleMonMoves
+	ld d, 4 ; 4 moves to check
+
+.loop
+	ld a, [hl]
+	and a
+	jr z, .nextMove ; empty move slot
+	push bc
+	push de
+	push hl
+
+	call AIGetMoveType ; gets type in register A
+	ld e, a
+
+	; Check type effectiveness against enemy's types
+	ld a, e
+	ld b, c
+	call AICheckTypeEffectiveness
+	jr c, .superEffective
+
+	ld a, e
+	ld b, b
+	call AICheckTypeEffectiveness
+	jr c, .superEffective
+
+	pop hl
+	pop de
+	pop bc
+
+.nextMove
+	inc hl
+	dec d
+	jr nz, .loop
+
+	; No super-effective move found
+	and a ; clear carry
+	ret
+
+.superEffective
+	pop hl
+	pop de
+	pop bc
+	scf ; set carry
+	ret
+
+AIGetMoveType:
+	; Get the move type from move data
+	ld e, a
+	ld d, 0
+	ld hl, Moves
+	add hl, de
+	add hl, de ; each move entry is 2 bytes (type and power)
+	inc hl ; skip move effect byte
+	ld a, [hl] ; load move type
+	ret
+
+; Inputs:
+;   a = attack type
+;   b = defender type
+; Output:
+;   Carry set if super-effective (2x), clear otherwise
+
+AICheckTypeEffectiveness:
+	push af
+	push bc
+
+	ld d, a ; attacker type
+	ld e, b ; defender type
+	call AIGetTypeEffectiveness
+	ld a, [wTypeEffectiveness]
+	cp $20 ; x2 multiplier
+	jr z, .super
+
+	and a ; clear carry
+	jr .done
+
+.super
+	scf ; set carry
+
+.done
+	pop bc
+	pop af
+	ret
+
+; Inputs:
+;   d = attacker type
+;   e = defender type
+; Output:
+;   [wTypeEffectiveness] = multiplier (0x00, 0x10, 0x14, 0x20)

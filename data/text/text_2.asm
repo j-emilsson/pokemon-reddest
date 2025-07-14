@@ -1698,8 +1698,88 @@ _LinkCanceledText::
 	line "canceled."
 	done
 
+_InfernatorSpeechText1::
+	text "Hi and welcome to"
+	line "#MON Reddest!"
+
+	para "My name is"
+	line "INFERNATOR!"
+	cont "I am the creator"
+	cont "of this ROM hack!"
+	cont "I hope you will"
+	cont "enjoy this game!"
+
+	para "There are two"
+	line "difficulty levels"
+	cont "in this hack:"
+	cont "NORMAL and HARD."
+
+ 	para "The NORMAL"
+	line "difficulty is"
+	cont "like the vanilla"
+	cont "game, but with"
+	cont "more difficult"
+	cont "trainers."
+
+ 	para "The HARD"
+	line "difficulty is"
+	cont "like the Normal"
+	cont "difficulty but"
+	cont "with these"
+	cont "additions:"
+	cont "- Forced Set Mode"
+	cont "- Gym Level Caps"
+	cont "- No items in"
+	cont "battles"
+
+	para "Please choose the"
+	line "difficulty that"
+	cont "fits you best."
+	prompt
+
+_InfernatorSpeechText2::
+	text "I will follow"
+	line "you throughout"
+	cont "your journey and"
+	cont "test your skills,"
+	cont "so do not slack!"
+
+	para "All necessary info"
+	line "about this game"
+	cont "can be found"
+	cont "on the game's"
+	cont "GitHub page."
+
+	para "Now I am done"
+	line "rambling!"
+	cont "Over to you,"
+	cont "the #MON PROF!"
+	prompt
+
+_DifficultyText::
+   text "Select difficulty"
+   done
+
+_NormalDifficultyText::
+	text "You have chosen"
+	line "NORMAL difficulty!"
+	
+	para "Continue?"
+	done
+
+_HardDifficultyText::
+	text "You have chosen"
+	line "HARD difficulty!"
+	
+	para "Continue?"
+	done
+
 _OakSpeechText1::
-	text "Hello there!"
+	text "Thank you for"
+	line "that introduction"
+	cont "INFERNATOR!"
+
+	para "Hello there!"
 	line "Welcome to the"
 	cont "world of #MON!"
 

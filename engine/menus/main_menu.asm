@@ -552,13 +552,16 @@ DisplayOptionMenu:
 	ld [wOptionsBattleAnimCursorX], a
 	jp .eraseOldMenuCursor
 .cursorInBattleStyle
-	jr .lockedToSet
-	/* ld a, [wOptionsBattleStyleCursorX] ; battle style cursor X coordinate
+	ld a, [wDifficulty]
+	and a
+	jr nz, .lockedToSet
+	;jr .lockedToSet ; to force hard difficulty
+	ld a, [wOptionsBattleStyleCursorX] ; battle style cursor X coordinate
 	xor $0b ; toggle between 1 and 10
 	ld [wOptionsBattleStyleCursorX], a
-	jp .eraseOldMenuCursor */
+	jp .eraseOldMenuCursor
 .lockedToSet
-	ld a, 10 ; SET mode cursor position
+	ld a, 10 ; SET difficulty cursor position
 	ld [wOptionsBattleStyleCursorX], a
 	jp .eraseOldMenuCursor
 .pressedLeftInTextSpeed
@@ -631,8 +634,11 @@ SetOptionsFromCursorPositions:
 	set 6, d
 	jr .storeOptions
 .battleStyleShift
-	res 6, d
-	jr .battleStyleSet
+ 	res 6, d 
+	;jr .battleStyleSet ; to force hard mode
+	ld a, [wDifficulty]
+	and a
+	jr nz, .battleStyleSet
 .storeOptions
 	ld a, d
 	ld [wOptions], a
@@ -662,6 +668,10 @@ SetCursorPositionsFromOptions:
 	hlcoord 0, 8
 	call .placeUnfilledRightArrow
 	sla c
+/* 	ld a, 10
+	jr nz, .storeBattleStyleCursorX */
+	ld a, [wDifficulty]
+	and a
 	ld a, 10
 	jr nz, .storeBattleStyleCursorX
 	ld a, 1

@@ -123,8 +123,13 @@ ItemUseBall:
 	ld a, [wBoxCount] ; is box full?
 	cp MONS_PER_BOX
 	jp z, BoxFullCannotThrowBall
-	
-; Hard mode, can't throw balls at pokemon above level cap
+
+; check if player is on normal difficulty
+	ld a, [wDifficulty]
+	and a
+	jr z, .canUseBall ; skip on normal mode
+
+; can't throw balls at pokemon above level cap on hard difficulty
 	callfar GetLevelCap
 	ld a, [wMaxLevel]
 	ld b, a
@@ -1486,11 +1491,20 @@ ItemUseMedicine:
 	push hl
 	ld bc, wPartyMon1Level - wPartyMon1
 	add hl, bc ; hl now points to level
+	
 	push hl ; store mon's level
 	ld b, MAX_LEVEL
+
+; check if player is on normal difficulty
+	ld a, [wDifficulty]
+	and a
+	jr z, .normalDifficulty
+
+; level caps on hard mode
 	callfar GetLevelCap
 	ld a, [wMaxLevel]
 	ld b, a
+.normalDifficulty
 	pop hl ; retrieve mon's level
 	ld a, [hl] ; a = level
 	;cp MAX_LEVEL

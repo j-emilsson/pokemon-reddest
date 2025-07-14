@@ -180,12 +180,46 @@ DisplayIntroNameTextBox:
 	ld [wMenuWatchedKeys], a ; A_BUTTON
 	inc a
 	ld [wTopMenuItemY], a
-	inc a
+
+	; --- Set wMaxMenuItem based on which list DE points to ---
+
+	; Check if DE == DefaultNamesPlayerList
+	ld hl, DefaultNamesPlayerList
+	ld a, 0
+	call CheckDEEqualHL
+	jr z, .playerList
+
+	; Else assume rival list
+	ld a, RIVAL_NAME_COUNT
+	dec a
 	ld [wMaxMenuItem], a
-	jp HandleMenuInput
+	jr .doneMax
 
 .namestring
 	db "NAME@"
+	
+.playerList:
+    ld a, PLAYER_NAME_COUNT
+    dec a
+    ld [wMaxMenuItem], a
+
+.doneMax:
+    jp HandleMenuInput
+
+; Helper routine: Check if DE == HL; returns Z=1 if equal, Z=0 otherwise
+CheckDEEqualHL:
+    ld a, d
+    cp h
+    jr nz, .notEqual
+    ld a, e
+    cp l
+    jr nz, .notEqual
+    xor a
+    ret  ; Z=1 if equal
+.notEqual:
+    scf
+    ccf
+    ret    ; Z=0 if not equal
 
 INCLUDE "data/player_names.asm"
 
