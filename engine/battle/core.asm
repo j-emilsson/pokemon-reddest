@@ -5611,7 +5611,7 @@ AdjustDamageForMoveType:
 ; the result is stored in [wTypeEffectiveness]
 ; ($05 is not very effective, $10 is neutral, $14 is super effective)
 ; as far is can tell, this is only used once in some AI code to help decide which move to use
-AIGetTypeEffectiveness:
+/* AIGetTypeEffectiveness:
 	ld a, [wEnemyMoveType]
 	ld d, a                    ; d = type of enemy move
 	ld hl, wBattleMonType
@@ -5641,7 +5641,140 @@ AIGetTypeEffectiveness:
 .done
 	ld a, [hl]
 	ld [wTypeEffectiveness], a ; store damage multiplier
-	ret
+	ret */
+
+; Input:
+;   wEnemyMoveType - type of enemy move
+;   wAITargetMonType1, wAITargetMonType2 - defending mon types
+; Output:
+;   wTypeEffectiveness = effectiveness score
+; Returns:
+;   none
+; AIGetTypeEffectiveness:
+; Calculates effectiveness of wEnemyMoveType on wBattleMonType/wBattleMonType+1
+; Result in wTypeEffectiveness (values like $05 not very, $10 neutral, $20 super effective, $28 max 4x)
+; AIGetTypeEffectiveness
+; Calculates type effectiveness of enemy move on player Pokémon
+; Result stored in wTypeEffectiveness:
+;  0x00 = no effect
+;  0x05 = not very effective (0.5x)
+;  0x0A = normal (1x)
+;  0x14 = super effective (2x)
+;  0x28 = 4x super effective (4x)
+; Input:
+;   [wEnemyMoveType] = move type
+;   [wBattleMonType], [wBattleMonType+1] = defender types
+; Output:
+;   [wTypeEffectiveness] = effectiveness multiplier (byte, default 0x0A neutral)
+
+AIGetTypeEffectiveness:
+    ld a, [wEnemyMoveType]
+    ld d, a
+
+    ld a, [wBattleMonType]
+    ld b, a
+    ld a, [wBattleMonType + 1]
+    ld c, a
+
+    ld a, $0A              ; start with 1.0x effectiveness ($0A = 10)
+    ld [wTypeEffectiveness], a
+
+    ld hl, TypeEffects
+.loop:
+    ld a, [hl]
+    cp $FF
+    jr z, .done
+
+    cp d                   ; compare with attacking type
+    jr nz, .next_entry
+
+    inc hl
+    ld a, [hl]             ; get defending type
+    cp b                   ; compare with type 1
+    jr z, .apply_effectiveness
+    cp c                   ; compare with type 2
+    jr z, .apply_effectiveness
+    
+    ; No match, go to next entry
+    inc hl                 ; skip effectiveness byte
+    inc hl                 ; move to next entry
+    jr .loop
+
+.apply_effectiveness:
+    inc hl
+    ld a, [hl]             ; get effectiveness multiplier
+    ld e, a
+    ld a, [wTypeEffectiveness]
+    call MultiplyTypeEffectiveness
+    ld [wTypeEffectiveness], a
+    
+    ; Move to next entry
+    inc hl
+    jr .loop
+
+.next_entry:
+    inc hl
+    inc hl
+    inc hl                 ; skip this entire entry (3 bytes)
+    jr .loop
+
+.done:
+    ret
+
+; MultiplyTypeEffectiveness
+; A = current effectiveness (0-255)
+; E = new multiplier (e.g. 5=0.5x, 10=1x, 20=2x)
+; Result in A = (A * E) / 10
+MultiplyTypeEffectiveness:
+    push bc
+    ld b, a      ; current effectiveness
+    ld a, b
+    ld b, e
+    call Multiply8
+    ld b, 10
+    call Divide16By8
+    ld a, h      ; result = high byte of HL
+    pop bc
+    ret
+
+; Multiply8: HL = A * B
+Multiply8:
+    push af
+    push bc
+    ld h, 0
+    ld l, 0
+    ld c, b
+.loop_mul:
+    or a
+    jr z, .done
+    add hl, bc
+    dec a
+    jr nz, .loop_mul
+.done:
+    pop bc
+    pop af
+    ret
+
+; Divide16By8: HL = HL / B
+Divide16By8:
+    xor a
+    ld d, a
+    ld e, a
+    ld a, 16
+.loop_div:
+    add hl, hl
+    rl e
+    rl d
+    ld a, d
+    cp b
+    jr c, .no_sub
+    sub b
+    ld d, a
+    inc l
+.no_sub:
+    dec a
+    jr nz, .loop_div
+    ret
 
 INCLUDE "data/types/type_matchups.asm"
 
@@ -6972,6 +7105,13 @@ PrintEmptyString:
 .emptyString
 	db "@"
 
+CallBattleRandom:
+    call BattleRandom
+    ; Ensure result is in A, and no flags interfere
+    ; If BattleRandom returns in C, move to A
+    ; Example if result is in C:
+    ld a, c
+    ret
 
 BattleRandom:
 ; Link battles use a shared PRNG.

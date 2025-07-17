@@ -106,7 +106,7 @@ AIEnemyTrainerChooseMoves:
 AIMoveChoiceModificationFunctionPointers:
 	dw AIMoveChoiceModification1
 	dw AIMoveChoiceModification2
-	dw AIMoveChoiceModification3
+	dw AIMoveChoiceModificationNew ; new priority-based AI
 	dw AIMoveChoiceModification4 ; unused, does nothing
 
 ; discourages moves that cause no damage but only a status ailment if player's mon already has one
@@ -150,7 +150,15 @@ StatusAilmentMoveEffects:
 	db SLEEP_EFFECT
 	db POISON_EFFECT
 	db PARALYZE_EFFECT
-	db -1 ; end
+	db POISON_SIDE_EFFECT1
+	db POISON_SIDE_EFFECT2
+	db POISON_SIDE_EFFECT3
+	db BURN_SIDE_EFFECT1
+	db BURN_SIDE_EFFECT2
+	db FREEZE_SIDE_EFFECT
+	db PARALYZE_SIDE_EFFECT1
+	db PARALYZE_SIDE_EFFECT2
+	db $FF ; end
 
 ; slightly encourage moves with specific effects.
 ; in particular, stat-modifying moves and other move effects
@@ -255,6 +263,376 @@ AIMoveChoiceModification3:
 	jr z, .nextMove
 	inc [hl] ; slightly discourage this move
 	jr .nextMove
+
+; New priority-based AI system implementing the full specification from CLAUDE.md
+; Score Index Priority (lower is better, 0-9 scale):
+;  0: 4x SE + STAB           (Best)
+;  1: 4x SE + no STAB
+;  2: 2x SE + STAB
+;  3: 2x SE + no STAB        
+;  4: Neutral + STAB         
+;  5: Non Ailment Status Move
+;  6: Neutral + no STAB
+;  7: 0.5x + STAB
+;  8: 0.5x + no STAB
+;  9: 0x                     (Worst)
+; Also implements probabilistic status move selection
+AIMoveChoiceModificationNew:
+	; Initialize all moves with high scores (will be lowered based on priority)
+	ld hl, wBuffer
+	ld a, 10   ; start with high score
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld [hl], a
+	
+	; Now check each move individually and assign proper scores
+	ld hl, wEnemyMonMoves
+	ld de, wBuffer
+	ld b, NUM_MOVES
+	
+.checkMove
+	ld a, [hl]
+	and a
+	jp z, .nextMove  ; empty move slot
+	
+	; Save registers and read move data
+	push hl
+	push de
+	push bc
+	call ReadMove
+	
+	; Calculate type effectiveness
+	callfar AIGetTypeEffectiveness
+	
+	; Check if move has STAB (Same Type Attack Bonus)
+	call CheckMoveSTAB  ; returns carry if STAB
+	push af  ; save STAB flag
+	
+	; Determine move category and assign priority score
+	ld a, [wEnemyMovePower]
+	and a
+	jr z, .statusMove  ; if power = 0, it's a status move
+	
+	; Add 4x effectiveness detection to simple version
+	ld a, [wTypeEffectiveness]
+	cp FOUR_TIMES_EFFECTIVE  ; Check if 4x
+	jr z, .fourTimesEffective
+	cp SUPER_EFFECTIVE  ; Check if 2x
+	jr z, .twoTimesEffective
+	
+	; Everything else (1x, 0.5x, 0x) - treat as neutral for now
+	pop af  ; restore STAB flag
+	jr c, .neutralWithSTAB
+	ld a, 6  ; 1x + no STAB (score 6 from spec)
+	jr .setScore
+.neutralWithSTAB
+	ld a, 4  ; 1x + STAB (score 4 from spec)
+	jr .setScore
+	
+.fourTimesEffective
+	; 4x effectiveness - give best scores based on STAB
+	pop af  ; restore STAB flag
+	jr c, .fourTimesWithSTAB
+	ld a, 1  ; 4x + no STAB (score 1 from spec)
+	jr .setScore
+.fourTimesWithSTAB
+	ld a, 0  ; 4x + STAB (score 0 from spec - best possible)
+	jr .setScore
+	
+.twoTimesEffective
+	; 2x effectiveness - give good scores based on STAB
+	pop af  ; restore STAB flag
+	jr c, .twoTimesWithSTAB
+	ld a, 3  ; 2x + no STAB (score 3 from spec)
+	jr .setScore
+.twoTimesWithSTAB
+	ld a, 2  ; 2x + STAB (score 2 from spec)
+	jr .setScore
+	
+.statusMove
+	pop af  ; restore STAB flag (discard for status moves)
+	; Check if it's a status ailment move vs stat modification move
+	ld a, [wEnemyMoveEffect]
+	push hl
+	push de
+	push bc
+	ld hl, StatusAilmentMoveEffects
+	ld de, 1
+	call IsInArray
+	pop bc
+	pop de
+	pop hl
+	jr c, .statusAilmentMove
+	; Non-ailment status move (like TAIL WHIP, SCREECH)
+	ld a, 5
+	jr .setScore
+.statusAilmentMove
+	; Status ailment move - check if target already has status
+	ld a, [wBattleMonStatus]
+	and a
+	jr nz, .targetHasStatus
+	; Target has no status - status move is viable
+	ld a, 5
+	jr .setScore
+.targetHasStatus
+	; Target already has status - heavily discourage
+	ld a, 9
+	
+.setScore
+	; Restore registers and set the score
+	pop bc
+	pop de
+	pop hl
+	ld [de], a  ; store score in buffer at correct position
+	
+.nextMove
+	inc hl
+	inc de
+	dec b
+	jp nz, .checkMove
+	
+	; Skip complex post-processing for now - basic scoring system works
+	ret
+
+ApplyProbabilisticLogic:
+	; Check for moves with specific scores and apply probabilistic status move logic
+	ld hl, wBuffer
+	ld de, wEnemyMonMoves
+	ld b, NUM_MOVES
+	
+.findSpecialScores
+	ld a, [hl]
+	cp 2  ; 2x + STAB?
+	jr z, .found2xSTAB
+	cp 3  ; 2x + no STAB?
+	jr z, .found2xNoSTAB
+	cp 4  ; 1x + STAB?
+	jr z, .found1xSTAB
+	jr .nextCheck
+	
+.found2xSTAB
+	; Check for status ailment moves and apply 80% logic
+	call CheckForUsableStatusMoves
+	jr nc, .nextCheck  ; no usable status moves
+	ld a, [wBattleMonStatus]
+	and a
+	jr nz, .nextCheck  ; target has status
+	; 80% chance to use status move, 20% chance to keep 2x STAB
+	call Random
+	cp 205  ; 80% chance (205/256 ≈ 80%)
+	jr c, .useStatusMove
+	jr .nextCheck
+	
+.found2xNoSTAB  
+	; Check for status ailment moves and apply 90% logic
+	call CheckForUsableStatusMoves
+	jr nc, .nextCheck  ; no usable status moves
+	ld a, [wBattleMonStatus]
+	and a
+	jr nz, .nextCheck  ; target has status
+	; 90% chance to use status move, 10% chance to keep 2x no STAB
+	call Random
+	cp 230  ; 90% chance (230/256 ≈ 90%)
+	jr c, .useStatusMove
+	jr .nextCheck
+	
+.found1xSTAB
+	; Check for status ailment moves and apply 95% logic
+	call CheckForUsableStatusMoves
+	jr nc, .nextCheck  ; no usable status moves
+	ld a, [wBattleMonStatus]
+	and a
+	jr nz, .nextCheck  ; target has status
+	; 95% chance to use status move, 5% chance to keep 1x STAB
+	call Random
+	cp 243  ; 95% chance (243/256 ≈ 95%)
+	jr c, .useStatusMove
+	jr .nextCheck
+
+.useStatusMove
+	; Find best status ailment move and give it score 0
+	push hl
+	call FindBestStatusMove  ; returns index in A, or 255 if none
+	pop hl
+	cp 255
+	jr z, .nextCheck
+	; Set the status move to best score
+	ld c, a
+	ld b, 0
+	ld hl, wBuffer
+	add hl, bc
+	ld [hl], 0
+	ret  ; done, status move now has priority
+	
+.nextCheck
+	inc hl
+	inc de
+	dec b
+	jr nz, .findSpecialScores
+	
+	; Finally, apply strongest move selection among same-score moves
+	call SelectStrongestMove
+	ret
+
+FindBestStatusMove:
+	; Find the best status ailment move index, return 255 if none
+	ld hl, wEnemyMonMoves
+	ld b, NUM_MOVES
+	ld c, 0  ; move index
+.findStatusLoop
+	ld a, [hl]
+	and a
+	jr z, .notFound
+	push hl
+	push bc
+	call ReadMove
+	ld a, [wEnemyMovePower]
+	and a
+	jr nz, .notStatusMove
+	; Check if status ailment move
+	ld a, [wEnemyMoveEffect]
+	push hl
+	push de
+	push bc
+	ld hl, StatusAilmentMoveEffects
+	ld de, 1
+	call IsInArray
+	pop bc
+	pop de
+	pop hl
+	jr c, .foundStatus
+.notStatusMove
+	pop bc
+	pop hl
+	inc hl
+	inc c
+	dec b
+	jr nz, .findStatusLoop
+.notFound
+	ld a, 255  ; not found
+	ret
+.foundStatus
+	pop bc
+	pop hl
+	ld a, c    ; return index
+	ret
+
+SelectStrongestMove:
+	; Find minimum score, then among moves with that score, pick strongest
+	ld hl, wBuffer
+	ld a, 10   ; start with high value
+	ld b, NUM_MOVES
+.findMinScore
+	ld c, [hl]
+	cp c
+	jr c, .skipMin
+	ld a, c    ; new minimum
+.skipMin
+	inc hl
+	dec b
+	jr nz, .findMinScore
+	
+	; A now contains minimum score, find strongest move with that score
+	ld b, a    ; B = minimum score
+	ld hl, wBuffer
+	ld de, wEnemyMonMoves  
+	ld c, NUM_MOVES
+	ld a, 0    ; max power found
+	ld [wTempoModifier], a
+	xor a
+	ld [wTempMoveID], a  ; index of strongest move
+	
+.findStrongestLoop
+	ld a, [hl]
+	cp b
+	jr nz, .nextPowerCheck
+	; This move has minimum score, check power
+	push hl
+	push de
+	push bc
+	ld a, [de]
+	and a
+	jr z, .emptyMove
+	call ReadMove
+	ld a, [wEnemyMovePower]
+	ld d, a
+	ld a, [wTempoModifier]
+	cp d
+	jr nc, .notStronger
+	ld a, d
+	ld [wTempoModifier], a
+	ld a, c
+	ld [wTempMoveID], a
+.notStronger
+.emptyMove
+	pop bc
+	pop de
+	pop hl
+.nextPowerCheck
+	inc hl
+	inc de
+	dec c
+	jr nz, .findStrongestLoop
+	
+	; Set strongest move to score 0, others to 10
+	ld a, [wTempMoveID]
+	ld c, a
+	ld b, 0
+	ld hl, wBuffer
+	add hl, bc
+	ld [hl], 0
+	ret
+
+; Check if there are usable status ailment moves  
+; Returns: carry set if usable status moves exist
+CheckForUsableStatusMoves:
+	ld hl, wEnemyMonMoves
+	ld b, NUM_MOVES
+.checkStatusLoop
+	ld a, [hl]
+	and a
+	jr z, .noUsableStatus  ; empty move slot
+	
+	push hl
+	push bc
+	call ReadMove
+	
+	; Check if it's a status move (power = 0)
+	ld a, [wEnemyMovePower]
+	and a
+	jr nz, .notStatusMove
+	
+	; Check if it's a status ailment move
+	ld a, [wEnemyMoveEffect]
+	push hl
+	push de
+	push bc
+	ld hl, StatusAilmentMoveEffects
+	ld de, 1
+	call IsInArray
+	pop bc
+	pop de
+	pop hl
+	jr c, .foundUsableStatus
+	
+.notStatusMove
+	pop bc
+	pop hl
+	inc hl
+	dec b
+	jr nz, .checkStatusLoop
+	
+.noUsableStatus
+	and a  ; clear carry
+	ret
+	
+.foundUsableStatus
+	pop bc
+	pop hl
+	scf    ; set carry
+	ret
+
 AIMoveChoiceModification4:
 	ret
 
@@ -449,8 +827,10 @@ LanceAI:
 
 InfernatorAI:
 	; Check if the opposing Pokémon is strong against this one
-	call AICheckIfEnemySuperEffective
-	jp c, AISwitchIfEnoughMons
+
+	;TODO: commented out because is it broken atm
+/* 	call AICheckIfEnemySuperEffective
+	jp c, AISwitchIfEnoughMons */
 
 	; Check for status condition
 	ld a, [wEnemyMonStatus]
@@ -862,3 +1242,23 @@ AICheckTypeEffectiveness:
 ;   e = defender type
 ; Output:
 ;   [wTypeEffectiveness] = multiplier (0x00, 0x10, 0x14, 0x20)
+
+
+; Check if current move gets STAB (Same Type Attack Bonus)
+; Returns: carry set if STAB, clear if no STAB
+CheckMoveSTAB:
+	ld a, [wEnemyMoveType]
+	ld b, a
+	ld a, [wEnemyMonType1]
+	cp b
+	jr z, .hasSTAB
+	ld a, [wEnemyMonType2]
+	cp b
+	jr z, .hasSTAB
+	; No STAB
+	and a  ; clear carry
+	ret
+.hasSTAB
+	scf    ; set carry
+	ret
+

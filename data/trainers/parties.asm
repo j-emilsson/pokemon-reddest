@@ -215,8 +215,8 @@ PokemaniacData:
 	db 23, CUBONE, SLOWPOKE, 0
 ; Route 2
 	db 10, PIKACHU, 0
-; Pallet town
-	;db 1, ONIX, 0
+; Route 1
+	db 5, ONIX, 0
 
 SuperNerdData:
 ; Mt. Moon 1F

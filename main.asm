@@ -193,7 +193,6 @@ INCLUDE "engine/battle/unused_stats_functions.asm"
 INCLUDE "engine/battle/scroll_draw_trainer_pic.asm"
 INCLUDE "engine/battle/trainer_ai.asm"
 INCLUDE "engine/battle/draw_hud_pokeball_gfx.asm"
-INCLUDE "engine/pokemon/evos_moves.asm"
 
 
 SECTION "Move Effects", ROMX
@@ -375,3 +374,4 @@ INCLUDE "custom/update_sprites.asm"
 INCLUDE "custom/vblank.asm"
 INCLUDE "custom/calc_stats.asm"
 INCLUDE "custom/infernator_onix.asm"
+INCLUDE "engine/pokemon/evos_moves.asm"

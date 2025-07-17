@@ -50,11 +50,16 @@ SONICBOOM_DAMAGE   EQU 40
 DRAGON_RAGE_DAMAGE EQU 40
 
 ; type effectiveness factors, scaled by 10
-SUPER_EFFECTIVE    EQU 20
+/* SUPER_EFFECTIVE    EQU 20
 MORE_EFFECTIVE     EQU 15
 EFFECTIVE          EQU 10
 NOT_VERY_EFFECTIVE EQU 05
-NO_EFFECT          EQU 00
+NO_EFFECT          EQU 00 */
+EFFECTIVE           = $0A  ; 1x neutral
+NOT_VERY_EFFECTIVE  = $05  ; 0.5x
+SUPER_EFFECTIVE     = $14  ; 2x
+FOUR_TIMES_EFFECTIVE= $28  ; 4x
+NO_EFFECT           = $00
 
 ; non-volatile statuses
 SLP EQU %111 ; sleep counter

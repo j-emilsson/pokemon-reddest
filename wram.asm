@@ -2086,7 +2086,14 @@ wDifficulty::
 	; $01 = hard
 	ds 1
 
-	ds 53
+wBestMoveIndexForScore::  ds 10  ; One for each score 0–9
+wBestMovePowerForScore::  ds 10  ; Parallel array: best base power
+wBestMoveIndex:: ds 1
+wBestMovePower:: ds 1
+wBestMoveScore:: ds 1
+wTempMoveData:: ds 6 ; animation/id, effect, power, type, accuracy, pp
+wDebugTypeEffectiveness:: ds 1
+	ds 32
 
 wObtainedHiddenItemsFlags:: flag_array 112
 
